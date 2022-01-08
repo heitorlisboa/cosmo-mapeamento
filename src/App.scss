@@ -1,0 +1,55 @@
+// Variables and default font
+:root {
+  --main-color: #230664;
+  --main-color-darker: #1a0449;
+  --secondary-color: #ffffff;
+  --anchor-hover: var(--secondary-color);
+  --gray-text: #605e5e;
+
+  font-family: "Gotham Rounded", sans-serif;
+  
+}
+
+// Element selection styling
+::selection {
+  color: var(--secondary-color);
+  background-color: var(--main-color);
+}
+
+// Smooth scrolling
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+// Scroll styling
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--secondary-color);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color-darker); 
+}
+
+// Defining a default anchor style
+a {
+  text-decoration: none;
+  color: var(--main-color);
+  transition: color 0.4s ease;
+}
+
+a:hover {
+  color: var(--anchor-hover);
+}
+
+// Utility class to make margins stop collapsing
+.no-collapse {
+  overflow: auto;
+}
