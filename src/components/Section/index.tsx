@@ -1,12 +1,12 @@
 import { FC } from "react";
 
 interface SectionProps {
-  className: string;
+  className?: string;
 }
 
 const Section: FC<SectionProps> = (props) => {
   return (
-    <section className={`no-collapse ${props.className}`}>
+    <section className={`no-collapse ${props.className || ""}`}>
       {props.children}
     </section>
   );
