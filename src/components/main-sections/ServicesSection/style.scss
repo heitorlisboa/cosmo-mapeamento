@@ -29,17 +29,13 @@
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 
-    > p {
-      margin: 0.75rem 0;
-    }
-
     strong {
       font-weight: 400;
     }
   }
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .services-section {
     &__warning {
       color: var(--gray-text);
