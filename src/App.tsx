@@ -4,6 +4,8 @@ import MainBg from "./components/MainBg";
 import Navbar from "./components/Navbar";
 import Title from "./components/Title";
 import ServicesSection from "./components/main-sections/ServicesSection";
+import PortfolioSection from "./components/main-sections/PortfolioSection";
+import TeamSection from "./components/main-sections/TeamSection";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <strong>MAPEAMENTO AÉREO</strong>
         </Title>
         <ServicesSection />
+        <PortfolioSection />
+        <TeamSection />
       </main>
     </>
   );
