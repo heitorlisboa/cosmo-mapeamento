@@ -1,0 +1,31 @@
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+
+  color: var(--gray-text);
+  text-align: center;
+
+  &__title {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.3em;
+    font-weight: bold;
+    line-height: 1.2em;
+
+    margin-bottom: 0.7rem;
+  }
+
+  > p {
+    font-size: 0.8em;
+    font-weight: 350;
+
+    margin-bottom: 0.5rem;
+  }
+
+  > img {
+    margin-top: auto;
+    filter: hue-rotate(50deg);
+  }
+}
