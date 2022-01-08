@@ -1,0 +1,28 @@
+.secondary-title {
+  font-family: "Gotham Rounded", sans-serif;
+  font-weight: 300;
+  font-size: clamp(2.25rem, 8vw + 1rem, 5.5rem);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+  line-height: 1em;
+
+  margin: 4rem auto;
+  padding-inline: 1rem;
+
+  &--blurple {
+    color: var(--main-color);
+  }
+
+  &--white {
+    color: var(--secondary-color);
+  }
+
+  > .smaller {
+    font-size: clamp(2rem, 6vw + 1rem, 4rem);
+  }
+
+  > strong {
+    display: block;
+  }
+}
