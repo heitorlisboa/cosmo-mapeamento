@@ -5,9 +5,14 @@
   grid-template-rows: max-content 1fr;
   justify-content: center;
   justify-items: center;
-  
+
   max-width: 700px;
   margin: 4rem auto;
+
+  @media (min-width: 768px) {
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: auto;
+  }
 
   > img {
     --image-size: 185px;
@@ -25,16 +30,9 @@
     margin: 0;
 
     text-align: center;
-    
+
     strong {
       display: block;
     }
-  }
-}
-
-@media (min-width: 768px) {
-  .employee {
-    grid-template-columns: max-content 1fr;
-    grid-template-rows: auto;
   }
 }
