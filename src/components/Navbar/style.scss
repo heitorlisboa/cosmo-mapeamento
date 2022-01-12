@@ -6,7 +6,6 @@
   padding: 1.25rem 2rem;
   border-radius: 50px;
 
-
   &__list {
     list-style: none;
     padding: 0;
@@ -20,7 +19,17 @@
     text-align: center;
 
     > li:first-child a {
-      color: var(--anchor-hover);
+      color: var(--secondary-color);
+    }
+
+    a {
+      color: var(--main-color);
+      text-decoration: none;
+      transition: color 0.4s ease;
+
+      &:hover {
+        color: var(--secondary-color);
+      }
     }
   }
 }

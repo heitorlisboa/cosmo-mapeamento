@@ -3,7 +3,6 @@
   --main-color: #230664;
   --main-color-darker: #1a0449;
   --secondary-color: #ffffff;
-  --anchor-hover: var(--secondary-color);
   --gray-text: #605e5e;
   --purple-text: #4000d0;
   --black-alpha: rgba(255, 255, 255, 0.3);
@@ -41,13 +40,7 @@ html:focus-within {
 
 // Defining a default anchor style
 a {
-  text-decoration: none;
-  color: var(--main-color);
-  transition: color 0.4s ease;
-}
-
-a:hover {
-  color: var(--anchor-hover);
+  color: inherit;
 }
 
 // Defining a default paragraph style
