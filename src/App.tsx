@@ -6,6 +6,7 @@ import Title from "./components/Title";
 import ServicesSection from "./components/main-sections/ServicesSection";
 import PortfolioSection from "./components/main-sections/PortfolioSection";
 import TeamSection from "./components/main-sections/TeamSection";
+import InstitutionalSection from "./components/main-sections/InstitutionalSection";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <ServicesSection />
         <PortfolioSection />
         <TeamSection />
+        <InstitutionalSection />
       </main>
     </>
   );
