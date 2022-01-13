@@ -6,7 +6,7 @@
   align-items: center;
   justify-items: center;
 
-  max-width: 700px;
+  max-width: 45em;
   margin: 4rem auto;
 
   @media (min-width: 768px) {
@@ -26,7 +26,7 @@
   }
 
   &__content {
-    width: min(100%, 600px);
+    width: min(100%, 35em);
     margin: 0;
 
     text-align: center;
