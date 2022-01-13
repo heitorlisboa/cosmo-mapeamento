@@ -27,7 +27,7 @@ const FlexItem: FC<FlexItemProps> = (props) => {
           }}
           className="modal__close"
           src={xIcon}
-          alt=""
+          alt="Botão para fechar imagem"
         />
         <img src={props.img} alt="" />
       </div>
