@@ -7,6 +7,7 @@ import ServicesSection from "./components/main-sections/ServicesSection";
 import PortfolioSection from "./components/main-sections/PortfolioSection";
 import TeamSection from "./components/main-sections/TeamSection";
 import InstitutionalSection from "./components/main-sections/InstitutionalSection";
+import CustomersPartnersSection from "./components/main-sections/CustomersPartnersSection";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <PortfolioSection />
         <TeamSection />
         <InstitutionalSection />
+        <CustomersPartnersSection />
       </main>
     </>
   );
