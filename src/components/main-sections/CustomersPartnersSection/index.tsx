@@ -55,7 +55,7 @@ function CustomersPartnersSection() {
             rel="noreferrer"
           >
             <img
-              id="nazareno"
+              className="nazareno"
               src={prefeituraNazarenoLogo}
               alt="Logo da Prefeitura Municipal de Nazareno (Adiministração de 2021 a 2024)"
             />
