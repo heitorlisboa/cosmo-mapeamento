@@ -1,4 +1,4 @@
-import "./style.scss"
+import "./style.scss";
 
 import whatsappIcon from "../../../../img/contact-icons/whatsapp.webp";
 import localIcon from "../../../../img/contact-icons/local.webp";

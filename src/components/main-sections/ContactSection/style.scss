@@ -14,7 +14,7 @@
     margin: 4rem auto;
 
     &__title {
-      font-size: clamp(1rem, 0.5vw + 1rem, 1.5rem);
+      font-size: var(--fs-small-title);
       font-family: var(--ff-secondary);
       text-align: center;
 

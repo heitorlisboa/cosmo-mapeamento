@@ -71,8 +71,9 @@ function ServicesSection() {
         <p>
           Nossos veículos aéreos são devidamente registrados no{" "}
           <strong>SISANT/ANAC</strong> e todas as missões são acompanhadas de
-          autorização prévia no sistema <strong>SARPAS/DECEA</strong>, bem como da elaboração de
-          documento <strong>de análise de risco operacional</strong>.
+          autorização prévia no sistema <strong>SARPAS/DECEA</strong>, bem como
+          da elaboração de documento{" "}
+          <strong>de análise de risco operacional</strong>.
         </p>
         <p>Exija isso!</p>
       </div>

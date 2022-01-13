@@ -1,5 +1,5 @@
 import { FC } from "react";
-import "./style.scss"
+import "./style.scss";
 import TextBox from "../../../TextBox";
 
 interface EmployeeProps {

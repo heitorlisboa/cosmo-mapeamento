@@ -12,7 +12,7 @@ function ContactSection() {
       <Title className="contact-section__title" color="white">
         <strong>Contato</strong>
       </Title>
-      
+
       <Socials />
       <Info />
 

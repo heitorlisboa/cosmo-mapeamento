@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import "./style.scss";
 
-import xIcon from "../../../../img/portfolio-img/x-icon.png"
+import xIcon from "../../../../img/portfolio-img/x-icon.png";
 
 interface FlexItemProps {
   img: string;
