@@ -9,6 +9,7 @@ import TeamSection from "./components/main-sections/TeamSection";
 import InstitutionalSection from "./components/main-sections/InstitutionalSection";
 import CustomersPartnersSection from "./components/main-sections/CustomersPartnersSection";
 import ContactSection from "./components/main-sections/ContactSection";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
         <CustomersPartnersSection />
         <ContactSection />
       </main>
+      
+      <Footer />
     </>
   );
 }
