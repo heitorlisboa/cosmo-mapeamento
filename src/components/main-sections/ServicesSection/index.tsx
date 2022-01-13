@@ -15,7 +15,7 @@ import phoneRouteIcon from "../../../img/services-icons/phone-route.webp";
 
 function ServicesSection() {
   return (
-    <Section className="services-section">
+    <Section className="services-section" id="services">
       <Title color="blurple">
         <strong>Principais</strong> serviços
       </Title>

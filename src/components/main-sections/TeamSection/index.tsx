@@ -8,7 +8,7 @@ import fabricioImg from "../../../img/team-img/perfil-fabricio-palestra.webp";
 
 function TeamSection() {
   return (
-    <Section className="team-section">
+    <Section className="team-section" id="team">
       <Title color="blurple">
         <strong>A equipe</strong>
       </Title>

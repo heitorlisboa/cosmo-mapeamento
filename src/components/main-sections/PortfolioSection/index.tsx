@@ -15,7 +15,7 @@ import post3 from "../../../img/portfolio-img/post-3.png";
 
 function PortfolioSection() {
   return (
-    <Section className="portfolio-section">
+    <Section className="portfolio-section" id="portfolio">
       <Title color="white">
         <strong>Portfólio</strong>
       </Title>

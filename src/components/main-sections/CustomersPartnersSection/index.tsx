@@ -11,7 +11,7 @@ import aplicageoLogo from "../../../img/customers-partners-logos/aplicageo.webp"
 
 function CustomersPartnersSection() {
   return (
-    <Section className="customers-partners-section">
+    <Section className="customers-partners-section" id="customers-partners">
       <Title color="blurple">
         <strong>CLIENTES</strong> &amp; PARCEIROS
       </Title>
