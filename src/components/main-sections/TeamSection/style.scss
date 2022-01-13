@@ -1,5 +1,7 @@
+@use "../../../scss/opacity-background" as var;
+
 .team-section {
-  background-image: linear-gradient(var(--black-alpha), var(--black-alpha)),
+  background-image: #{var.$opacity-background},
     url(../../../img/background-alt-2.webp);
   background-size: cover;
   background-position: center;
