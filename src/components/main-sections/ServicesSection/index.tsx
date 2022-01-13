@@ -19,7 +19,7 @@ function ServicesSection() {
       <Title color="blurple">
         <strong>Principais</strong> serviços
       </Title>
-      <div className="services-section__grid">
+      <ul className="services-section__grid">
         <GridItem
           title="Levantamentos aerofotogramétricos"
           content="De propriedades rurais, áreas de preservação permanente, microbacias hidrográficas, loteamentos urbanos, áreas de mineração, dentre outros."
@@ -65,7 +65,7 @@ function ServicesSection() {
           content="Sistemas de Informação Geográfica na web para visualização de dados georreferenciados."
           img={phoneRouteIcon}
         />
-      </div>
+      </ul>
       <div className="services-section__warning">
         <p>Importante:</p>
         <p>

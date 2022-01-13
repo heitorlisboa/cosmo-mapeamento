@@ -12,7 +12,7 @@ const FlexItem: FC<FlexItemProps> = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <article className="flex-item">
+    <li className="flex-item">
       <img
         onClick={(event) => {
           setModalOpen(true);
@@ -31,7 +31,7 @@ const FlexItem: FC<FlexItemProps> = (props) => {
         />
         <img src={props.img} alt="" />
       </div>
-    </article>
+    </li>
   );
 };
 

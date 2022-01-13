@@ -19,7 +19,7 @@ function PortfolioSection() {
       <Title color="white">
         <strong>Portfólio</strong>
       </Title>
-      <div className="portfolio-section__flex">
+      <ul className="portfolio-section__flex">
         <FlexItem img={post25_pg2} alt="Post 25 - Meandro abandonado pg2" />
         <FlexItem img={post25_pg1} alt="Post 25 - Meandro abandonado pg1" />
         <FlexItem img={post20} alt="Post 20 - Modelagem 3D" />
@@ -32,7 +32,7 @@ function PortfolioSection() {
         />
         <FlexItem img={post6} alt="Post 6 - Processamento da nuvem de pontos" />
         <FlexItem img={post3} alt="Post 3 - Modelo Digital de Superfície" />
-      </div>
+      </ul>
     </Section>
   );
 }

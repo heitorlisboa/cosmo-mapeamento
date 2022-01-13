@@ -15,50 +15,62 @@ function CustomersPartnersSection() {
       <Title color="blurple">
         <strong>CLIENTES</strong> &amp; PARCEIROS
       </Title>
-      <div className="customers-partners-section__grid">
-        <a
-          href="https://www.studiomatilha.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={studioMatilhaLogo} alt="Logo do Studio Matilha" />
-        </a>
-        <a
-          href="https://www.algerconsultoria.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={algerLogo} alt="Logo da Alger" />
-        </a>
-        <a
-          href="https://www.instagram.com/innovarcontabilidadecontagem/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={innovarLogo} alt="Logo da Innovar" />
-        </a>
-        <a href="https://www.vasgeo.com.br/" target="_blank" rel="noreferrer">
-          <img src={vasgeoLogo} alt="Logo da VasGeo" />
-        </a>
-        <a
-          href="http://www.nazareno.mg.gov.br/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            id="nazareno"
-            src={prefeituraNazarenoLogo}
-            alt="Logo da Prefeitura Municipal de Nazareno (Adiministração de 2021 a 2024)"
-          />
-        </a>
-        <a
-          href="https://www.instagram.com/rodrigobelote.ambiental/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img src={aplicageoLogo} alt="Logo da AplicaGeo" />
-        </a>
-      </div>
+      <ul className="customers-partners-section__grid">
+        <li>
+          <a
+            href="https://www.studiomatilha.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={studioMatilhaLogo} alt="Logo do Studio Matilha" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.algerconsultoria.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={algerLogo} alt="Logo da Alger" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/innovarcontabilidadecontagem/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={innovarLogo} alt="Logo da Innovar" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.vasgeo.com.br/" target="_blank" rel="noreferrer">
+            <img src={vasgeoLogo} alt="Logo da VasGeo" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="http://www.nazareno.mg.gov.br/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              id="nazareno"
+              src={prefeituraNazarenoLogo}
+              alt="Logo da Prefeitura Municipal de Nazareno (Adiministração de 2021 a 2024)"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/rodrigobelote.ambiental/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={aplicageoLogo} alt="Logo da AplicaGeo" />
+          </a>
+        </li>
+      </ul>
     </Section>
   );
 }
