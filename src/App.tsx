@@ -33,7 +33,7 @@ function App() {
         <CustomersPartnersSection />
         <ContactSection />
       </main>
-      
+
       <Footer />
     </>
   );
