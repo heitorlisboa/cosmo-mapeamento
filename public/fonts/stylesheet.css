@@ -17,7 +17,7 @@
     url("GothamRounded-Light.woff") format("woff"),
     url("GothamRounded-Light.ttf") format("truetype"),
     url("GothamRounded-Light.svg#GothamRounded-Light") format("svg");
-  font-weight: 300;
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
@@ -30,6 +30,18 @@
     url("GothamRounded-Medium.ttf") format("truetype"),
     url("GothamRounded-Medium.svg#GothamRounded-Medium") format("svg");
   font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gotham Rounded";
+  src: url("GothamRounded-Book.eot");
+  src: url("GothamRounded-Book.eot?#iefix") format("embedded-opentype"),
+    url("GothamRounded-Book.woff") format("woff"),
+    url("GothamRounded-Book.ttf") format("truetype"),
+    url("GothamRounded-Book.svg#GothamRounded-Book") format("svg");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
