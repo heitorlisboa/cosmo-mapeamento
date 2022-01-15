@@ -11,20 +11,22 @@ interface FlexItemProps {
 const FlexItem: FC<FlexItemProps> = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
 
+  function openModal() {
+    setModalOpen(true);
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    setModalOpen(false);
+    document.body.style.overflow = "initial";
+  }
+
   return (
     <li className="flex-item">
-      <img
-        onClick={(event) => {
-          setModalOpen(true);
-        }}
-        src={props.img}
-        alt={props.alt}
-      />
+      <img onClick={openModal} src={props.img} alt={props.alt} />
       <div className={"modal" + (modalOpen ? "" : " modal--closed")}>
         <img
-          onClick={(event) => {
-            setModalOpen(false);
-          }}
+          onClick={closeModal}
           className="modal__close"
           src={xIcon}
           alt="Botão para fechar imagem"
