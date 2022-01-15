@@ -1,5 +1,5 @@
 .secondary-title {
-  font-family: "Gotham Rounded", sans-serif;
+  font-family: var(--ff-primary);
   font-weight: 300;
   font-size: var(--fs-big-title);
   text-align: center;
@@ -23,7 +23,7 @@
   }
 
   .smaller {
-    font-size: var(--fs-medium-title)
+    font-size: var(--fs-medium-title);
   }
 
   strong {
