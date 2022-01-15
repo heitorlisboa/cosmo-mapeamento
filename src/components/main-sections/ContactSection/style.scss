@@ -28,6 +28,11 @@
       padding: 0.2rem 1.5rem;
       border: none;
       outline: none;
+
+      &::placeholder {
+        color: inherit;
+        opacity: 0.6;
+      }
     }
 
     input {
