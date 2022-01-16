@@ -3,15 +3,15 @@ import Section from "../../Section";
 import Title from "../../Title";
 import FlexItem from "./FlexItem";
 
-import post25_pg2 from "../../../img/portfolio-img/post-25-pg-2.png";
-import post25_pg1 from "../../../img/portfolio-img/post-25-pg-1.png";
-import post20 from "../../../img/portfolio-img/post-20.png";
-import post11 from "../../../img/portfolio-img/post-11.png";
-import post17 from "../../../img/portfolio-img/post-17.png";
-import post2 from "../../../img/portfolio-img/post-2.png";
-import post8 from "../../../img/portfolio-img/post-8.png";
-import post6 from "../../../img/portfolio-img/post-6.png";
-import post3 from "../../../img/portfolio-img/post-3.png";
+import post25_pg2 from "../../../img/portfolio-img/post-25-pg-2.webp";
+import post25_pg1 from "../../../img/portfolio-img/post-25-pg-1.webp";
+import post20 from "../../../img/portfolio-img/post-20.webp";
+import post11 from "../../../img/portfolio-img/post-11.webp";
+import post17 from "../../../img/portfolio-img/post-17.webp";
+import post2 from "../../../img/portfolio-img/post-2.webp";
+import post8 from "../../../img/portfolio-img/post-8.webp";
+import post6 from "../../../img/portfolio-img/post-6.webp";
+import post3 from "../../../img/portfolio-img/post-3.webp";
 
 function PortfolioSection() {
   return (
