@@ -1,5 +1,9 @@
+@use "../../../scss/parallax-background";
+
 .contact-section {
   color: var(--secondary-color);
+
+  @extend %parallax-background;
 
   &__title {
     margin-bottom: 1.5rem;
