@@ -1,4 +1,9 @@
+// Css
 import "./App.scss";
+import "./reset.css";
+import "./fonts/stylesheet.css";
+
+// Components
 import Header from "./components/Header";
 import MainLogo from "./components/MainLogo";
 import Navbar from "./components/Navbar";
