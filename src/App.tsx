@@ -1,7 +1,7 @@
 // Css
-import "./App.scss";
 import "./reset.css";
 import "./fonts/stylesheet.css";
+import "./App.scss";
 
 // Components
 import Header from "./components/Header";
