@@ -17,6 +17,12 @@
     @media (min-width: 1024px) {
       display: block;
       position: absolute;
+
+      opacity: 0;
+
+      @media (prefers-reduced-motion: no-preference) {
+        --animation-config: 1s ease-out 500ms 1 normal forwards;
+      }
     }
   }
 
@@ -27,7 +33,7 @@
       top: 100px;
 
       @media (prefers-reduced-motion: no-preference) {
-        animation: right-to-left 1s ease-out 0s 1 normal forwards;
+        animation: right-to-left var(--animation-config);
 
         @keyframes right-to-left {
           from {
@@ -48,7 +54,7 @@
       margin-left: -850px;
 
       @media (prefers-reduced-motion: no-preference) {
-        animation: left-to-right 1s ease-out 0s 1 normal forwards;
+        animation: left-to-right var(--animation-config);
 
         @keyframes left-to-right {
           from {
