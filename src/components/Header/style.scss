@@ -20,43 +20,45 @@
     }
   }
 
-  .drone-1 {
-    right: 50%;
-    margin-right: -725px;
-    top: 100px;
+  @media (min-width: 1024px) {
+    .drone-1 {
+      right: 50%;
+      margin-right: -725px;
+      top: 100px;
 
-    @media (prefers-reduced-motion: no-preference) {
-      animation: right-to-left 1s ease-out 0s 1 normal forwards;
+      @media (prefers-reduced-motion: no-preference) {
+        animation: right-to-left 1s ease-out 0s 1 normal forwards;
 
-      @keyframes right-to-left {
-        from {
-          opacity: 0;
-          transform: translateX(150px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
+        @keyframes right-to-left {
+          from {
+            opacity: 0;
+            transform: translateX(150px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
       }
     }
-  }
 
-  .drone-2 {
-    bottom: 35px;
-    left: 50%;
-    margin-left: -850px;
+    .drone-2 {
+      bottom: 35px;
+      left: 50%;
+      margin-left: -850px;
 
-    @media (prefers-reduced-motion: no-preference) {
-      animation: left-to-right 1s ease-out 0s 1 normal forwards;
+      @media (prefers-reduced-motion: no-preference) {
+        animation: left-to-right 1s ease-out 0s 1 normal forwards;
 
-      @keyframes left-to-right {
-        from {
-          opacity: 0;
-          transform: translateX(-150px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
+        @keyframes left-to-right {
+          from {
+            opacity: 0;
+            transform: translateX(-150px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
       }
     }
