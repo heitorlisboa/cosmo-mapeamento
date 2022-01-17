@@ -18,10 +18,8 @@
       display: block;
       position: absolute;
 
-      opacity: 0;
-
       @media (prefers-reduced-motion: no-preference) {
-        --animation-config: 1s ease-out 500ms 1 normal forwards;
+        --animation-config: 1s ease-out 500ms 1 normal backwards;
       }
     }
   }
