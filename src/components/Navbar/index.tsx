@@ -25,6 +25,11 @@ function Navbar() {
           </a>
         </li>
         <li>
+          <a href="#institutional" target="_self">
+            Institucional
+          </a>
+        </li>
+        <li>
           <a href="#customers-partners" target="_self">
             Clientes e parceiros
           </a>

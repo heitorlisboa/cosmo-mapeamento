@@ -7,7 +7,7 @@ import logoCosmo from "../../../img/logo-cosmo.webp";
 
 function InstitutionalSection() {
   return (
-    <Section className="institutional-section">
+    <Section id="institutional" className="institutional-section">
       <Title className="outlined-text" color="white">
         <strong>Institucional</strong>
       </Title>
