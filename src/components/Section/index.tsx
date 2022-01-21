@@ -1,19 +1,20 @@
-import { FC } from "react";
+import { forwardRef, HTMLProps } from "react";
 
-interface SectionProps {
+export interface SectionProps extends HTMLProps<HTMLElement> {
   className?: string;
   id: string;
 }
 
-const Section: FC<SectionProps> = (props) => {
+const Section = forwardRef<HTMLElement, SectionProps>((props, ref) => {
   return (
     <section
+      ref={ref}
       className={`no-collapse ${props.className || ""}`}
       id={props.id}
     >
       {props.children}
     </section>
   );
-};
+});
 
 export default Section;

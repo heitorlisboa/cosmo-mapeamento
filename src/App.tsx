@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import MainLogo from "./components/MainLogo";
 import Navbar from "./components/Navbar";
 import Title from "./components/Title";
+import SideNav from "./components/SideNav";
 import ServicesSection from "./components/main-sections/ServicesSection";
 import PortfolioSection from "./components/main-sections/PortfolioSection";
 import TeamSection from "./components/main-sections/TeamSection";
@@ -29,12 +30,14 @@ function App() {
       </Header>
 
       <main>
-        <ServicesSection />
-        <PortfolioSection />
-        <TeamSection />
-        <InstitutionalSection />
-        <CustomersPartnersSection />
-        <ContactSection />
+        <SideNav>
+          <ServicesSection id="services" />
+          <PortfolioSection id="portfolio" />
+          <TeamSection id="team" />
+          <InstitutionalSection id="institutional" />
+          <CustomersPartnersSection id="customers-partners" />
+          <ContactSection id="contact" />
+        </SideNav>
       </main>
 
       <Footer />
