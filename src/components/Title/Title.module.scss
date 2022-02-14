@@ -1,0 +1,28 @@
+.title {
+  font-family: var(--ff-primary);
+  font-weight: 300;
+  font-size: var(--fs-big-title);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.25rem;
+  line-height: 1em;
+
+  margin-block: 4rem;
+  padding-inline: 0.25rem;
+
+  @media (min-width: 768px) {
+    padding-inline: 1rem;
+  }
+
+  strong {
+    display: block;
+  }
+}
+
+.blurple {
+  color: var(--main-color);
+}
+
+.white {
+  color: var(--secondary-color);
+}

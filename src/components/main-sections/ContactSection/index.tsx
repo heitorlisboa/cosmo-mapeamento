@@ -1,6 +1,8 @@
 import { forwardRef } from "react";
 import { SectionParentProps } from "../../../types";
-import "./style.scss";
+
+import styles from "./ContactSection.module.scss";
+
 import Section from "../../Section";
 import Title from "../../Title";
 import Socials from "./Socials";
@@ -11,8 +13,8 @@ const ContactSection = forwardRef<HTMLElement, SectionParentProps>(
     function handleSubmit() {}
 
     return (
-      <Section ref={ref} className="contact-section" id={props.id}>
-        <Title className="contact-section__title" color="white">
+      <Section ref={ref} className={styles.section} id={props.id}>
+        <Title className={styles.section__title} color="white">
           <strong>Contato</strong>
         </Title>
 
@@ -20,11 +22,11 @@ const ContactSection = forwardRef<HTMLElement, SectionParentProps>(
         <Info />
 
         <form
-          className="contact-form"
+          className={styles.form}
           aria-labelledby="form-title"
           onSubmit={handleSubmit}
         >
-          <h4 className="contact-form__title" id="form-title">
+          <h4 className={styles.form__title} id="form-title">
             Se preferir, preencha o formulário abaixo e solicite um orçamento:
           </h4>
           <input
@@ -64,5 +66,7 @@ const ContactSection = forwardRef<HTMLElement, SectionParentProps>(
     );
   }
 );
+
+ContactSection.displayName = "ContactSection";
 
 export default ContactSection;

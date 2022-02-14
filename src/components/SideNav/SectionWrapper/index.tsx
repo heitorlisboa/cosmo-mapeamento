@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { SectionProps } from "../../Section";
 
 interface SectionWrapperProps {
-  observer: IntersectionObserver;
+  observer: IntersectionObserver | undefined;
   navVisible: boolean;
 }
 
@@ -25,7 +25,8 @@ const SectionWrapper: FC<SectionWrapperProps> = ({
 
   useEffect(() => {
     // Only observe the Section elements when the nav is visible
-    if (navVisible) {
+    // and when the observer is given (its value is started as undefined)
+    if (navVisible && observer) {
       const currentElement = elementRef.current;
 
       if (currentElement) observer.observe(currentElement);

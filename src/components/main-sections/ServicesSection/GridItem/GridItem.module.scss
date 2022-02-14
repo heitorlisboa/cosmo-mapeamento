@@ -1,0 +1,27 @@
+.gridItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 100%;
+
+  color: var(--gray-text);
+  text-align: center;
+
+  > p {
+    font-size: 0.8em;
+    font-weight: 350;
+  }
+
+  > img {
+    margin-top: auto;
+    filter: hue-rotate(50deg);
+  }
+}
+
+.title {
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-small-title);
+  font-weight: bold;
+  line-height: 1.2em;
+}

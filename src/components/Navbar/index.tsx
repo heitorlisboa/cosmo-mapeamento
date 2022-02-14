@@ -1,9 +1,9 @@
-import "./style.scss";
+import styles from "./Navbar.module.scss";
 
 function Navbar() {
   return (
-    <nav className="navbar">
-      <ul className="navbar__list">
+    <nav className={styles.navbar}>
+      <ul className={styles.list}>
         <li>
           <a href="#" target="_self">
             Página Inicial

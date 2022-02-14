@@ -1,0 +1,34 @@
+@use "../../../styles/partials/opacity-background" as var;
+
+// TODO: Trocar o opacity-background por um background-color
+.section {
+  background-image: #{var.$opacity-background},
+    url(/img/background-alt-3.webp);
+}
+
+.outlinedText {
+  text-shadow: 0 0 3px black;
+}
+
+.grid {
+  @media (min-width: 1024px) {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    justify-items: center;
+
+    max-width: 70em;
+    padding-inline: 1rem;
+    margin: 4rem auto;
+  }
+}
+
+.logo {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+    border: 8px solid var(--secondary-color);
+  }
+}

@@ -1,12 +1,13 @@
-import "./style.scss";
+/* eslint-disable @next/next/no-img-element */
+import styles from "./Socials.module.scss";
 
-import instagramIcon from "../../../../img/contact-icons/instagram.webp";
-import facebookIcon from "../../../../img/contact-icons/facebook.webp";
-import linkedinIcon from "../../../../img/contact-icons/linkedin.webp";
+const instagramIcon = "/img/contact-icons/instagram.webp";
+const facebookIcon = "/img/contact-icons/facebook.webp";
+const linkedinIcon = "/img/contact-icons/linkedin.webp";
 
 function Socials() {
   return (
-    <ul className="socials" aria-label="Redes sociais da Cosmo Mapeamento">
+    <ul className={styles.list} aria-label="Redes sociais da Cosmo Mapeamento">
       <li>
         <a
           href="https://www.instagram.com/cosmomapeamento/"
@@ -14,7 +15,7 @@ function Socials() {
           rel="noreferrer"
           aria-label="Instagram"
         >
-          <img src={instagramIcon} alt="Logo do Instagram" />
+          <img src={instagramIcon} alt="" />
         </a>
       </li>
       <li>
@@ -24,7 +25,7 @@ function Socials() {
           rel="noreferrer"
           aria-label="Facebook"
         >
-          <img src={facebookIcon} alt="Logo do Facebook" />
+          <img src={facebookIcon} alt="" />
         </a>
       </li>
       <li>
@@ -34,7 +35,7 @@ function Socials() {
           rel="noreferrer"
           aria-label="LinkedIn"
         >
-          <img src={linkedinIcon} alt="Logo do LinkedIn" />
+          <img src={linkedinIcon} alt="" />
         </a>
       </li>
     </ul>

@@ -1,7 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import { FC, useState } from "react";
-import "./style.scss";
 
-import xIcon from "../../../../img/portfolio-img/x-icon.png";
+import styles from "./FlexItem.module.scss";
+
+const xIcon = "/img/portfolio-img/x-icon.svg";
 
 interface FlexItemProps {
   img: string;
@@ -22,15 +24,22 @@ const FlexItem: FC<FlexItemProps> = (props) => {
   }
 
   return (
-    <li className="flex-item">
+    <li className={styles.flexItem}>
       <img onClick={openModal} src={props.img} alt={props.alt} />
-      <div className={"modal" + (modalOpen ? "" : " modal--closed")}>
-        <img
+      <div
+        // TODO: Conferir se as classes não estão sendo escritar juntas
+        className={`
+          ${styles.modal}
+          ${modalOpen ? "" : styles["modal--closed"]}
+        `}
+      >
+        <button
+          className={styles.closeButton}
+          aria-label="Fechar imagem"
           onClick={closeModal}
-          className="modal__close"
-          src={xIcon}
-          alt="Botão para fechar imagem"
-        />
+        >
+          <img src={xIcon} alt="" />
+        </button>
         <img src={props.img} alt="" />
       </div>
     </li>

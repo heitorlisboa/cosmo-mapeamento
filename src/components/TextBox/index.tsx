@@ -1,5 +1,5 @@
-import { FC } from "react";
-import "./style.scss";
+import type { FC } from "react";
+import styles from "./TextBox.module.scss";
 
 interface TextBoxProps {
   className?: string;
@@ -7,7 +7,9 @@ interface TextBoxProps {
 
 const TextBox: FC<TextBoxProps> = (props) => {
   return (
-    <div className={`text-box ${props.className || ""}`}>{props.children}</div>
+    <div className={`${styles.container} ${props.className || ""}`}>
+      {props.children}
+    </div>
   );
 };
 

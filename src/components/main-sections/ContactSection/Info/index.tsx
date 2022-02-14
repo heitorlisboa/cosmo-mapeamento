@@ -1,11 +1,12 @@
-import "./style.scss";
+/* eslint-disable @next/next/no-img-element */
+import styles from "./ContactInfo.module.scss";
 
-import whatsappIcon from "../../../../img/contact-icons/whatsapp.webp";
-import localIcon from "../../../../img/contact-icons/local.webp";
+const whatsappIcon = "/img/contact-icons/whatsapp.webp";
+const localIcon = "/img/contact-icons/local.webp";
 
 function Info() {
   return (
-    <ul className="contact-info" aria-label="Informações de contato">
+    <ul className={styles.infoList} aria-label="Informações de contato">
       <li>
         <p>Email</p>
         <p>
@@ -14,10 +15,10 @@ function Info() {
           </a>
         </p>
       </li>
-      <li className="whatsapp">
-        <div className="whatsapp__grid">
+      <li className={styles.whatsapp}>
+        <div className={styles.grid}>
           <a href="https://wa.me/message/YAJAA3RXTF7RG1" aria-label="Whatsapp">
-            <img src={whatsappIcon} alt="Logo do Whatsapp" />
+            <img src={whatsappIcon} alt="" />
           </a>
           <p>Telefone / Whatsapp</p>
           <p>(31) 99897-9774</p>
@@ -27,8 +28,8 @@ function Info() {
           <p>Segunda à sexta - 09h às 18h</p>
         </div>
       </li>
-      <li className="local">
-        <img src={localIcon} alt="" aria-hidden="true" />
+      <li className={styles.grid}>
+        <img src={localIcon} alt="" />
         <p>Contagem - Minas Gerais</p>
         <p>CNPJ: 41.899.909/0001-20</p>
       </li>

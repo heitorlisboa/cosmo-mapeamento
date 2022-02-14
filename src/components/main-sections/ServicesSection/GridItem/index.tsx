@@ -1,5 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { FC } from "react";
-import "./style.scss";
+
+import styles from "./GridItem.module.scss";
+
 
 interface GridItemProps {
   title: string;
@@ -9,8 +12,8 @@ interface GridItemProps {
 
 const GridItem: FC<GridItemProps> = (props) => {
   return (
-    <li className="grid-item">
-      <h4 className="grid-item__title">{props.title}</h4>
+    <li className={styles.gridItem}>
+      <h4 className={styles.title}>{props.title}</h4>
       <p>{props.content}</p>
       <img src={props.img} alt="" />
     </li>

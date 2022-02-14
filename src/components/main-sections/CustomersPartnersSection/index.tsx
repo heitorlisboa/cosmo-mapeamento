@@ -1,32 +1,37 @@
+/* eslint-disable @next/next/no-img-element */
 import { forwardRef } from "react";
 import { SectionParentProps } from "../../../types";
-import "./style.scss";
+
+import styles from "./CustomersPartnersSection.module.scss";
+
 import Section from "../../Section";
 import Title from "../../Title";
 
 // Logos
-import studioMatilhaLogo from "../../../img/customers-partners-logos/studio-matilha.webp";
-import algerLogo from "../../../img/customers-partners-logos/alger.webp";
-import innovarLogo from "../../../img/customers-partners-logos/innovar.webp";
-import vasgeoLogo from "../../../img/customers-partners-logos/vasgeo.webp";
-import prefeituraNazarenoLogo from "../../../img/customers-partners-logos/prefeitura-nazareno.webp";
-import aplicageoLogo from "../../../img/customers-partners-logos/aplicageo.webp";
+const studioMatilhaLogo = "/img/customers-partners-logos/studio-matilha.webp";
+const algerLogo = "/img/customers-partners-logos/alger.webp";
+const innovarLogo = "/img/customers-partners-logos/innovar.webp";
+const vasgeoLogo = "/img/customers-partners-logos/vasgeo.webp";
+const prefeituraNazarenoLogo =
+  "/img/customers-partners-logos/prefeitura-nazareno.webp";
+const aplicageoLogo = "/img/customers-partners-logos/aplicageo.webp";
 
 const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
   (props, ref) => {
     return (
-      <Section ref={ref} className="customers-partners-section" id={props.id}>
+      <Section ref={ref} className={styles.section} id={props.id}>
         <Title color="blurple">
-          <strong>CLIENTES</strong> &amp; PARCEIROS
+          <strong>Clientes</strong> &amp; Parceiros
         </Title>
-        <ul className="customers-partners-section__grid">
+        <ul className={styles.list}>
           <li>
             <a
               href="https://www.studiomatilha.com/"
               target="_blank"
               rel="noreferrer"
+              aria-label="Studio Matilha"
             >
-              <img src={studioMatilhaLogo} alt="Logo do Studio Matilha" />
+              <img src={studioMatilhaLogo} alt="" />
             </a>
           </li>
           <li>
@@ -34,8 +39,9 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
               href="https://www.algerconsultoria.com/"
               target="_blank"
               rel="noreferrer"
+              aria-label="Alger"
             >
-              <img src={algerLogo} alt="Logo da Alger" />
+              <img src={algerLogo} alt="" />
             </a>
           </li>
           <li>
@@ -43,8 +49,9 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
               href="https://www.instagram.com/innovarcontabilidadecontagem/"
               target="_blank"
               rel="noreferrer"
+              aria-label="Innovar"
             >
-              <img src={innovarLogo} alt="Logo da Innovar" />
+              <img src={innovarLogo} alt="" />
             </a>
           </li>
           <li>
@@ -52,8 +59,9 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
               href="https://www.vasgeo.com.br/"
               target="_blank"
               rel="noreferrer"
+              aria-label="VasGeo"
             >
-              <img src={vasgeoLogo} alt="Logo da VasGeo" />
+              <img src={vasgeoLogo} alt="" />
             </a>
           </li>
           <li>
@@ -61,11 +69,12 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
               href="http://www.nazareno.mg.gov.br/"
               target="_blank"
               rel="noreferrer"
+              aria-label="Prefeitura Municipal de Nazareno (Adiministração de 2021 a 2024)"
             >
               <img
-                className="nazareno"
+                className={styles.nazareno}
                 src={prefeituraNazarenoLogo}
-                alt="Logo da Prefeitura Municipal de Nazareno (Adiministração de 2021 a 2024)"
+                alt=""
               />
             </a>
           </li>
@@ -74,8 +83,9 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
               href="https://www.instagram.com/rodrigobelote.ambiental/"
               target="_blank"
               rel="noreferrer"
+              aria-label="AplicaGeo"
             >
-              <img src={aplicageoLogo} alt="Logo da AplicaGeo" />
+              <img src={aplicageoLogo} alt="" />
             </a>
           </li>
         </ul>
@@ -83,5 +93,7 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
     );
   }
 );
+
+CustomersPartnersSection.displayName = "CustomersPartnersSection";
 
 export default CustomersPartnersSection;

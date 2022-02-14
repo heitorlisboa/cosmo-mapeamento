@@ -17,4 +17,6 @@ const Section = forwardRef<HTMLElement, SectionProps>((props, ref) => {
   );
 });
 
+Section.displayName = "Section";
+
 export default Section;

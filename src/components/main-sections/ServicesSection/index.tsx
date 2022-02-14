@@ -1,33 +1,35 @@
 import { forwardRef } from "react";
 import { SectionParentProps } from "../../../types";
-import "./style.scss";
+
+import styles from "./ServicesSection.module.scss";
+
 import Section from "../../Section";
 import Title from "../../Title";
 import GridItem from "./GridItem";
 
 // Geography related icons
-import mapPoiIcon from "../../../img/services-icons/map-poi.webp";
-import layersIcon from "../../../img/services-icons/layers.webp";
-import layerContourIcon from "../../../img/services-icons/layer-contour.webp";
-import contourMapIcon from "../../../img/services-icons/contour-map.webp";
-import statisticMapIcon from "../../../img/services-icons/statistic-map.webp";
-import landcoverMapIcon from "../../../img/services-icons/landcover-map.webp";
-import earthGearIcon from "../../../img/services-icons/earth-gear.webp";
-import worldMapIcon from "../../../img/services-icons/world-map.webp";
-import phoneRouteIcon from "../../../img/services-icons/phone-route.webp";
+const mapPOIIcon = "/img/services-icons/map-poi.webp";
+const layersIcon = "/img/services-icons/layers.webp";
+const layerContourIcon = "/img/services-icons/layer-contour.webp";
+const contourMapIcon = "/img/services-icons/contour-map.webp";
+const statisticMapIcon = "/img/services-icons/statistic-map.webp";
+const landcoverMapIcon = "/img/services-icons/landcover-map.webp";
+const earthGearIcon = "/img/services-icons/earth-gear.webp";
+const worldMapIcon = "/img/services-icons/world-map.webp";
+const phoneRouteIcon = "/img/services-icons/phone-route.webp";
 
 const ServicesSection = forwardRef<HTMLElement, SectionParentProps>(
   (props, ref) => {
     return (
-      <Section ref={ref} className="services-section" id={props.id}>
+      <Section ref={ref} className={styles.section} id={props.id}>
         <Title color="blurple">
           <strong>Principais</strong> serviços
         </Title>
-        <ul className="services-section__grid">
+        <ul className={styles.grid}>
           <GridItem
             title="Levantamentos aerofotogramétricos"
             content="De propriedades rurais, áreas de preservação permanente, microbacias hidrográficas, loteamentos urbanos, áreas de mineração, dentre outros."
-            img={mapPoiIcon}
+            img={mapPOIIcon}
           />
           <GridItem
             title="Elaboração de ortofotomosaicos"
@@ -70,7 +72,7 @@ const ServicesSection = forwardRef<HTMLElement, SectionParentProps>(
             img={phoneRouteIcon}
           />
         </ul>
-        <div className="services-section__warning">
+        <div className={styles.warning}>
           <p>Importante:</p>
           <p>
             Nossos veículos aéreos são devidamente registrados no{" "}
@@ -85,5 +87,7 @@ const ServicesSection = forwardRef<HTMLElement, SectionParentProps>(
     );
   }
 );
+
+ServicesSection.displayName = "ServicesSection";
 
 export default ServicesSection;

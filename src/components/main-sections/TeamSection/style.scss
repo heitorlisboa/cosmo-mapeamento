@@ -1,8 +1,0 @@
-@use "../../../scss/opacity-background" as var;
-
-.team-section {
-  background-image: #{var.$opacity-background},
-    url(../../../img/background-alt-2.webp);
-  background-size: cover;
-  background-position: center;
-}

@@ -1,29 +1,31 @@
 import { forwardRef } from "react";
 import { SectionParentProps } from "../../../types";
-import "./style.scss";
+
+import styles from "./PortfolioSection.module.scss";
+
 import Section from "../../Section";
 import Title from "../../Title";
 import FlexItem from "./FlexItem";
 
 // Portfolio images
-import post25_pg2 from "../../../img/portfolio-img/post-25-pg-2.webp";
-import post25_pg1 from "../../../img/portfolio-img/post-25-pg-1.webp";
-import post20 from "../../../img/portfolio-img/post-20.webp";
-import post11 from "../../../img/portfolio-img/post-11.webp";
-import post17 from "../../../img/portfolio-img/post-17.webp";
-import post2 from "../../../img/portfolio-img/post-2.webp";
-import post8 from "../../../img/portfolio-img/post-8.webp";
-import post6 from "../../../img/portfolio-img/post-6.webp";
-import post3 from "../../../img/portfolio-img/post-3.webp";
+const post25_pg2 = "/img/portfolio-img/post-25-pg-2.webp";
+const post25_pg1 = "/img/portfolio-img/post-25-pg-1.webp";
+const post20 = "/img/portfolio-img/post-20.webp";
+const post11 = "/img/portfolio-img/post-11.webp";
+const post17 = "/img/portfolio-img/post-17.webp";
+const post2 = "/img/portfolio-img/post-2.webp";
+const post8 = "/img/portfolio-img/post-8.webp";
+const post6 = "/img/portfolio-img/post-6.webp";
+const post3 = "/img/portfolio-img/post-3.webp";
 
 const PortfolioSection = forwardRef<HTMLElement, SectionParentProps>(
   (props, ref) => {
     return (
-      <Section ref={ref} className="portfolio-section" id={props.id}>
+      <Section ref={ref} className={styles.section} id={props.id}>
         <Title color="white">
           <strong>Portfólio</strong>
         </Title>
-        <ul className="portfolio-section__flex">
+        <ul className={styles.list}>
           <FlexItem img={post25_pg2} alt="Post 25 - Meandro abandonado pg2" />
           <FlexItem img={post25_pg1} alt="Post 25 - Meandro abandonado pg1" />
           <FlexItem img={post20} alt="Post 20 - Modelagem 3D" />
@@ -44,5 +46,7 @@ const PortfolioSection = forwardRef<HTMLElement, SectionParentProps>(
     );
   }
 );
+
+PortfolioSection.displayName = "PortfolioSection";
 
 export default PortfolioSection;

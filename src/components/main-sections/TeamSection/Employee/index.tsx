@@ -1,5 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { FC } from "react";
-import "./style.scss";
+
+import styles from "./Employee.module.scss";
+
 import TextBox from "../../../TextBox";
 
 interface EmployeeProps {
@@ -9,9 +12,9 @@ interface EmployeeProps {
 
 const Employee: FC<EmployeeProps> = (props) => {
   return (
-    <article className="employee">
+    <article className={styles.container}>
       <img src={props.img} alt={props.alt} />
-      <TextBox className="employee__content">{props.children}</TextBox>
+      <TextBox className={styles.content}>{props.children}</TextBox>
     </article>
   );
 };

@@ -1,25 +1,24 @@
+/* eslint-disable @next/next/no-img-element */
 import { forwardRef } from "react";
 import { SectionParentProps } from "../../../types";
-import "./style.scss";
+
+import styles from "./InstitutionalSection.module.scss";
+
 import Section from "../../Section";
 import Title from "../../Title";
 import TextBox from "../../TextBox";
 
-import logoCosmo from "../../../img/logo-cosmo.webp";
+const logoCosmo = "/img/logo-cosmo.webp";
 
 const InstitutionalSection = forwardRef<HTMLElement, SectionParentProps>(
   (props, ref) => {
     return (
-      <Section ref={ref} className="institutional-section" id={props.id}>
-        <Title className="outlined-text" color="white">
+      <Section ref={ref} className={styles.section} id={props.id}>
+        <Title className={styles.outlinedText} color="white">
           <strong>Institucional</strong>
         </Title>
-        <div className="institutional-section__grid">
-          <img
-            className="secondary-logo"
-            src={logoCosmo}
-            alt="Logo da Cosmo Mapeamento"
-          />
+        <div className={styles.grid}>
+          <img className={styles.logo} src={logoCosmo} alt="" />
           <TextBox>
             <p>
               A <strong>missão</strong> da equipe <strong>Cosmo</strong> é
@@ -41,6 +40,8 @@ const InstitutionalSection = forwardRef<HTMLElement, SectionParentProps>(
                   href="https://www.instagram.com/cosmomapeamento/"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Link para o Instagram do Cosmo Mapeamento"
+                  title="Link para o Instagram do Cosmo Mapeamento"
                 >
                   #cosmomapeamento
                 </a>
@@ -52,5 +53,7 @@ const InstitutionalSection = forwardRef<HTMLElement, SectionParentProps>(
     );
   }
 );
+
+InstitutionalSection.displayName = "InstitutionalSection";
 
 export default InstitutionalSection;

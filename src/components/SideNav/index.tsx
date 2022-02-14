@@ -1,12 +1,12 @@
 // React and types
-import React, { FC, ReactElement, useState } from "react";
+import React, { FC, ReactElement, useEffect, useState } from "react";
 import { SectionProps } from "../Section";
 
 // Style
-import "./style.scss";
+import styles from "./SideNav.module.scss";
 
-// Function
-import isInList from "../../functions/isInList";
+// Utilities
+import isInList from "../../utils/isInList";
 
 // Component
 import SectionWrapper from "./SectionWrapper";
@@ -18,21 +18,16 @@ interface SVGsObject {
 const SideNav: FC = (props) => {
   const minWidth = 768; // Min width for the side nav to be shown
   // State of the nav visibility
-  const [navVisible, setNavVisible] = useState(window.innerWidth > minWidth);
+  const [navVisible, setNavVisible] = useState<boolean>(false);
+  // Intersection observer
+  const [observer, setObserver] = useState<IntersectionObserver>();
 
-  // Event listener to change the nav visibility on window resize
-  window.addEventListener("resize", () => {
-    const width = window.innerWidth;
-    if (width > minWidth) {
-      setNavVisible(true);
-    } else {
-      setNavVisible(false);
-    }
-  });
-
-  const navItems: SVGsObject = {}; // An object with all the refs from the SVGs on the nav
-  const sectionsBeingObserved: string[] = []; // A list of the ids from the sections being observed
-  let sectionsIntersecting: number = 0; // The number of sections that are intersecting at the moment
+  // An object with all the refs from the SVGs on the nav
+  const [navItems, _setNavItems] = useState<SVGsObject>({});
+  // A list of the ids from the sections being observed
+  const sectionsBeingObserved: string[] = [];
+  // The number of sections that are intersecting at the moment
+  let sectionsIntersecting: number = 0;
 
   const observerCallback: IntersectionObserverCallback = (entries) => {
     entries.forEach((entry) => {
@@ -43,11 +38,11 @@ const SideNav: FC = (props) => {
 
         // Activating its corresponding nav item
         const activeNavItem = navItems[sectionId];
-        activeNavItem.classList.add("active");
+        activeNavItem.classList.add(styles.active);
 
         // Deactivating all other nav items
         Object.values(navItems).forEach((item) => {
-          if (item !== activeNavItem) item.classList.remove("active");
+          if (item !== activeNavItem) item.classList.remove(styles.active);
         });
       }
 
@@ -63,7 +58,7 @@ const SideNav: FC = (props) => {
     // If there are no sections intersecting, then deactivate all nav items
     if (!sectionsIntersecting) {
       Object.values(navItems).forEach((item) => {
-        item.classList.remove("active");
+        item.classList.remove(styles.active);
       });
     }
   };
@@ -74,7 +69,21 @@ const SideNav: FC = (props) => {
     rootMargin: "-49% 0px",
   };
 
-  const observer = new IntersectionObserver(observerCallback, observerOptions);
+  useEffect(() => {
+    setNavVisible(window.innerWidth > minWidth);
+
+    // Event listener to change the nav visibility on window resize
+    window.addEventListener("resize", () => {
+      const width = window.innerWidth;
+      if (width > minWidth) {
+        setNavVisible(true);
+      } else {
+        setNavVisible(false);
+      }
+    });
+
+    setObserver(new IntersectionObserver(observerCallback, observerOptions));
+  }, []);
 
   // A list of the section elements useful to observe and create a nav item for each of them
   const sectionList: ReactElement<SectionProps>[] = [];
@@ -87,16 +96,24 @@ const SideNav: FC = (props) => {
 
   return (
     <>
-      {/* Only renders the navigation when the nav should be visible */}
+      {/* Only renders the navigation when the it should be visible */}
       {navVisible && (
-        <aside className="side-nav">
+        <aside className={styles.sideNav}>
           <nav>
-            <ul>
+            <ul className={styles.list}>
               {sectionList.map((section, index) => (
-                <li key={index} className="side-nav__item">
+                <li key={index}>
                   <a href={"#" + section.props.id}>
                     <svg
                       ref={(SVGRef) => {
+                        // HACK
+                        /* If you use the state setter, for an unknown reason,
+                        the setter keeps being called infinitely, exceeding the
+                        max number of calls. And if you don't use a React state
+                        variable, the components that depends on its value,
+                        simply don't get it. This is a problem that only happens
+                        when using Next.js, because with pure React it works
+                        just fine */
                         if (SVGRef) navItems[section.props.id] = SVGRef;
                         return SVGRef;
                       }}
@@ -111,7 +128,6 @@ const SideNav: FC = (props) => {
           </nav>
         </aside>
       )}
-
       {sectionList.map((section, index) => (
         <SectionWrapper key={index} navVisible={navVisible} observer={observer}>
           {section}

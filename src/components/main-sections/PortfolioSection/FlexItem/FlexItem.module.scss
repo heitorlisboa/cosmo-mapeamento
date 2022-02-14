@@ -1,0 +1,39 @@
+.flexItem {
+  aspect-ratio: 1/1;
+  min-width: 200px;
+  max-width: 300px;
+  flex: 1;
+
+  // TODO: Alterar o efeito de hover de opacidade para background-color
+  > img:hover {
+    cursor: pointer;
+    filter: opacity(50%);
+  }
+}
+
+.modal {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+
+  background-color: var(--secondary-color);
+
+  &--closed {
+    display: none;
+  }
+}
+
+// TODO: Conferir se o tamanho e a posição do botão estão corretos
+.closeButton {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  aspect-ratio: 1;
+  width: 1.75rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
