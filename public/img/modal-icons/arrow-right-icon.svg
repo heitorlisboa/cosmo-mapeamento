@@ -1,0 +1,11 @@
+<svg enable-background="new 0 0 24 24" height="24px" viewBox="0 0 48 96" width="24px" fill="#000000" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <bx:grid x="0" y="0" width="1" height="1"></bx:grid>
+  </defs>
+  <g>
+    <path d="M0,0h24v24H0V0z" fill="none"></path>
+  </g>
+  <g style="" transform="matrix(4.8, 0, 0, 4.8, -33.903198, -9.599999)">
+    <polygon points="7.063 21.167 7.897 22 17.063 12 7.897 2 7.063 2.833 15.397 12" style=""></polygon>
+  </g>
+</svg>
