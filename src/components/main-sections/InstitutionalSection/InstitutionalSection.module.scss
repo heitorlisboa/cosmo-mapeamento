@@ -1,9 +1,7 @@
-@use "../../../styles/partials/opacity-background" as var;
-
-// TODO: Trocar o opacity-background por um background-color
 .section {
-  background-image: #{var.$opacity-background},
-    url(/img/background-alt-3.webp);
+  background-image: url(/img/background-alt-3.webp);
+  background-color: var(--white-alpha);
+  background-blend-mode: color;
 }
 
 .outlinedText {
