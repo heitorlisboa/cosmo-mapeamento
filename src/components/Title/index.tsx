@@ -1,4 +1,7 @@
 import { FC } from "react";
+
+import formatClass from "../../utils/formatClass";
+
 import styles from "./Title.module.scss";
 
 interface TitleProps {
@@ -12,12 +15,11 @@ const Title: FC<TitleProps> = (props) => {
 
   return (
     <Component
-      // TODO: Conferir se as classes não estão sendo escritar juntas
-      className={`
+      className={formatClass(`
         ${styles.title}
         ${styles[props.color]}
         ${props.className || ""}
-      `}
+      `)}
     >
       {props.children}
     </Component>

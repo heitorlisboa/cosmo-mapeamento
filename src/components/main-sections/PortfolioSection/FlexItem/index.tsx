@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { FC, useState } from "react";
 
+import formatClass from "../../../../utils/formatClass";
+
 import styles from "./FlexItem.module.scss";
 
 const xIcon = "/img/portfolio-img/x-icon.svg";
@@ -27,11 +29,10 @@ const FlexItem: FC<FlexItemProps> = (props) => {
     <li className={styles.flexItem}>
       <img onClick={openModal} src={props.img} alt={props.alt} />
       <div
-        // TODO: Conferir se as classes não estão sendo escritar juntas
-        className={`
+        className={formatClass(`
           ${styles.modal}
           ${modalOpen ? "" : styles["modal--closed"]}
-        `}
+        `)}
       >
         <button
           className={styles.closeButton}
