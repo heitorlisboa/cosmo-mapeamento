@@ -1,5 +1,6 @@
-import React, { HTMLProps, useState } from "react";
-import type { FC, ReactElement } from "react";
+import React, { useState } from "react";
+import type { FC, ReactElement, HTMLProps } from "react";
+import type { EmptyObject } from "../../types";
 
 import objectHasItems from "../../utils/objectHasItems";
 
@@ -10,16 +11,18 @@ const arrowRightIcon = "/img/modal-icons/arrow-right-icon.svg";
 
 type CarouselItem = ReactElement<HTMLImageElement>;
 
-type ActiveModal = {
-  img: string;
-  alt: string;
-};
+type ActiveModal =
+  | {
+      img: string;
+      alt: string;
+    }
+  | EmptyObject;
 
 const ModalCarousel: FC<HTMLProps<HTMLUListElement>> = ({
   children,
   ...otherProps
 }) => {
-  const [activeModal, setActiveModal] = useState<ActiveModal | {}>({});
+  const [activeModal, setActiveModal] = useState<ActiveModal>({});
   const carouselItemList: CarouselItem[] = [];
 
   React.Children.forEach(children, (child) => {
@@ -28,11 +31,10 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> = ({
   });
 
   function openModal(element: CarouselItem) {
-    const modal: ActiveModal = {
+    setActiveModal({
       img: element.props.src,
       alt: element.props.alt,
-    };
-    setActiveModal(modal);
+    });
     document.body.style.overflow = "hidden";
   }
 
