@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import styles from "./Socials.module.scss";
 
 const instagramIcon = "/img/contact-icons/instagram.webp";

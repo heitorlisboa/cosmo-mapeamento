@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import styles from "./ContactInfo.module.scss";
 
 const whatsappIcon = "/img/contact-icons/whatsapp.webp";
