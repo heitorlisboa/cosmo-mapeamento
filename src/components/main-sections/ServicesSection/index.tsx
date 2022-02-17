@@ -1,8 +1,11 @@
+// React functions and types
 import { forwardRef } from "react";
-import { SectionParentProps } from "../../../types";
+import type { SectionParentProps } from "../../../types";
 
+// Styles
 import styles from "./ServicesSection.module.scss";
 
+// Components
 import Section from "../../Section";
 import Title from "../../Title";
 import GridItem from "./GridItem";
@@ -19,9 +22,9 @@ const worldMapIcon = "/img/services-icons/world-map.webp";
 const phoneRouteIcon = "/img/services-icons/phone-route.webp";
 
 const ServicesSection = forwardRef<HTMLElement, SectionParentProps>(
-  (props, ref) => {
+  function ServicesSectionComponent({ id }, ref) {
     return (
-      <Section ref={ref} className={styles.section} id={props.id}>
+      <Section ref={ref} className={styles.section} id={id}>
         <Title color="blurple">
           <strong>Principais</strong> serviços
         </Title>
@@ -87,7 +90,5 @@ const ServicesSection = forwardRef<HTMLElement, SectionParentProps>(
     );
   }
 );
-
-ServicesSection.displayName = "ServicesSection";
 
 export default ServicesSection;

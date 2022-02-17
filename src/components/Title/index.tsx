@@ -5,23 +5,28 @@ import formatClass from "../../utils/formatClass";
 import styles from "./Title.module.scss";
 
 interface TitleProps {
-  color: "blurple" | "white";
   tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  color: "blurple" | "white";
   className?: string;
 }
 
-const Title: FC<TitleProps> = (props) => {
-  const Component = props.tag || "h2";
+const Title: FC<TitleProps> = function TitleComponent({
+  children,
+  tag,
+  color,
+  className,
+}) {
+  const Component = tag || "h2";
 
   return (
     <Component
       className={formatClass(`
         ${styles.title}
-        ${styles[props.color]}
-        ${props.className || ""}
+        ${styles[color]}
+        ${className || ""}
       `)}
     >
-      {props.children}
+      {children}
     </Component>
   );
 };

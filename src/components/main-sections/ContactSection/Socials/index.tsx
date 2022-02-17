@@ -1,10 +1,11 @@
 import styles from "./Socials.module.scss";
 
+// Icons
 const instagramIcon = "/img/contact-icons/instagram.webp";
 const facebookIcon = "/img/contact-icons/facebook.webp";
 const linkedinIcon = "/img/contact-icons/linkedin.webp";
 
-function Socials() {
+const Socials = function SocialsComponent() {
   return (
     <ul className={styles.list} aria-label="Redes sociais da Cosmo Mapeamento">
       <li>
@@ -39,6 +40,6 @@ function Socials() {
       </li>
     </ul>
   );
-}
+};
 
 export default Socials;

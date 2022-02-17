@@ -8,12 +8,13 @@ interface TextBoxProps {
   className?: string;
 }
 
-const TextBox: FC<TextBoxProps> = (props) => {
+const TextBox: FC<TextBoxProps> = function TextBoxComponent({
+  children,
+  className,
+}) {
   return (
-    <div
-      className={formatClass(`${styles.container} ${props.className || ""}`)}
-    >
-      {props.children}
+    <div className={formatClass(`${styles.container} ${className || ""}`)}>
+      {children}
     </div>
   );
 };

@@ -7,18 +7,19 @@ export interface SectionProps extends HTMLProps<HTMLElement> {
   id: string;
 }
 
-const Section = forwardRef<HTMLElement, SectionProps>((props, ref) => {
+const Section = forwardRef<HTMLElement, SectionProps>(function SectionComponent(
+  { children, id, className },
+  ref
+) {
   return (
     <section
       ref={ref}
-      className={formatClass(`no-collapse ${props.className || ""}`)}
-      id={props.id}
+      className={formatClass(`no-collapse ${className || ""}`)}
+      id={id}
     >
-      {props.children}
+      {children}
     </section>
   );
 });
-
-Section.displayName = "Section";
 
 export default Section;

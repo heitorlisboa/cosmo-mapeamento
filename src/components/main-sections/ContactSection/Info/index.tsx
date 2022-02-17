@@ -1,9 +1,10 @@
 import styles from "./ContactInfo.module.scss";
 
+// Icons
 const whatsappIcon = "/img/contact-icons/whatsapp.webp";
 const localIcon = "/img/contact-icons/local.webp";
 
-function Info() {
+const Info = function InfoComponent() {
   return (
     <ul className={styles.infoList} aria-label="Informações de contato">
       <li>
@@ -34,6 +35,6 @@ function Info() {
       </li>
     </ul>
   );
-}
+};
 
 export default Info;

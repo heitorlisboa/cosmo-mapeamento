@@ -1,22 +1,22 @@
-// React and types
-import React, { FC, ReactElement, useEffect, useState } from "react";
-import { SectionProps } from "../Section";
+// React, React hooks and types
+import React, { useEffect, useState } from "react";
+import type { FC, ReactElement } from "react";
+import type { SectionProps } from "../Section";
 
-// Style
+// Styles
 import styles from "./SideNav.module.scss";
 
 // Utilities
 import isInList from "../../utils/isInList";
 
-// Component
+// Components
 import SectionWrapper from "./SectionWrapper";
 
-interface SVGsObject {
-  [key: string]: SVGSVGElement;
-}
+type SVGsObject = Record<string, SVGSVGElement>;
 
-const SideNav: FC = (props) => {
-  const minWidth = 768; // Min width for the side nav to be shown
+const SideNav: FC = function SideNavComponent({ children }) {
+  // Min width for the side nav to be shown
+  const minWidth = 768;
   // State of the nav visibility
   const [navVisible, setNavVisible] = useState<boolean>(false);
   // Intersection observer
@@ -89,7 +89,7 @@ const SideNav: FC = (props) => {
   const sectionList: ReactElement<SectionProps>[] = [];
 
   // Each valid ReactElement is added to the sectionList
-  React.Children.forEach(props.children, (child) => {
+  React.Children.forEach(children, (child) => {
     if (!React.isValidElement(child)) return;
     sectionList.push(child);
   });

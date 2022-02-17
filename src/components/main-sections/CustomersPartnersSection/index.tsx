@@ -1,8 +1,11 @@
+// React functions and types
 import { forwardRef } from "react";
-import { SectionParentProps } from "../../../types";
+import type { SectionParentProps } from "../../../types";
 
+// Styles
 import styles from "./CustomersPartnersSection.module.scss";
 
+// Components
 import Section from "../../Section";
 import Title from "../../Title";
 
@@ -16,9 +19,9 @@ const prefeituraNazarenoLogo =
 const aplicageoLogo = "/img/customers-partners-logos/aplicageo.webp";
 
 const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
-  (props, ref) => {
+  function CustomersPartnersSectionComponent({ id }, ref) {
     return (
-      <Section ref={ref} className={styles.section} id={props.id}>
+      <Section ref={ref} className={styles.section} id={id}>
         <Title color="blurple">
           <strong>Clientes</strong> &amp; Parceiros
         </Title>
@@ -92,7 +95,5 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
     );
   }
 );
-
-CustomersPartnersSection.displayName = "CustomersPartnersSection";
 
 export default CustomersPartnersSection;

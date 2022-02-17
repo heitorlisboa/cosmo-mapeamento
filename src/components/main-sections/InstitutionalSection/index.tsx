@@ -1,18 +1,22 @@
+// React functions and types
 import { forwardRef } from "react";
-import { SectionParentProps } from "../../../types";
+import type { SectionParentProps } from "../../../types";
 
+// Styles
 import styles from "./InstitutionalSection.module.scss";
 
+// Components
 import Section from "../../Section";
 import Title from "../../Title";
 import TextBox from "../../TextBox";
 
+// Logo
 const logoCosmo = "/img/logo-cosmo.webp";
 
 const InstitutionalSection = forwardRef<HTMLElement, SectionParentProps>(
-  (props, ref) => {
+  function InstitutionalSectionComponent({ id }, ref) {
     return (
-      <Section ref={ref} className={styles.section} id={props.id}>
+      <Section ref={ref} className={styles.section} id={id}>
         <Title className={styles.outlinedText} color="white">
           <strong>Institucional</strong>
         </Title>
@@ -52,7 +56,5 @@ const InstitutionalSection = forwardRef<HTMLElement, SectionParentProps>(
     );
   }
 );
-
-InstitutionalSection.displayName = "InstitutionalSection";
 
 export default InstitutionalSection;

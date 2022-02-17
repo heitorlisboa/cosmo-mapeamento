@@ -1,7 +1,6 @@
-import { FC } from "react";
+import type { FC } from "react";
 
 import styles from "./GridItem.module.scss";
-
 
 interface GridItemProps {
   title: string;
@@ -9,12 +8,16 @@ interface GridItemProps {
   img: string;
 }
 
-const GridItem: FC<GridItemProps> = (props) => {
+const GridItem: FC<GridItemProps> = function GridItemComponent({
+  title,
+  content,
+  img,
+}) {
   return (
     <li className={styles.gridItem}>
-      <h4 className={styles.title}>{props.title}</h4>
-      <p>{props.content}</p>
-      <img src={props.img} alt="" />
+      <h4 className={styles.title}>{title}</h4>
+      <p>{content}</p>
+      <img src={img} alt="" />
     </li>
   );
 };

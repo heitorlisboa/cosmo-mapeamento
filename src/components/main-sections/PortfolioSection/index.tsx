@@ -1,8 +1,11 @@
+// React functions and types
 import { forwardRef } from "react";
-import { SectionParentProps } from "../../../types";
+import type { SectionParentProps } from "../../../types";
 
+// Styles
 import styles from "./PortfolioSection.module.scss";
 
+// Components
 import Section from "../../Section";
 import Title from "../../Title";
 import ModalCarousel from "../../ModalCarousel";
@@ -19,9 +22,9 @@ const post6 = "/img/portfolio-img/post-6.webp";
 const post3 = "/img/portfolio-img/post-3.webp";
 
 const PortfolioSection = forwardRef<HTMLElement, SectionParentProps>(
-  (props, ref) => {
+  function PortfolioSectionComponent({ id }, ref) {
     return (
-      <Section ref={ref} className={styles.section} id={props.id}>
+      <Section ref={ref} className={styles.section} id={id}>
         <Title color="white">
           <strong>Portfólio</strong>
         </Title>
@@ -43,7 +46,5 @@ const PortfolioSection = forwardRef<HTMLElement, SectionParentProps>(
     );
   }
 );
-
-PortfolioSection.displayName = "PortfolioSection";
 
 export default PortfolioSection;

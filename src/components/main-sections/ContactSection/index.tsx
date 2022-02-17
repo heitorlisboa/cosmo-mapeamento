@@ -1,19 +1,23 @@
+// React functions and types
 import { forwardRef } from "react";
-import { SectionParentProps } from "../../../types";
+import type { SectionParentProps } from "../../../types";
 
+// Styles
 import styles from "./ContactSection.module.scss";
 
+// Components
 import Section from "../../Section";
 import Title from "../../Title";
 import Socials from "./Socials";
 import Info from "./Info";
 
 const ContactSection = forwardRef<HTMLElement, SectionParentProps>(
-  (props, ref) => {
+  function ContactSectionComponent({ id }, ref) {
+    // TODO: Fazer com que o formulário seja enviado para o e-mail
     function handleSubmit() {}
 
     return (
-      <Section ref={ref} className={styles.section} id={props.id}>
+      <Section ref={ref} className={styles.section} id={id}>
         <Title className={styles.section__title} color="white">
           <strong>Contato</strong>
         </Title>
@@ -66,7 +70,5 @@ const ContactSection = forwardRef<HTMLElement, SectionParentProps>(
     );
   }
 );
-
-ContactSection.displayName = "ContactSection";
 
 export default ContactSection;

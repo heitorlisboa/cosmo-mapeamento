@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.scss";
 
-function Navbar() {
+const Navbar = function NavbarComponent() {
   return (
     <nav className={styles.navbar}>
       <ul className={styles.list}>
@@ -42,6 +42,6 @@ function Navbar() {
       </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;

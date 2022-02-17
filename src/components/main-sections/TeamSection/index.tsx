@@ -1,19 +1,23 @@
+// React functions and types
 import { forwardRef } from "react";
-import { SectionParentProps } from "../../../types";
+import type { SectionParentProps } from "../../../types";
 
+// Styles
 import styles from "./TeamSection.module.scss";
 
+// Components
 import Section from "../../Section";
 import Title from "../../Title";
 import TextBox from "../../TextBox";
-import Employee from "./Employee";
+import Member from "./Member";
 
+// Members images
 const fabricioImg = "/img/team-img/perfil-fabricio-palestra.webp";
 
 const TeamSection = forwardRef<HTMLElement, SectionParentProps>(
-  (props, ref) => {
+  function TeamSectionComponent({ id }, ref) {
     return (
-      <Section ref={ref} className={styles.section} id={props.id}>
+      <Section ref={ref} className={styles.section} id={id}>
         <Title color="blurple">
           <strong>A equipe</strong>
         </Title>
@@ -31,7 +35,7 @@ const TeamSection = forwardRef<HTMLElement, SectionParentProps>(
           </p>
           <p>Conheça a coordenação:</p>
         </TextBox>
-        <Employee img={fabricioImg} alt="Foto de Fabrício Lisboa">
+        <Member img={fabricioImg} alt="Foto de Fabrício Lisboa">
           <p>
             <strong>Fabrício Lisboa Vieira Machado</strong>
             CEO da Cosmo - Mapeamento Ambiental
@@ -41,12 +45,10 @@ const TeamSection = forwardRef<HTMLElement, SectionParentProps>(
             Geografia Aplicada e Geotecnologias pela Universidade Federal de
             Minas Gerais
           </p>
-        </Employee>
+        </Member>
       </Section>
     );
   }
 );
-
-TeamSection.displayName = "TeamSection";
 
 export default TeamSection;
