@@ -1,5 +1,6 @@
 // React, React hooks and types
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { usePrefersReducedMotion } from "../../hooks/PrefersReducedMotion";
 import type { FC, ReactElement, HTMLProps } from "react";
 
 // Utilities
@@ -16,9 +17,11 @@ type Image = ReactElement<HTMLImageElement>;
 
 const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
   function ModalCarouselComponent({ children, ...otherProps }) {
+    const [scrollAuto, setScrollAuto] = useState(false);
     const [activeModalIndex, setActiveModalIndex] = useState(-1);
     const carouselRef = useRef<HTMLUListElement>(null);
     const imageList: Image[] = [];
+    const prefersReducedMotion = usePrefersReducedMotion();
 
     React.Children.forEach(children, (child) => {
       if (!React.isValidElement(child)) return;
@@ -26,6 +29,7 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
     });
 
     function openModal(index: number) {
+      setScrollAuto(true);
       setActiveModalIndex(index);
       document.body.style.overflow = "hidden";
     }
@@ -36,33 +40,44 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
     }
 
     function goToPrevImg() {
+      setScrollAuto(false);
       const prevImageIndex = cycleIndex(imageList, activeModalIndex, "prev");
       setActiveModalIndex(prevImageIndex);
     }
 
     function goToNextImg() {
+      setScrollAuto(false);
       const nextImageIndex = cycleIndex(imageList, activeModalIndex, "next");
       setActiveModalIndex(nextImageIndex);
     }
 
     // TODO: Fazer com que o scroll manual também altere o activeModalIndex
-    useEffect(() => {
-      const carousel = carouselRef.current;
 
-      if (activeModalIndex !== -1 && carousel) {
-        /* The scrollable distance is the distance between the end of the scroll
+    useLayoutEffect(() => {
+      const carousel = carouselRef.current;
+      if (!carousel) return;
+
+      /* The scrollable distance is the distance between the end of the scroll
       track and the closest scroll thumb tip (considering the scroll thumb is on
       the start) */
-        const scrollableDistance = carousel.scrollWidth - carousel.offsetWidth;
-        /* Minus 1 at the end because, since the first carousel item will always
+      const scrollableDistance = carousel.scrollWidth - carousel.offsetWidth;
+      /* Minus 1 at the end because, since the first carousel item will always
       be at the distance 0, there will only be distance between items when there
       is more than 1 item */
-        const itemScrollDistance = scrollableDistance / (imageList.length - 1);
-        const activeModalScrollDistance = itemScrollDistance * activeModalIndex;
+      const imageScrollDistance = scrollableDistance / (imageList.length - 1);
+      const activeModalScrollDistance = imageScrollDistance * activeModalIndex;
 
-        carousel.scrollTo({ left: activeModalScrollDistance });
-      }
-    }, [activeModalIndex]);
+      let scrollBehavior: ScrollBehavior = prefersReducedMotion
+        ? "auto"
+        : "smooth";
+
+      if (scrollAuto) scrollBehavior = "auto";
+
+      carousel.scrollTo({
+        left: activeModalScrollDistance,
+        behavior: scrollBehavior,
+      });
+    }, [activeModalIndex, imageList.length, prefersReducedMotion, scrollAuto]);
 
     return (
       <>
