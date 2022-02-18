@@ -51,7 +51,7 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
       setActiveModalIndex(nextImageIndex);
     }
 
-    // TODO: Fazer com que o scroll manual também altere o activeModalIndex
+    const imageScrollDistanceRef = useRef<number>();
 
     useLayoutEffect(() => {
       const carousel = carouselRef.current;
@@ -65,6 +65,7 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
       be at the distance 0, there will only be distance between items when there
       is more than 1 item */
       const imageScrollDistance = scrollableDistance / (imageList.length - 1);
+      imageScrollDistanceRef.current = imageScrollDistance;
       const activeModalScrollDistance = imageScrollDistance * activeModalIndex;
 
       let scrollBehavior: ScrollBehavior = prefersReducedMotion
@@ -78,6 +79,34 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
         behavior: scrollBehavior,
       });
     }, [activeModalIndex, imageList.length, prefersReducedMotion, scrollAuto]);
+
+    useEffect(() => {
+      const carousel = carouselRef.current;
+      const imageScrollDistance = imageScrollDistanceRef.current;
+      if (!carousel || !imageScrollDistance) return;
+
+      function scrollListener() {
+        if (!carousel || !imageScrollDistance) return;
+
+        const scrollPosition = carousel.scrollLeft;
+
+        for (let index = 0; index < imageList.length; index++) {
+          const scrollBreakpoint = imageScrollDistance * index;
+          if (
+            scrollPosition === scrollBreakpoint &&
+            activeModalIndex !== index
+          ) {
+            setActiveModalIndex(index);
+          }
+        }
+      }
+
+      carousel.addEventListener("scroll", scrollListener);
+
+      return () => {
+        carousel.removeEventListener("scroll", scrollListener);
+      };
+    }, [activeModalIndex, imageList.length]);
 
     return (
       <>
