@@ -116,9 +116,7 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
             <li
               key={index}
               className={styles.listItem}
-              onClick={() => {
-                openModal(index);
-              }}
+              onClick={openModal.bind(null, index)}
             >
               <button>
                 <span className="sr-only">Clique na imagem para abrí-la</span>
