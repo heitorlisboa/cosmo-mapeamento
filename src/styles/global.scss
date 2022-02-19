@@ -1,28 +1,5 @@
 @use "./fonts/stylesheet.css";
 
-// Variables and default font
-:root {
-  --main-color: #230664;
-  --main-color-transparent: hsla(259, 89%, 21%, 0.5);
-  --main-color-darker: #1a0449;
-  --secondary-color: #ffffff;
-  --gray-text: #605e5e;
-  --purple-text: #4000d0;
-  --white-alpha: hsla(0, 0%, 100%, 0.3);
-  --light-purple: #8c84fa;
-
-  --ff-primary: "Gotham Rounded", sans-serif;
-  --ff-secondary: Helvetica, Arial, sans-serif;
-
-  --fs-big-title: clamp(2.25rem, 8vw + 1rem, 5.5rem);
-  --fs-medium-title: clamp(2rem, 6vw + 1rem, 4rem);
-  --fs-small-title: 1.3rem;
-  --fs-big-text: 1.1rem;
-  --fs-small-text: 0.9rem;
-
-  font-family: var(--ff-primary);
-}
-
 // Element selection styling
 ::selection {
   color: var(--secondary-color);
@@ -52,6 +29,11 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--main-color-darker);
+}
+
+// Default font
+body {
+  font-family: var(--ff-primary);
 }
 
 // Defining a default anchor style

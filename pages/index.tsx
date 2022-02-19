@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 
 // Styles
-import styles from "../src/styles/Home.module.scss";
+import styles from "../src/styles/pages/Home.module.scss";
 
 // Components
 import Navbar from "../src/components/Navbar";
