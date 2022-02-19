@@ -22,9 +22,9 @@ const worldMapIcon = "/img/services-icons/world-map.webp";
 const phoneRouteIcon = "/img/services-icons/phone-route.webp";
 
 const ServicesSection = forwardRef<HTMLElement, SectionParentProps>(
-  function ServicesSectionComponent({ id }, ref) {
+  function ServicesSectionComponent({ id, name }, ref) {
     return (
-      <Section ref={ref} className={styles.section} id={id}>
+      <Section ref={ref} className={styles.section} id={id} name={name}>
         <Title color="blurple">
           <strong>Principais</strong> serviços
         </Title>

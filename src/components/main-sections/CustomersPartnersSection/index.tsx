@@ -19,9 +19,9 @@ const prefeituraNazarenoLogo =
 const aplicageoLogo = "/img/customers-partners-logos/aplicageo.webp";
 
 const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
-  function CustomersPartnersSectionComponent({ id }, ref) {
+  function CustomersPartnersSectionComponent({ id, name }, ref) {
     return (
-      <Section ref={ref} className={styles.section} id={id}>
+      <Section ref={ref} className={styles.section} id={id} name={name}>
         <Title color="blurple">
           <strong>Clientes</strong> &amp; Parceiros
         </Title>

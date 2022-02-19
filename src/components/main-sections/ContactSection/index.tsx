@@ -12,12 +12,12 @@ import Socials from "./Socials";
 import Info from "./Info";
 
 const ContactSection = forwardRef<HTMLElement, SectionParentProps>(
-  function ContactSectionComponent({ id }, ref) {
+  function ContactSectionComponent({ id, name }, ref) {
     // TODO: Fazer com que o formulário seja enviado para o e-mail
     function handleSubmit() {}
 
     return (
-      <Section ref={ref} className={styles.section} id={id}>
+      <Section ref={ref} className={styles.section} id={id} name={name}>
         <Title className={styles.section__title} color="white">
           <strong>Contato</strong>
         </Title>
@@ -30,9 +30,9 @@ const ContactSection = forwardRef<HTMLElement, SectionParentProps>(
           aria-labelledby="form-title"
           onSubmit={handleSubmit}
         >
-          <h4 className={styles.form__title} id="form-title">
+          <h3 className={styles.form__title} id="form-title">
             Se preferir, preencha o formulário abaixo e solicite um orçamento:
-          </h4>
+          </h3>
           <input
             type="text"
             name="name"

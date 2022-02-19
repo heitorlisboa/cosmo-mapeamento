@@ -14,9 +14,9 @@ import TextBox from "../../TextBox";
 const logoCosmo = "/img/logo-cosmo.webp";
 
 const InstitutionalSection = forwardRef<HTMLElement, SectionParentProps>(
-  function InstitutionalSectionComponent({ id }, ref) {
+  function InstitutionalSectionComponent({ id, name }, ref) {
     return (
-      <Section ref={ref} className={styles.section} id={id}>
+      <Section ref={ref} className={styles.section} id={id} name={name}>
         <Title className={styles.outlinedText} color="white">
           <strong>Institucional</strong>
         </Title>

@@ -22,9 +22,9 @@ const post6 = "/img/portfolio-img/post-6.webp";
 const post3 = "/img/portfolio-img/post-3.webp";
 
 const PortfolioSection = forwardRef<HTMLElement, SectionParentProps>(
-  function PortfolioSectionComponent({ id }, ref) {
+  function PortfolioSectionComponent({ id, name }, ref) {
     return (
-      <Section ref={ref} className={styles.section} id={id}>
+      <Section ref={ref} className={styles.section} id={id} name={name}>
         <Title color="white">
           <strong>Portfólio</strong>
         </Title>

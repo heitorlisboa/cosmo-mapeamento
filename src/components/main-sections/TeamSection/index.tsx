@@ -15,9 +15,9 @@ import Member from "./Member";
 const fabricioImg = "/img/team-img/perfil-fabricio-palestra.webp";
 
 const TeamSection = forwardRef<HTMLElement, SectionParentProps>(
-  function TeamSectionComponent({ id }, ref) {
+  function TeamSectionComponent({ id, name }, ref) {
     return (
-      <Section ref={ref} className={styles.section} id={id}>
+      <Section ref={ref} className={styles.section} id={id} name={name}>
         <Title color="blurple">
           <strong>A equipe</strong>
         </Title>

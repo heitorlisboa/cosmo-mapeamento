@@ -15,7 +15,7 @@ const GridItem: FC<GridItemProps> = function GridItemComponent({
 }) {
   return (
     <li className={styles.gridItem}>
-      <h4 className={styles.title}>{title}</h4>
+      <h3 className={styles.title}>{title}</h3>
       <p>{content}</p>
       <img src={img} alt="" />
     </li>

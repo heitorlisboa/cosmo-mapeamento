@@ -47,12 +47,15 @@ const Home: NextPage = () => {
 
       <main>
         <SideNav>
-          <ServicesSection id="services" />
-          <PortfolioSection id="portfolio" />
-          <TeamSection id="team" />
-          <InstitutionalSection id="institutional" />
-          <CustomersPartnersSection id="customers-partners" />
-          <ContactSection id="contact" />
+          <ServicesSection id="services" name="Catálogo de serviços" />
+          <PortfolioSection id="portfolio" name="Portfólio" />
+          <TeamSection id="team" name="Quem somos" />
+          <InstitutionalSection id="institutional" name="Institucional" />
+          <CustomersPartnersSection
+            id="customers-partners"
+            name="Clientes e parceiros"
+          />
+          <ContactSection id="contact" name="Contato" />
         </SideNav>
       </main>
 

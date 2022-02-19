@@ -70,7 +70,8 @@ const SideNav: FC = function SideNavComponent({ children }) {
             <ul className={styles.list}>
               {sectionList.map((section, index) => (
                 <li key={index}>
-                  <a href={"#" + section.props.id}>
+                  <a href={"#" + section.props.id} title={section.props.name}>
+                    <span className="sr-only">{section.props.name}</span>
                     <svg
                       ref={refs[section.props.id].SVGRef}
                       viewBox="0 0 24 24"

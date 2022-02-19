@@ -1,11 +1,12 @@
 import { forwardRef, HTMLProps } from "react";
+import { SectionParentProps } from "../../types";
 
 import formatClass from "../../utils/formatClass";
 
-export interface SectionProps extends HTMLProps<HTMLElement> {
-  className?: string;
-  id: string;
-}
+export type SectionProps = HTMLProps<HTMLElement> &
+  SectionParentProps & {
+    className?: string;
+  };
 
 const Section = forwardRef<HTMLElement, SectionProps>(function SectionComponent(
   { children, id, className },
