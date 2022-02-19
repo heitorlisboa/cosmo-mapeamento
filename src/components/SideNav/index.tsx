@@ -1,5 +1,5 @@
 // React, React hooks and types
-import React, { cloneElement, createRef, useEffect, useMemo } from "react";
+import React, { cloneElement, createRef, useMemo } from "react";
 import { useScrollAwareNav } from "../../hooks/ScrollAwareNav";
 import type { FC, ReactElement, RefObject } from "react";
 import type { SectionProps } from "../Section";
@@ -50,28 +50,16 @@ const SideNav: FC = function SideNavComponent({ children }) {
   // Min width for the side nav to be shown
   const minWidth = 768;
 
-  const { observerRef, navVisible } = useScrollAwareNav({
+  const entriesRefs = useMemo(
+    () => Object.values(refs).map((pairOfRefs) => pairOfRefs.sectionRef),
+    [refs]
+  );
+
+  const { navVisible } = useScrollAwareNav({
     executeForEachEntry,
     minWidth,
+    entriesRefs,
   });
-
-  useEffect(() => {
-    const cleanupObserverRef = observerRef;
-
-    Object.values(refs).forEach((pairOfRefs) => {
-      const sectionElement = pairOfRefs.sectionRef.current;
-      const observer = observerRef.current;
-      if (sectionElement && observer) observer.observe(sectionElement);
-    });
-
-    return () => {
-      Object.values(refs).forEach((pairOfRefs) => {
-        const sectionElement = pairOfRefs.sectionRef.current;
-        const observer = cleanupObserverRef.current;
-        if (sectionElement && observer) observer.unobserve(sectionElement);
-      });
-    };
-  }, [observerRef, refs]);
 
   return (
     <>

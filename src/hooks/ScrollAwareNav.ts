@@ -1,8 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { RefObject } from "react";
 
 interface ScrollAwareNavArgs {
   /** Function that will be executed for each observer entry */
   executeForEachEntry: (entry: IntersectionObserverEntry) => void;
+  /** The refs of the elements that you want to observe */
+  entriesRefs: RefObject<HTMLDivElement>[];
   /** Intersection observer options */
   observerOptions?: IntersectionObserverInit;
   /** Minimum viewport width (in pixels) for the nav to be visible */
@@ -12,10 +15,11 @@ interface ScrollAwareNavArgs {
 /**
  * Custom hook used to create a scroll-aware navigation
  * @param configs Navigation configurations
- * @returns The intersection observer RefObject and the nav visibility state
+ * @returns The nav visibility state
  */
 export function useScrollAwareNav({
   executeForEachEntry,
+  entriesRefs,
   observerOptions = {
     root: null,
     threshold: 0,
@@ -42,6 +46,25 @@ export function useScrollAwareNav({
     );
   }, [observerCallback, observerOptions]);
 
+  /* REGISTERING OBSERVER ENTRIES */
+  useEffect(() => {
+    const cleanupObserverRef = observerRef;
+
+    entriesRefs.forEach((entryRef) => {
+      const sectionElement = entryRef.current;
+      const observer = observerRef.current;
+      if (sectionElement && observer) observer.observe(sectionElement);
+    });
+
+    return () => {
+      entriesRefs.forEach((entryRef) => {
+        const sectionElement = entryRef.current;
+        const observer = cleanupObserverRef.current;
+        if (sectionElement && observer) observer.unobserve(sectionElement);
+      });
+    };
+  }, [entriesRefs, observerRef]);
+
   /* NAVIGATION VISIBILITY */
   const [navVisible, setNavVisible] = useState(false);
 
@@ -60,7 +83,6 @@ export function useScrollAwareNav({
   }, [minWidth]);
 
   return {
-    observerRef,
     navVisible,
   };
 }
