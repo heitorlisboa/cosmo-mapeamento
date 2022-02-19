@@ -15,7 +15,7 @@
 
   li {
     svg {
-      --color: #cccccc;
+      --color: var(--main-color-darker);
       width: 12px;
       aspect-ratio: 1/1;
       fill: transparent;
