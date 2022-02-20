@@ -17,6 +17,8 @@ const vasgeoLogo = "/img/customers-partners-logos/vasgeo.webp";
 const prefeituraNazarenoLogo =
   "/img/customers-partners-logos/prefeitura-nazareno.webp";
 const aplicageoLogo = "/img/customers-partners-logos/aplicageo.webp";
+const engenhariaVerdeLogo =
+  "/img/customers-partners-logos/engenharia-verde.webp";
 
 const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
   function CustomersPartnersSectionComponent({ id, name }, ref) {
@@ -82,13 +84,16 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
           </li>
           <li>
             <a
-              href="https://www.instagram.com/rodrigobelote.ambiental/"
+              href="https://www.instagram.com/aplicageo/"
               target="_blank"
               rel="noreferrer"
               aria-label="AplicaGeo"
             >
               <img src={aplicageoLogo} alt="" />
             </a>
+          </li>
+          <li>
+            <img src={engenhariaVerdeLogo} alt="" />
           </li>
         </ul>
       </Section>
