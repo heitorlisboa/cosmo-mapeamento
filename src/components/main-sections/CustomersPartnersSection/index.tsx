@@ -26,7 +26,7 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
           <strong>Clientes</strong> &amp; Parceiros
         </Title>
         <ul className={styles.list}>
-          <li>
+          <li className={styles.itemPadding}>
             <a
               href="https://www.studiomatilha.com/"
               target="_blank"
@@ -36,7 +36,7 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
               <img src={studioMatilhaLogo} alt="" />
             </a>
           </li>
-          <li>
+          <li className={styles.itemPadding}>
             <a
               href="https://www.algerconsultoria.com/"
               target="_blank"
@@ -46,7 +46,7 @@ const CustomersPartnersSection = forwardRef<HTMLElement, SectionParentProps>(
               <img src={algerLogo} alt="" />
             </a>
           </li>
-          <li>
+          <li className={styles.itemPadding}>
             <a
               href="https://www.instagram.com/innovarcontabilidadecontagem/"
               target="_blank"

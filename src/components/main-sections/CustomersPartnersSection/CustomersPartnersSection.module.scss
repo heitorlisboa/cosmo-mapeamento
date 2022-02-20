@@ -3,10 +3,9 @@
 }
 
 .list {
-  display: grid;
+  display: flex;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  justify-items: center;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
 
@@ -14,8 +13,20 @@
   padding: 1rem;
   margin: 4rem auto;
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  @media (min-width: 769px) {
+    gap: 4rem;
+  }
+
+  li {
+    flex-basis: clamp(175px, 20vw, 250px);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .itemPadding {
+    padding-inline: clamp(0.5rem, 2vw, 2rem);
   }
 
   .nazareno {
