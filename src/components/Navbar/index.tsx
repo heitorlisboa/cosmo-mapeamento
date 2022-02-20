@@ -22,38 +22,27 @@ const Navbar = function NavbarComponent() {
     }
   }
 
-  function openNav(
-    mobileNavToggle: HTMLButtonElement,
-    navigation: HTMLDivElement
-  ) {
-    mobileNavToggle.setAttribute("aria-expanded", "true");
-    navigation.setAttribute("data-visible", "true");
-    navigation.style.visibility = "visible";
-
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeNav(
-    mobileNavToggle: HTMLButtonElement,
-    navigation: HTMLDivElement
-  ) {
-    mobileNavToggle.setAttribute("aria-expanded", "false");
-    navigation.setAttribute("data-visible", "false");
-    setTimeout(() => {
-      navigation.style.visibility = "hidden";
-    }, 500);
-
-    document.body.style.overflow = "auto";
-  }
-
   function handleMobileNavToggle() {
     const mobileNavToggle = mobileNavToggleRef.current;
     const navigation = navigationRef.current;
     if (!mobileNavToggle || !navigation) return;
 
     const isOpen = mobileNavToggle.ariaExpanded;
-    if (isOpen === "false") openNav(mobileNavToggle, navigation);
-    else if (isOpen === "true") closeNav(mobileNavToggle, navigation);
+    if (isOpen === "false") {
+      mobileNavToggle.setAttribute("aria-expanded", "true");
+      navigation.setAttribute("data-visible", "true");
+      navigation.style.visibility = "visible";
+
+      document.body.style.overflow = "hidden";
+    } else if (isOpen === "true") {
+      mobileNavToggle.setAttribute("aria-expanded", "false");
+      navigation.setAttribute("data-visible", "false");
+      setTimeout(() => {
+        navigation.style.visibility = "hidden";
+      }, 500);
+
+      document.body.style.overflow = "auto";
+    }
   }
 
   return (
