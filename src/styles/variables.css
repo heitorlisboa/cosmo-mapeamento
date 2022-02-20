@@ -1,9 +1,14 @@
 :root {
   --main-color: #230664;
   --main-color-transparent: hsla(259, 89%, 21%, 0.5);
+  --main-color-lighter: #985ee8;
   --main-color-darker: #1a0449;
+
   --secondary-color: #ffffff;
+  --secondary-color-transparent: hsla(0, 0%, 100%, 0.4);
   --secondary-color-darker: #e6e6e6;
+  --secondary-color-darker-transparent: hsla(0, 0%, 90%, 0.6);
+  
   --gray-text: #605e5e;
   --purple-text: #4000d0;
   --white-alpha: hsla(0, 0%, 100%, 0.3);
