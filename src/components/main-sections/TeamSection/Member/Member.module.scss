@@ -9,7 +9,7 @@
   max-width: 45em;
   margin: 4rem auto;
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     grid-template-columns: max-content 1fr;
     grid-template-rows: auto;
   }
