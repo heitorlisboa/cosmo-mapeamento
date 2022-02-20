@@ -8,8 +8,6 @@ interface ScrollAwareNavArgs {
   entriesRefs: RefObject<HTMLDivElement>[];
   /** Intersection observer options */
   observerOptions?: IntersectionObserverInit;
-  /** Minimum viewport width (in pixels) for the nav to be visible */
-  minWidth?: number;
 }
 
 /**
@@ -24,8 +22,7 @@ export function useScrollAwareNav({
     root: null,
     threshold: 0,
     rootMargin: "-49% 0px",
-  },
-  minWidth = 0,
+  }
 }: ScrollAwareNavArgs) {
   /* OBSERVER SETUP */
   const observerCallback: IntersectionObserverCallback = useCallback(
@@ -64,25 +61,4 @@ export function useScrollAwareNav({
       });
     };
   }, [entriesRefs, observerRef]);
-
-  /* NAVIGATION VISIBILITY */
-  const [navVisible, setNavVisible] = useState(false);
-
-  useEffect(() => {
-    setNavVisible(window.innerWidth > minWidth);
-
-    function resizeListener() {
-      setNavVisible(window.innerWidth > minWidth);
-    }
-
-    window.addEventListener("resize", resizeListener);
-
-    return () => {
-      window.removeEventListener("resize", resizeListener);
-    };
-  }, [minWidth]);
-
-  return {
-    navVisible,
-  };
 }

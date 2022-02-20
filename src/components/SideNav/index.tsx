@@ -1,6 +1,7 @@
 // React, React hooks and types
 import React, { cloneElement, createRef, useMemo } from "react";
 import { useScrollAwareNav } from "../../hooks/ScrollAwareNav";
+import { useWindowSize } from "../../hooks/WindowSize";
 import type { FC, ReactElement, RefObject } from "react";
 import type { SectionProps } from "../Section";
 
@@ -16,6 +17,9 @@ const SideNav: FC = function SideNavComponent({ children }) {
   /* A list of the section elements useful to observe and create a nav item for
   each of them */
   const sectionList: ReactElement<SectionProps>[] = [];
+  // Min width for the side nav to be shown
+  const minWidth = 769;
+  const windowSize = useWindowSize();
 
   // Each valid ReactElement is added to the sectionList
   React.Children.forEach(children, (child) => {
@@ -47,24 +51,20 @@ const SideNav: FC = function SideNavComponent({ children }) {
     }
   }
 
-  // Min width for the side nav to be shown
-  const minWidth = 768;
-
   const entriesRefs = useMemo(
     () => Object.values(refs).map((pairOfRefs) => pairOfRefs.sectionRef),
     [refs]
   );
 
-  const { navVisible } = useScrollAwareNav({
+  useScrollAwareNav({
     executeForEachEntry,
-    minWidth,
     entriesRefs,
   });
 
   return (
     <>
       {/* Only renders the navigation when the it should be visible */}
-      {navVisible && (
+      {windowSize && windowSize >= minWidth && (
         <aside className={styles.sideNav}>
           <nav>
             <ul className={styles.list}>
