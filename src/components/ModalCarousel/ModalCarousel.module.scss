@@ -38,6 +38,7 @@
 }
 
 @media (max-width: 768px) {
+  $mobile-list-width: min(350px, 100%);
   .list {
     display: grid;
     gap: unset;
@@ -46,7 +47,7 @@
     div {
       display: grid;
       grid-auto-flow: column;
-      width: 350px;
+      width: $mobile-list-width;
       overflow-x: scroll;
 
       &::-webkit-scrollbar {
@@ -62,7 +63,7 @@
   }
 
   .firstListItem {
-    width: 350px;
+    width: $mobile-list-width;
   }
 }
 
