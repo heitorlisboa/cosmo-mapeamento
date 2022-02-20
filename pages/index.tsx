@@ -14,30 +14,26 @@ import InstitutionalSection from "../src/components/main-sections/InstitutionalS
 import CustomersPartnersSection from "../src/components/main-sections/CustomersPartnersSection";
 import ContactSection from "../src/components/main-sections/ContactSection";
 
+// Images
+const drone1 = "/img/drone-1.webp";
+const drone2 = "/img/drone-2.webp";
+const mainLogo = "/img/logo-cosmo-alpha.webp";
+
 // Page
 const Home: NextPage = () => {
   return (
     <>
       <header className={`${styles.header} no-collapse`}>
         {/* Drones */}
-        <img
-          className={styles.drone1}
-          src="/img/drone-1.webp"
-          alt=""
-          aria-hidden="true"
-        />
-        <img
-          className={styles.drone2}
-          src="/img/drone-2.webp"
-          alt=""
-          aria-hidden="true"
-        />
+        <img className={styles.drone1} src={drone1} alt="" aria-hidden="true" />
+        <img className={styles.drone2} src={drone2} alt="" aria-hidden="true" />
         {/* Logo */}
         <img
           className={styles.mainLogo}
-          src="/img/logo-cosmo-alpha.webp"
+          src={mainLogo}
           alt="Logo da Cosmo Mapeamento"
         />
+
         <Navbar />
         <Title color="white">
           <span className="smaller-title">Descubra o universo do</span>
