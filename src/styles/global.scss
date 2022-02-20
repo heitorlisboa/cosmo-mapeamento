@@ -13,11 +13,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color-darker);
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--main-color);
+  border: 2px solid var(--secondary-color-darker);
+  border-radius: 100vw;
 }
 
 ::-webkit-scrollbar-thumb:hover {
