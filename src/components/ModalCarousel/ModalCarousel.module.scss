@@ -37,6 +37,35 @@
   }
 }
 
+@media (max-width: 768px) {
+  .list {
+    display: grid;
+    gap: unset;
+    justify-items: center;
+
+    div {
+      display: grid;
+      grid-auto-flow: column;
+      width: 350px;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        height: 10px;
+      }
+    }
+  }
+
+  .listItem {
+    min-width: unset;
+    max-width: unset;
+    width: 100px;
+  }
+
+  .firstListItem {
+    width: 350px;
+  }
+}
+
 // Modal Carousel
 .container {
   background-color: var(--secondary-color);

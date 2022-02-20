@@ -8,6 +8,7 @@ import cycleIndex from "../../utils/cycleIndex";
 
 // Styles
 import styles from "./ModalCarousel.module.scss";
+import { useWindowSize } from "../../hooks/WindowSize";
 
 // Icons
 const closeIcon = "/img/modal-icons/close-icon.svg";
@@ -22,6 +23,8 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
     const carouselRef = useRef<HTMLUListElement>(null);
     const imageList: Image[] = [];
     const prefersReducedMotion = usePrefersReducedMotion();
+    const windowSize = useWindowSize();
+    const mobileSize = 768;
 
     React.Children.forEach(children, (child) => {
       if (!React.isValidElement(child)) return;
@@ -110,21 +113,57 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
 
     return (
       <>
-        {/* Image list */}
-        <ul className={styles.list} {...otherProps}>
-          {imageList.map((image, index) => (
+        {/* Mobile image list */}
+        {windowSize && windowSize <= mobileSize && (
+          <ul className={styles.list} {...otherProps}>
             <li
-              key={index}
-              className={styles.listItem}
-              onClick={openModal.bind(null, index)}
+              className={`${styles.listItem} ${styles.firstListItem}`}
+              onClick={openModal.bind(null, 0)}
             >
               <button>
                 <span className="sr-only">Clique na imagem para abrí-la</span>
-                {image}
+                {imageList[0]}
               </button>
             </li>
-          ))}
-        </ul>
+            <div>
+              {imageList.map((image, index) => {
+                if (index === 0) return;
+                return (
+                  <li
+                    key={index}
+                    className={styles.listItem}
+                    onClick={openModal.bind(null, index)}
+                  >
+                    <button>
+                      <span className="sr-only">
+                        Clique na imagem para abrí-la
+                      </span>
+                      {image}
+                    </button>
+                  </li>
+                );
+              })}
+            </div>
+          </ul>
+        )}
+
+        {/* Desktop image list */}
+        {windowSize && windowSize > mobileSize && (
+          <ul className={styles.list} {...otherProps}>
+            {imageList.map((image, index) => (
+              <li
+                key={index}
+                className={styles.listItem}
+                onClick={openModal.bind(null, index)}
+              >
+                <button>
+                  <span className="sr-only">Clique na imagem para abrí-la</span>
+                  {image}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
 
         {/* Modal Carousel */}
         {activeModalIndex !== -1 && (
