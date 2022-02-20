@@ -5,6 +5,7 @@ import formatClass from "../../utils/formatClass";
 import styles from "./Title.module.scss";
 
 interface TitleProps {
+  id?: string;
   tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   color: "blurple" | "white";
   className?: string;
@@ -12,11 +13,14 @@ interface TitleProps {
 
 const Title: FC<TitleProps> = function TitleComponent({
   children,
+  id,
   tag,
   color,
   className,
 }) {
   const Component = tag || "h2";
+  let optionalProps = {};
+  if (id) optionalProps = { id };
 
   return (
     <Component
@@ -25,6 +29,7 @@ const Title: FC<TitleProps> = function TitleComponent({
         ${styles[color]}
         ${className || ""}
       `)}
+      {...optionalProps}
     >
       {children}
     </Component>

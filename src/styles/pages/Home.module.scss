@@ -6,66 +6,86 @@
 
   @extend %parallax-background;
 
+  padding-bottom: min(10rem, 12vw);
+}
+
+.drone1,
+.drone2 {
+  display: none;
+  pointer-events: none;
+
   @media (min-width: 1024px) {
-    padding-bottom: 10rem;
+    display: block;
+    position: absolute;
+
+    @media (prefers-reduced-motion: no-preference) {
+      --animation-config: 1s ease-out 500ms 1 normal backwards;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .drone1 {
+    right: 50%;
+    margin-right: -725px;
+    top: 100px;
+
+    @media (prefers-reduced-motion: no-preference) {
+      animation: right-to-left var(--animation-config);
+
+      @keyframes right-to-left {
+        from {
+          opacity: 0;
+          transform: translateX(150px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
   }
 
-  .drone1,
   .drone2 {
-    display: none;
+    bottom: 35px;
+    left: 50%;
+    margin-left: -850px;
 
-    @media (min-width: 1024px) {
-      display: block;
-      position: absolute;
+    @media (prefers-reduced-motion: no-preference) {
+      animation: left-to-right var(--animation-config);
 
-      @media (prefers-reduced-motion: no-preference) {
-        --animation-config: 1s ease-out 500ms 1 normal backwards;
+      @keyframes left-to-right {
+        from {
+          opacity: 0;
+          transform: translateX(-150px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
       }
     }
   }
+}
 
-  @media (min-width: 1024px) {
-    .drone1 {
-      right: 50%;
-      margin-right: -725px;
-      top: 100px;
+.skipToContent {
+  background-color: var(--secondary-color);
 
-      @media (prefers-reduced-motion: no-preference) {
-        animation: right-to-left var(--animation-config);
+  color: var(--main-color);
 
-        @keyframes right-to-left {
-          from {
-            opacity: 0;
-            transform: translateX(150px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      }
-    }
+  position: absolute;
+  left: 1rem;
 
-    .drone2 {
-      bottom: 35px;
-      left: 50%;
-      margin-left: -850px;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 5px 5px;
 
-      @media (prefers-reduced-motion: no-preference) {
-        animation: left-to-right var(--animation-config);
+  transform: translateY(-100%);
+  transition: transform 500ms ease-out;
 
-        @keyframes left-to-right {
-          from {
-            opacity: 0;
-            transform: translateX(-150px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-      }
-    }
+  &:focus-visible {
+    outline: 5px solid var(--main-color);
+    outline-offset: 0;
+    transform: translateY(0);
   }
 }
 
@@ -73,6 +93,20 @@
   width: clamp(200px, 50%, 288px);
 
   margin: 2rem auto;
+}
+
+.arrow {
+  position: absolute;
+  left: 50%;
+  bottom: min(4rem, 5vw);
+
+  transform: translateX(-50%);
+  filter: invert(100%);
+
+  img {
+    width: 4rem;
+    transform: rotate(90deg);
+  }
 }
 
 .footer {
