@@ -1,9 +1,50 @@
 import { useRef } from "react";
+import { useWindowSize } from "../../hooks/WindowSize";
+
 import styles from "./Navbar.module.scss";
 
 const Navbar = function NavbarComponent() {
   const mobileNavToggleRef = useRef<HTMLButtonElement>(null);
   const navigationRef = useRef<HTMLDivElement>(null);
+  const mobileSize = 768;
+  const windowSize = useWindowSize(handleResize);
+
+  function handleResize() {
+    const mobileNavToggle = mobileNavToggleRef.current;
+    const navigation = navigationRef.current;
+    if (!navigation || !mobileNavToggle || !windowSize) return;
+
+    if (windowSize > mobileSize) {
+      navigation.style.visibility = "visible";
+    } else if (windowSize <= mobileSize) {
+      navigation.style.visibility =
+        mobileNavToggle.ariaExpanded === "true" ? "visible" : "hidden";
+    }
+  }
+
+  function openNav(
+    mobileNavToggle: HTMLButtonElement,
+    navigation: HTMLDivElement
+  ) {
+    mobileNavToggle.setAttribute("aria-expanded", "true");
+    navigation.setAttribute("data-visible", "true");
+    navigation.style.visibility = "visible";
+
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeNav(
+    mobileNavToggle: HTMLButtonElement,
+    navigation: HTMLDivElement
+  ) {
+    mobileNavToggle.setAttribute("aria-expanded", "false");
+    navigation.setAttribute("data-visible", "false");
+    setTimeout(() => {
+      navigation.style.visibility = "hidden";
+    }, 500);
+
+    document.body.style.overflow = "auto";
+  }
 
   function handleMobileNavToggle() {
     const mobileNavToggle = mobileNavToggleRef.current;
@@ -11,21 +52,8 @@ const Navbar = function NavbarComponent() {
     if (!mobileNavToggle || !navigation) return;
 
     const isOpen = mobileNavToggle.ariaExpanded;
-    switch (isOpen) {
-      case "false":
-        mobileNavToggle.setAttribute("aria-expanded", "true");
-        navigation.setAttribute("data-visible", "true");
-
-        document.body.style.overflow = "hidden";
-        break;
-
-      case "true":
-        mobileNavToggle.setAttribute("aria-expanded", "false");
-        navigation.setAttribute("data-visible", "false");
-
-        document.body.style.overflow = "auto";
-        break;
-    }
+    if (isOpen === "false") openNav(mobileNavToggle, navigation);
+    else if (isOpen === "true") closeNav(mobileNavToggle, navigation);
   }
 
   return (
