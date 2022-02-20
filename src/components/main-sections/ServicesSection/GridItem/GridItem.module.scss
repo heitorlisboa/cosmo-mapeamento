@@ -1,9 +1,9 @@
 .gridItem {
+  --size: 265px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  height: 100%;
+  flex-basis: var(--size);
 
   color: var(--gray-text);
   text-align: center;
@@ -24,4 +24,23 @@
   font-size: var(--fs-small-title);
   font-weight: bold;
   line-height: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .gridItem {
+    --size: 150px;
+    gap: 0.5rem;
+
+    > p {
+      display: none;
+    }
+
+    > img {
+      width: 2.5rem;
+    }
+  }
+
+  .title {
+    font-size: 1rem;
+  }
 }
