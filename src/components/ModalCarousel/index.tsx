@@ -1,7 +1,7 @@
 // React, React hooks and types
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { usePrefersReducedMotion } from "../../hooks/PrefersReducedMotion";
-import type { FC, ReactElement, HTMLProps } from "react";
+import type { FC, ReactElement, HTMLAttributes } from "react";
 
 // Utilities
 import cycleIndex from "../../utils/cycleIndex";
@@ -16,7 +16,7 @@ const arrowRightIcon = "/img/modal-icons/arrow-right-icon.svg";
 
 type Image = ReactElement<HTMLImageElement>;
 
-const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
+const ModalCarousel: FC<HTMLAttributes<HTMLElement>> =
   function ModalCarouselComponent({ children, ...otherProps }) {
     const [scrollAuto, setScrollAuto] = useState(false);
     const [activeModalIndex, setActiveModalIndex] = useState(-1);
@@ -115,26 +115,20 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
       <>
         {/* Mobile image list */}
         {windowSize && windowSize <= mobileSize && (
-          <ul className={styles.list} {...otherProps}>
-            <li
-              className={`${styles.listItem} ${styles.firstListItem}`}
+          <div className={styles.imagesContainer} {...otherProps}>
+            <button
+              className={styles.firstListItem}
               onClick={openModal.bind(null, 0)}
             >
-              <button>
-                <span className="sr-only">Clique na imagem para abrí-la</span>
-                {imageList[0]}
-              </button>
-            </li>
-            <div>
+              <span className="sr-only">Clique na imagem para abrí-la</span>
+              {imageList[0]}
+            </button>
+            <ul className={styles["list--mobile"]}>
               {imageList.map((image, index) => {
                 if (index === 0) return;
                 return (
-                  <li
-                    key={index}
-                    className={styles.listItem}
-                    onClick={openModal.bind(null, index)}
-                  >
-                    <button>
+                  <li key={index} className={styles.listItem}>
+                    <button onClick={openModal.bind(null, index)}>
                       <span className="sr-only">
                         Clique na imagem para abrí-la
                       </span>
@@ -143,20 +137,16 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
                   </li>
                 );
               })}
-            </div>
-          </ul>
+            </ul>
+          </div>
         )}
 
         {/* Desktop image list */}
         {windowSize && windowSize > mobileSize && (
           <ul className={styles.list} {...otherProps}>
             {imageList.map((image, index) => (
-              <li
-                key={index}
-                className={styles.listItem}
-                onClick={openModal.bind(null, index)}
-              >
-                <button>
+              <li key={index} className={styles.listItem}>
+                <button onClick={openModal.bind(null, index)}>
                   <span className="sr-only">Clique na imagem para abrí-la</span>
                   {image}
                 </button>
@@ -167,7 +157,7 @@ const ModalCarousel: FC<HTMLProps<HTMLUListElement>> =
 
         {/* Modal Carousel */}
         {activeModalIndex !== -1 && (
-          <div className={styles.container}>
+          <div className={styles.modalContainer}>
             <div className={styles.modal}>
               <button className={styles.closeButton} onClick={closeModal}>
                 <span className="sr-only">Fechar imagem</span>
