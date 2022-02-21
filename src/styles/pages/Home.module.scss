@@ -6,15 +6,30 @@
 
   @extend %parallax-background;
 
-  padding-bottom: min(10rem, 12vw);
+  padding-bottom: clamp(10rem, 20vw, 12rem);
 }
 
 .drone1,
 .drone2 {
   display: none;
   pointer-events: none;
+}
 
-  @media (min-width: 1024px) {
+@media (max-width: 1023px) {
+  .drone2 {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(6rem, 12vw, 8rem);
+    display: block;
+    width: min(100%, 400px);
+
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .drone1,
+  .drone2 {
     display: block;
     position: absolute;
 
@@ -22,9 +37,6 @@
       --animation-config: 1s ease-out 500ms 1 normal backwards;
     }
   }
-}
-
-@media (min-width: 1024px) {
   .drone1 {
     right: 50%;
     margin-right: -725px;
