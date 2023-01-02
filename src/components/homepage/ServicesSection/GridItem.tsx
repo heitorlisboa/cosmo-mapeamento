@@ -11,7 +11,7 @@ export const GridItem: FC<GridItemProps> = ({ title, content, imgUrl }) => (
     <strong className="font-secondary text-base font-bold leading-[1.2] tracking-tight md:text-title-sm">
       {title}
     </strong>
-    <p className="hidden text-[0.8rem] font-[350] md:block">{content}</p>
+    <p className="hidden text-[0.8rem] font-medium md:block">{content}</p>
     <img
       className="mt-auto w-10 hue-rotate-[50deg] md:w-auto"
       src={imgUrl}

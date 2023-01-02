@@ -5,7 +5,7 @@
     url('GothamRounded-Bold.woff') format('woff'),
     url('GothamRounded-Bold.ttf') format('truetype'),
     url('GothamRounded-Bold.svg#GothamRounded-Bold') format('svg');
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -17,7 +17,7 @@
     url('GothamRounded-Light.woff') format('woff'),
     url('GothamRounded-Light.ttf') format('truetype'),
     url('GothamRounded-Light.svg#GothamRounded-Light') format('svg');
-  font-weight: 200;
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -29,7 +29,7 @@
     url('GothamRounded-Medium.woff') format('woff'),
     url('GothamRounded-Medium.ttf') format('truetype'),
     url('GothamRounded-Medium.svg#GothamRounded-Medium') format('svg');
-  font-weight: 350;
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -41,7 +41,7 @@
     url('GothamRounded-Book.woff') format('woff'),
     url('GothamRounded-Book.ttf') format('truetype'),
     url('GothamRounded-Book.svg#GothamRounded-Book') format('svg');
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

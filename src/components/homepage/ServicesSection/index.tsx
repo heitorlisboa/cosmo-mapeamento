@@ -72,7 +72,7 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
         />
       </ul>
 
-      <div className="mx-auto my-8 w-[calc(100%-1rem)] max-w-2xl rounded-2xl p-4 text-center text-lg font-[350] text-primary-800 shadow-[0_0_20px_rgb(0_0_0/0.1)] md:rounded-full md:border-2 md:border-solid md:border-primary-800 md:px-12 md:py-0 md:text-neutral-600">
+      <div className="mx-auto my-8 w-[calc(100%-1rem)] max-w-2xl rounded-2xl p-4 text-center text-lg font-medium text-primary-800 shadow-[0_0_20px_rgb(0_0_0/0.1)] md:rounded-full md:border-2 md:border-solid md:border-primary-800 md:px-12 md:py-0 md:text-neutral-600">
         <p>Importante:</p>
         <p>
           Nossos veículos aéreos são devidamente registrados no{' '}
