@@ -13,15 +13,9 @@ module.exports = {
       colors: {
         primary: {
           400: 'hsl(244, 92%, 75%)',
-          500: 'hsl(265, 75%, 64%)',
           700: 'hsl(258, 100%, 41%)',
           800: 'hsl(259, 89%, 21%)',
-          '800-transparent': 'hsla(259, 89%, 21%, 0.5)',
           900: 'hsl(259, 90%, 15%)',
-        },
-        'white-transparent': 'hsla(0, 0%, 100%, 0.4)',
-        neutral: {
-          '200-transparent': 'hsla(0, 0%, 90%, 0.6)',
         },
       },
       fontSize: {
