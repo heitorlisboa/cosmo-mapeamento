@@ -16,6 +16,7 @@ export const GridItem: FC<GridItemProps> = ({ title, content, imgUrl }) => (
       className="mt-auto w-10 hue-rotate-[50deg] md:w-auto"
       src={imgUrl}
       alt=""
+      loading="lazy"
     />
   </li>
 );
