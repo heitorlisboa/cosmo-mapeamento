@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../components/Navbar';
+import { MainContent } from '../components/homepage/MainContent';
+
+const drone1 = '/img/drone-1.webp';
+const drone2 = '/img/drone-2.webp';
+const mainLogo = '/img/logo-cosmo-alpha.webp';
+const arrowIcon = '/img/modal-icons/arrow-right-icon.svg';
+---
+
+<Layout title="Cosmo Mapeamento">
+  <header
+    class="relative overflow-hidden bg-[url(/img/background.webp)] bg-cover bg-fixed pb-[clamp(10rem,20vw,12rem)]"
+  >
+    <a
+      class="absolute left-4 -translate-y-full bg-white px-4 py-2 text-primary-800 transition-transform duration-500 focus-visible:translate-y-0"
+      href="#main-title"
+    >
+      Pular para o conteúdo
+    </a>
+
+    {/* Drones */}
+    <img
+      class="pointer-events-none absolute top-[100px] left-1/2 ml-[275px] hidden animate-[fade-in-to-left_1s_ease-out_500ms_both] lg:block"
+      src={drone1}
+      alt=""
+      aria-hidden="true"
+    />
+    <img
+      class="pointer-events-none absolute bottom-[clamp(6rem,12vw,8rem)] left-1/2 block w-full max-w-sm -translate-x-1/2 lg:bottom-[35px] lg:right-1/2 lg:left-[unset] lg:mr-[250px] lg:w-[unset] lg:max-w-none lg:transform-none lg:animate-[fade-in-to-right_1s_ease-out_500ms_both]"
+      src={drone2}
+      alt=""
+      aria-hidden="true"
+    />
+    {/* Logo */}
+    <img
+      class="mx-auto my-8 w-[clamp(200px,50%,288px)]"
+      src={mainLogo}
+      alt="Logo da Cosmo Mapeamento"
+    />
+
+    <Navbar client:media="not all and (min-width: 768px)" />
+    <h1 id="main-title" class="text-white">
+      <span class="text-title-md">Descubra o universo do</span>
+      <strong>Mapeamento Aéreo</strong>
+    </h1>
+
+    <a
+      class="absolute left-1/2 bottom-[min(4rem,5vw)] -translate-x-1/2"
+      href="#services"
+      title="Ir para a primeira seção"
+    >
+      <span class="sr-only">Ir para a primeira seção</span>
+      <img class="w-16 rotate-90 invert" src={arrowIcon} alt="" />
+    </a>
+  </header>
+
+  <main>
+    <MainContent client:load />
+  </main>
+
+  <footer
+    class="no-collapse bg-white text-center font-secondary text-sm text-neutral-600"
+  >
+    <p>&copy; 2023 - Cosmo - Mapeamento Ambiental</p>
+  </footer>
+</Layout>
