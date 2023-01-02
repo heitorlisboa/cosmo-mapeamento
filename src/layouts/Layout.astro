@@ -1,0 +1,89 @@
+---
+import '../fonts/stylesheet.css';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="A Cosmo Mapeamento Ambiental é uma consultoria do setor de geotecnologias, especializada em levantamentos aerofotogramétricos com drones e análise espacial de fenômenos ambientais."
+    />
+    <meta name="generator" content={Astro.generator} />
+    {/* TODO: Generate favicon */}
+    <link rel="icon" type="image/svg+xml" href="/favicon.jpg" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply break-words bg-neutral-200 font-primary text-base leading-normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-16 px-1 text-center text-title-lg font-light
+      uppercase sm:px-4 [&_strong]:block;
+  }
+
+  p {
+    @apply my-3;
+  }
+
+  :focus-visible {
+    /* TODO: Style ':focus-visible' */
+  }
+
+  ::selection {
+    @apply bg-primary-800 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    @apply h-[10px] w-[10px];
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-200;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full border-2 border-solid border-neutral-200 bg-primary-800;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-900;
+  }
+
+  /* TODO: Tweak or remove custom margin */
+  .custom-margin {
+    --min-margin-x: 1.5rem;
+    width: calc(100% - 2 * var(--min-margin-x));
+    @apply mx-auto max-w-[45rem];
+  }
+
+  /* Utility class to make margins stop collapsing */
+  .no-collapse {
+    overflow: auto;
+  }
+</style>
