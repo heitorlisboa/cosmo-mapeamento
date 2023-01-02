@@ -15,6 +15,7 @@ export const Member: FC<MemberProps> = ({ children, img }) => (
       className="aspect-square w-44 rounded-full border-4 border-solid border-white object-cover"
       src={img.url}
       alt={img.alt}
+      loading="lazy"
     />
     <TextBox className="m-0 max-w-xl text-center md:max-w-lg">
       {children}

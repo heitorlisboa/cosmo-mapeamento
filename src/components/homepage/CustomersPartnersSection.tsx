@@ -31,7 +31,7 @@ export const CustomersPartnersSection = forwardRef<
           target="_blank"
           rel="noreferrer"
         >
-          <img src={studioMatilhaLogo} alt="Studio Matilha" />
+          <img src={studioMatilhaLogo} alt="Studio Matilha" loading="lazy" />
         </a>
       </li>
       <li className="px-[clamp(0.5rem,2vw,2rem)]">
@@ -40,7 +40,11 @@ export const CustomersPartnersSection = forwardRef<
           target="_blank"
           rel="noreferrer"
         >
-          <img src={algerLogo} alt="Alger, Consultoria e Assesoria Jurídica" />
+          <img
+            src={algerLogo}
+            alt="Alger, Consultoria e Assesoria Jurídica"
+            loading="lazy"
+          />
         </a>
       </li>
       <li className="px-[clamp(0.5rem,2vw,2rem)]">
@@ -49,12 +53,12 @@ export const CustomersPartnersSection = forwardRef<
           target="_blank"
           rel="noreferrer"
         >
-          <img src={innovarLogo} alt="Innovar, Contabilidade" />
+          <img src={innovarLogo} alt="Innovar, Contabilidade" loading="lazy" />
         </a>
       </li>
       <li>
         <a href="https://www.vasgeo.com.br/" target="_blank" rel="noreferrer">
-          <img src={vasgeoLogo} alt="VasGeo" />
+          <img src={vasgeoLogo} alt="VasGeo" loading="lazy" />
         </a>
       </li>
       <li>
@@ -67,6 +71,7 @@ export const CustomersPartnersSection = forwardRef<
             className="aspect-[3/1] w-full object-cover object-[50%_45%]"
             src={prefeituraNazarenoLogo}
             alt="Prefeitura Municipal de Nazareno (Adiministração de 2021 a 2024)"
+            loading="lazy"
           />
         </a>
       </li>
@@ -79,6 +84,7 @@ export const CustomersPartnersSection = forwardRef<
           <img
             src={aplicageoLogo}
             alt="AplicaGeo, Soluções em geoprocessamento e licenciamento ambiental"
+            loading="lazy"
           />
         </a>
       </li>
@@ -86,6 +92,7 @@ export const CustomersPartnersSection = forwardRef<
         <img
           src={engenhariaVerdeLogo}
           alt="Engenharia Verde, Consultoria e projetos LTDA"
+          loading="lazy"
         />
       </li>
     </ul>

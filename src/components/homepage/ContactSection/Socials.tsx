@@ -16,7 +16,7 @@ export const Socials: FC = () => (
         target="_blank"
         rel="noreferrer"
       >
-        <img src={instagramIcon} alt="Instagram" />
+        <img src={instagramIcon} alt="Instagram" loading="lazy" />
       </a>
     </li>
     <li>
@@ -25,7 +25,7 @@ export const Socials: FC = () => (
         target="_blank"
         rel="noreferrer"
       >
-        <img src={facebookIcon} alt="Facebook" />
+        <img src={facebookIcon} alt="Facebook" loading="lazy" />
       </a>
     </li>
     <li>
@@ -34,7 +34,7 @@ export const Socials: FC = () => (
         target="_blank"
         rel="noreferrer"
       >
-        <img src={linkedinIcon} alt="LinkedIn" />
+        <img src={linkedinIcon} alt="LinkedIn" loading="lazy" />
       </a>
     </li>
   </ul>

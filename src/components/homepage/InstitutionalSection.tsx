@@ -25,6 +25,7 @@ export const InstitutionalSection = forwardRef<
         className="hidden aspect-square w-72 border-4 border-solid border-white object-cover lg:block"
         src={cosmoLogo}
         alt=""
+        loading="lazy"
       />
       <TextBox className="lg:m-0">
         <p>
