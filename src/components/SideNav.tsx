@@ -70,9 +70,7 @@ export const SideNav: FC<SideNavProps> = ({ children }) => {
 
   return (
     <>
-      {/* This element will need a z-index if anything that should be behind it
-      gets a style that creates a stacking context */}
-      <aside className="fixed top-1/2 right-12 hidden -translate-y-1/2 md:block">
+      <aside className="fixed top-1/2 right-12 z-10 hidden -translate-y-1/2 md:block">
         <nav>
           <ul className="flex flex-col justify-center gap-10">
             {sectionList.map(
