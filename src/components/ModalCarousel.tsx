@@ -110,7 +110,7 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
   return (
     <>
       <ul
-        className="mx-auto mb-16 flex max-w-6xl gap-2 overflow-auto sm:flex-wrap sm:justify-center sm:px-4"
+        className="mx-auto mb-16 flex max-w-6xl gap-2 overflow-x-auto sm:flex-wrap sm:justify-center sm:px-4 sm:[overflow-x:unset]"
         aria-label="Posts do Instagram de trabalhos realizados pela Cosmo Mapeamento"
       >
         {images.map(({ src, alt }, index) => (
