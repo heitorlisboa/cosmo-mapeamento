@@ -21,7 +21,7 @@ export const Info: FC = () => (
       </p>
     </li>
 
-    <div className="hidden h-24 w-[3px] bg-white lg:block" role="separator" />
+    <div className="hidden h-24 w-[3px] bg-white lg:block" aria-hidden />
 
     <li className="grid justify-items-center gap-4">
       <div className="flex items-center gap-2">
@@ -42,7 +42,7 @@ export const Info: FC = () => (
       </div>
     </li>
 
-    <div className="hidden h-24 w-[3px] bg-white lg:block" role="separator" />
+    <div className="hidden h-24 w-[3px] bg-white lg:block" aria-hidden />
 
     <li className="flex items-center gap-2">
       <img src={localIcon} alt="" loading="lazy" />
