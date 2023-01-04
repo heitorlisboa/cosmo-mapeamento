@@ -13,7 +13,7 @@ export const InstitutionalSection = forwardRef<
   SideNavSectionProps
 >((props, ref) => (
   <Section
-    className="bg-[hsl(0_0%_100%/0.3)] bg-[url(/img/background-alt-3.webp)] bg-blend-color"
+    className="bg-[hsl(0_0%_100%/0.3)] bg-[url(/img/background-alt-3.webp)] bg-cover bg-top bg-blend-color"
     {...props}
     ref={ref}
   >
