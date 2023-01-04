@@ -75,13 +75,6 @@ const { title } = Astro.props;
     @apply bg-primary-900;
   }
 
-  /* TODO: Tweak or remove custom margin */
-  .custom-margin {
-    --min-margin-x: 1.5rem;
-    width: calc(100% - 2 * var(--min-margin-x));
-    @apply mx-auto max-w-[45rem];
-  }
-
   /* Utility class to make margins stop collapsing */
   .no-collapse {
     overflow: auto;
