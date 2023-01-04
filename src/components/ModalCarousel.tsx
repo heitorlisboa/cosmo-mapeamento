@@ -1,5 +1,13 @@
-import { type FC, type UIEvent, useEffect, useReducer, useRef } from 'react';
-import { Dialog } from '@headlessui/react';
+import {
+  type FC,
+  Fragment,
+  type UIEvent,
+  useCallback,
+  useEffect,
+  useReducer,
+  useRef,
+} from 'react';
+import { Dialog, Transition } from '@headlessui/react';
 
 import { modalCarouselReducer } from '../reducers/modal-carousel';
 import { useReducedMotion } from '../hooks/use-reduced-motion';
@@ -62,11 +70,12 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
     dispatch({ type: 'closeModal' });
   }
 
-  useEffect(() => {
+  const updateSlide = useCallback(() => {
+    const carousel = carouselRef.current;
     const { currentSlideIndex, isOpeningModal, isManuallyScrollingCarousel } =
       state;
-    const carousel = carouselRef.current;
-    if (!carousel || isManuallyScrollingCarousel) return;
+    const isClosingModal = currentSlideIndex === -1;
+    if (!carousel || isManuallyScrollingCarousel || isClosingModal) return;
 
     /**
      * The distance that the scroll thumb can travel in the scroll track, which
@@ -92,7 +101,11 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
       left: positionToScrollTo,
       behavior: scrollBehavior,
     });
-  }, [state, images.length, reducedMotion]);
+  }, [state, images.length, reducedMotion, carouselRef]);
+
+  useEffect(() => {
+    updateSlide();
+  }, [updateSlide]);
 
   return (
     <>
@@ -116,57 +129,77 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
         ))}
       </ul>
 
-      <Dialog open={isModalOpen} onClose={handleCloseModal}>
-        <Dialog.Panel className="fixed inset-0 z-10 bg-white">
-          <Dialog.Title className="sr-only">
-            Carrossel de posts do Instagram de trabalhos realizados pela Cosmo
-            Mapeamento
-          </Dialog.Title>
+      <Transition
+        show={isModalOpen}
+        as={Fragment}
+        enter="ease-in-out motion-safe:duration-300"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="ease-in-out motion-safe:duration-300"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+        beforeEnter={() => updateSlide()}
+      >
+        <Dialog
+          as="div"
+          className="fixed inset-0 z-10"
+          onClose={handleCloseModal}
+        >
+          <Dialog.Panel className="absolute inset-0 bg-white">
+            <Dialog.Title className="sr-only">
+              Carrossel de posts do Instagram de trabalhos realizados pela Cosmo
+              Mapeamento
+            </Dialog.Title>
 
-          <button
-            className="fixed bottom-8 left-1/3 aspect-[2/3] w-8 -translate-y-1/2 rounded-md bg-white/25 p-2 backdrop-blur transition-opacity hocus:opacity-60 md:left-8 md:top-1/2 md:bottom-auto md:w-10"
-            onClick={handleGoToPreviousSlide}
-          >
-            <img
-              className="h-full rotate-180"
-              src={arrowRightIcon}
-              alt="Imagem anterior"
-            />
-          </button>
-
-          <div
-            className="grid h-full snap-x snap-mandatory auto-cols-[100%] grid-flow-col items-center overflow-x-scroll"
-            onScroll={handleScrollCarousel}
-            ref={carouselRef}
-          >
-            {images.map(({ src, alt }, index) => (
-              // This list won't change so it's okay to use index as a key
+            <button
+              className="fixed bottom-8 left-1/3 aspect-[2/3] w-8 -translate-y-1/2 rounded-md bg-white/25 p-2 backdrop-blur transition-opacity hocus:opacity-60 md:left-8 md:top-1/2 md:bottom-auto md:w-10"
+              onClick={handleGoToPreviousSlide}
+            >
               <img
-                key={index}
-                className="mx-auto aspect-square w-[min(100%,600px)] snap-center object-cover lg:h-full lg:w-auto"
-                src={src}
-                alt={alt}
-                // Hiding the non-visible slides
-                aria-hidden={index !== state.currentSlideIndex}
+                className="h-full rotate-180"
+                src={arrowRightIcon}
+                alt="Imagem anterior"
               />
-            ))}
-          </div>
+            </button>
 
-          <button
-            className="fixed bottom-8 right-1/3 aspect-[2/3] w-8 -translate-y-1/2 rounded-md bg-white/25 p-2 backdrop-blur transition-opacity hocus:opacity-60 md:right-8 md:top-1/2 md:bottom-auto md:w-10"
-            onClick={handleGoToNextSlide}
-          >
-            <img className="h-full" src={arrowRightIcon} alt="Próxima imagem" />
-          </button>
+            <div
+              className="grid h-full snap-x snap-mandatory auto-cols-[100%] grid-flow-col items-center overflow-x-scroll"
+              onScroll={handleScrollCarousel}
+              ref={carouselRef}
+            >
+              {images.map(({ src, alt }, index) => (
+                // This list won't change so it's okay to use index as a key
+                <img
+                  key={index}
+                  className="mx-auto aspect-square w-[min(100%,600px)] snap-center object-cover lg:h-full lg:w-auto"
+                  src={src}
+                  alt={alt}
+                  // Hiding the non-visible slides
+                  aria-hidden={index !== state.currentSlideIndex}
+                />
+              ))}
+            </div>
 
-          <button
-            className="fixed top-8 right-8 aspect-square w-8 rounded-md bg-white/25 p-2 backdrop-blur transition-opacity hocus:opacity-60 md:w-10"
-            onClick={handleCloseModal}
-          >
-            <img src={closeIcon} alt="Fechar carrossel de imagens" />
-          </button>
-        </Dialog.Panel>
-      </Dialog>
+            <button
+              className="fixed bottom-8 right-1/3 aspect-[2/3] w-8 -translate-y-1/2 rounded-md bg-white/25 p-2 backdrop-blur transition-opacity hocus:opacity-60 md:right-8 md:top-1/2 md:bottom-auto md:w-10"
+              onClick={handleGoToNextSlide}
+            >
+              <img
+                className="h-full"
+                src={arrowRightIcon}
+                alt="Próxima imagem"
+              />
+            </button>
+
+            <button
+              className="fixed top-8 right-8 aspect-square w-8 rounded-md bg-white/25 p-2 backdrop-blur transition-opacity hocus:opacity-60 md:w-10"
+              onClick={handleCloseModal}
+            >
+              <img src={closeIcon} alt="Fechar carrossel de imagens" />
+            </button>
+          </Dialog.Panel>
+        </Dialog>
+      </Transition>
     </>
   );
 };
