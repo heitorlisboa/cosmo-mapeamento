@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 import type { SideNavSectionProps } from '../SideNav';
 
 import { Section } from '../Section';
+import { ModalCarousel } from '../ModalCarousel';
 
 // Portfolio images
 const post25Pg2 = '/img/portfolio-img/post-25-pg-2.webp';
@@ -26,20 +27,22 @@ export const PortfolioSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
       <h2 className="text-white">
         <strong>Portfólio</strong>
       </h2>
-      {/* <ModalCarousel aria-label="Posts do Instagram de trabalhos realizados">
-        <img src={post25Pg2} alt="Post 25 - Meandro abandonado (página 2)" />
-        <img src={post25Pg1} alt="Post 25 - Meandro abandonado (página 1)" />
-        <img src={post20} alt="Post 20 - Modelagem 3D" />
-        <img src={post11} alt="Post 11 - NDVI" />
-        <img src={post17} alt="Post 17 - SSEBop" />
-        <img src={post2} alt="Post 2 - Missões planejadas" />
-        <img
-          src={post8}
-          alt="Post 8 - Processamento digital de imagens de SR"
-        />
-        <img src={post6} alt="Post 6 - Processamento da nuvem de pontos" />
-        <img src={post3} alt="Post 3 - Modelo Digital de Superfície" />
-      </ModalCarousel> */}
+      <ModalCarousel
+        images={[
+          { src: post25Pg2, alt: 'Post 25 - Meandro abandonado (página 2)' },
+          { src: post25Pg1, alt: 'Post 25 - Meandro abandonado (página 1)' },
+          { src: post20, alt: 'Post 20 - Modelagem 3D' },
+          { src: post11, alt: 'Post 11 - NDVI' },
+          { src: post17, alt: 'Post 17 - SSEBop' },
+          { src: post2, alt: 'Post 2 - Missões planejadas' },
+          {
+            src: post8,
+            alt: 'Post 8 - Processamento digital de imagens de SR',
+          },
+          { src: post6, alt: 'Post 6 - Processamento da nuvem de pontos' },
+          { src: post3, alt: 'Post 3 - Modelo Digital de Superfície' },
+        ]}
+      />
     </Section>
   )
 );
