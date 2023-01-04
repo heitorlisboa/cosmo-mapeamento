@@ -70,7 +70,10 @@ export const SideNav: FC<SideNavProps> = ({ children }) => {
 
   return (
     <>
-      <aside className="fixed top-1/2 right-12 z-10 hidden -translate-y-1/2 md:block">
+      <aside
+        className="fixed top-1/2 right-12 z-10 hidden -translate-y-1/2 md:block"
+        aria-hidden
+      >
         <nav>
           <ul className="flex flex-col justify-center gap-10">
             {sectionList.map(
@@ -80,12 +83,11 @@ export const SideNav: FC<SideNavProps> = ({ children }) => {
                     className="group"
                     href={`#${sectionId}`}
                     title={sectionName}
+                    tabIndex={-1}
                   >
-                    <span className="sr-only">{sectionName}</span>
                     <svg
                       className="aspect-square w-3 fill-transparent stroke-primary-900 stroke-[4] transition-colors data-[active='true']:fill-primary-900 group-hocus:fill-primary-900"
                       viewBox="0 0 24 24"
-                      aria-hidden
                       data-active={false}
                       ref={refs[sectionId].svgRef}
                     >
