@@ -97,13 +97,15 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
   return (
     <>
       <ul
-        // TODO: Check how 'max-w-6xl' differs from 'max-width: 75rem;'
-        className="mx-auto mb-16 flex max-w-6xl flex-wrap justify-center gap-2 px-4"
+        className="mx-auto mb-16 flex max-w-6xl gap-2 overflow-auto sm:flex-wrap sm:justify-center sm:px-4"
         aria-label="Posts do Instagram de trabalhos realizados pela Cosmo Mapeamento"
       >
         {images.map(({ src, alt }, index) => (
           // This list won't change so it's okay to use index as a key
-          <li key={index} className="min-w-[12.5rem] max-w-xs flex-1">
+          <li
+            key={index}
+            className="min-w-[15rem] max-w-xs flex-1 sm:min-w-[12.5rem]"
+          >
             <button
               className="relative grid after:pointer-events-auto after:absolute after:inset-0 after:bg-primary-800/50 after:opacity-0 after:transition-opacity hocus:after:opacity-100"
               onClick={() => handleOpenModal(index)}
