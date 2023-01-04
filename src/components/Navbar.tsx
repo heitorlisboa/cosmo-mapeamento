@@ -39,7 +39,7 @@ export const Navbar: FC = () => {
       {/* "data-[visible='true']:translate-x-0" overlaps 'md:transform-none' */}
       {/* "data-[visible='true']:visible" overlaps 'md:visible' */}
       <nav
-        className="invisible fixed inset-0 left-[unset] z-10 translate-x-full bg-neutral-200/60 px-8 py-12 text-xl font-bold leading-normal text-primary-800 shadow-lg backdrop-blur transition-[transform,visibility] duration-500 data-[visible='true']:visible data-[visible='true']:translate-x-0 md:visible md:static md:z-auto md:mx-auto md:w-[calc(100%-2rem)] md:max-w-5xl md:transform-none md:rounded-full md:bg-white/40 md:py-5 md:text-base md:leading-normal md:backdrop-filter-none md:transition-none"
+        className="invisible fixed inset-0 left-[unset] z-10 translate-x-full bg-neutral-200/60 px-8 py-12 text-xl font-bold leading-normal text-primary-800 shadow-lg backdrop-blur data-[visible='true']:visible data-[visible='true']:translate-x-0 motion-safe:transition-[transform,visibility] motion-safe:duration-500 md:visible md:static md:z-auto md:mx-auto md:w-[calc(100%-2rem)] md:max-w-5xl md:transform-none md:rounded-full md:bg-white/40 md:py-5 md:text-base md:leading-normal md:backdrop-filter-none md:transition-none"
         style={{
           paddingRight: isMobileNavigationOpen
             ? undefined
