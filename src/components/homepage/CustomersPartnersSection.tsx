@@ -14,6 +14,8 @@ const prefeituraNazarenoLogo =
 const aplicageoLogo = '/img/customers-partners-logos/aplicageo.webp';
 const engenhariaVerdeLogo =
   '/img/customers-partners-logos/engenharia-verde.webp';
+const citLogo = '/img/customers-partners-logos/cit.webp';
+const geobyteLogo = '/img/customers-partners-logos/geobyte.webp';
 
 const DISPLAY_NAME = 'CustomersPartnersSection';
 export const CustomersPartnersSection = forwardRef<
@@ -94,6 +96,24 @@ export const CustomersPartnersSection = forwardRef<
           alt="Engenharia Verde, Consultoria e projetos LTDA"
           loading="lazy"
         />
+      </li>
+      <li>
+        <a
+          href="https://www.inteligenciaterritorial.org/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src={citLogo}
+            alt="CIT, Centro de Inteligência Territorial"
+            loading="lazy"
+          />
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/geobit-consultoria-e-tecnologia-gis/about/">
+          <img src={geobyteLogo} alt="Geobyte" loading="lazy" />
+        </a>
       </li>
     </ul>
   </Section>
