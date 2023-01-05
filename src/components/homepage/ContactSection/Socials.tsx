@@ -7,7 +7,7 @@ const linkedinIcon = '/img/contact-icons/linkedin.webp';
 
 export const Socials: FC = () => (
   <ul
-    className="flex justify-center gap-2 [&_a]:block [&_a]:transition-opacity hocus:[&_a]:opacity-60"
+    className="mt-6 flex justify-center gap-2 [&_a]:block [&_a]:transition-opacity hocus:[&_a]:opacity-60"
     aria-label="Redes sociais da Cosmo Mapeamento"
   >
     <li>

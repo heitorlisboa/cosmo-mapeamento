@@ -15,7 +15,7 @@ export const ContactSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
       {...props}
       ref={ref}
     >
-      <h2 className="mb-6 text-white">
+      <h2 className="text-white">
         <strong>Contato</strong>
       </h2>
 

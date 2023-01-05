@@ -6,7 +6,7 @@ const localIcon = '/img/contact-icons/local.webp';
 
 export const Info: FC = () => (
   <ul
-    className="mx-auto my-12 grid items-center justify-center justify-items-center gap-12 px-4 text-center text-sm leading-normal lg:grid-flow-col lg:gap-8 [&_p]:m-0 lg:[&>li]:w-56"
+    className="mx-auto mt-12 grid items-center justify-center justify-items-center gap-12 px-4 text-center text-sm leading-normal lg:grid-flow-col lg:gap-8 [&_p]:m-0 lg:[&>li]:w-56"
     aria-label="Informações de contato"
   >
     <li>

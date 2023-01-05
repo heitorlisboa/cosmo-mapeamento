@@ -20,11 +20,11 @@ export const CustomersPartnersSection = forwardRef<
   HTMLDivElement,
   SideNavSectionProps
 >((props, ref) => (
-  <Section className="bg-white" {...props} ref={ref}>
+  <Section className="gap-16 bg-white" {...props} ref={ref}>
     <h2 className="text-primary-800">
       <strong>Clientes</strong> &amp; Parceiros
     </h2>
-    <ul className="mx-auto my-16 flex max-w-5xl flex-wrap items-center justify-center gap-8 px-4 md:gap-16 [&_li]:basis-[clamp(175px,20vw,250px)] [&_a]:block [&_img]:w-full">
+    <ul className="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-8 px-4 md:gap-16 [&_li]:basis-[clamp(175px,20vw,250px)] [&_a]:block [&_img]:w-full">
       <li className="px-[clamp(0.5rem,2vw,2rem)]">
         <a
           href="https://www.studiomatilha.com/"

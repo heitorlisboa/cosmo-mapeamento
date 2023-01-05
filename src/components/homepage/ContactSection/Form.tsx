@@ -6,7 +6,7 @@ export const Form: FC = () => {
 
   return (
     <form
-      className="mx-auto my-16 flex max-w-3xl flex-col items-center gap-8"
+      className="mx-auto mt-16 flex max-w-3xl flex-col items-center gap-8"
       aria-labelledby="form-title"
       onSubmit={handleSubmit}
     >

@@ -13,21 +13,21 @@ export const InstitutionalSection = forwardRef<
   SideNavSectionProps
 >((props, ref) => (
   <Section
-    className="bg-[hsl(0_0%_100%/0.3)] bg-[url(/img/background-alt-3.webp)] bg-cover bg-top bg-blend-color"
+    className="gap-16 bg-[hsl(0_0%_100%/0.3)] bg-[url(/img/background-alt-3.webp)] bg-cover bg-top bg-blend-color"
     {...props}
     ref={ref}
   >
     <h1 className="text-title-md text-white [-webkit-text-stroke:1px_black] [@media(min-width:400px)]:text-title-lg">
       <strong>Institucional</strong>
     </h1>
-    <div className="lg:mx-auto lg:mb-24 lg:grid lg:max-w-5xl lg:grid-flow-col lg:items-center lg:justify-center lg:gap-4 lg:px-4">
+    <div className="lg:mx-auto lg:grid lg:max-w-5xl lg:grid-flow-col lg:items-center lg:justify-center lg:gap-4 lg:px-4">
       <img
         className="hidden aspect-square w-72 border-4 border-solid border-white object-cover lg:block"
         src={cosmoLogo}
         alt=""
         loading="lazy"
       />
-      <TextBox className="lg:m-0">
+      <TextBox>
         <p>
           A <strong>missão</strong> da equipe <strong>Cosmo</strong> é oferecer
           soluções inovadoras e assertivas para o mapeamento de fenômenos

@@ -10,7 +10,11 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
   /* `name` prop is from `SideNavChildProps` and is not used here and also
   should not be passed to `div` */
   ({ children, className, name, ...props }, ref) => (
-    <div className={clsx(className, 'no-collapse')} {...props} ref={ref}>
+    <div
+      className={clsx(className, 'grid content-center py-16 md:min-h-screen')}
+      {...props}
+      ref={ref}
+    >
       {children}
     </div>
   )

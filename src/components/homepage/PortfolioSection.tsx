@@ -20,7 +20,7 @@ const DISPLAY_NAME = 'PortfolioSection';
 export const PortfolioSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
   (props, ref) => (
     <Section
-      className="bg-[hsl(0_0%_100%/0.3)] bg-[url(/img/background-alt-1.webp)] bg-cover bg-center bg-blend-color"
+      className="gap-16 bg-[hsl(0_0%_100%/0.3)] bg-[url(/img/background-alt-1.webp)] bg-cover bg-center bg-blend-color"
       {...props}
       ref={ref}
     >
