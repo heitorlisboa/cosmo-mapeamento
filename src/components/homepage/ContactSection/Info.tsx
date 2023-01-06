@@ -16,7 +16,9 @@ export const Info: FC = () => (
           className="underline transition-opacity hocus:opacity-60"
           href="mailto:contato@cosmomapeamento.com.br"
         >
-          contato@cosmomapeamento.com.br
+          contato@cosmomapeamento.
+          <wbr />
+          com.br
         </a>
       </p>
     </li>
