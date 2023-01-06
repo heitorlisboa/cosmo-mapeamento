@@ -13,14 +13,14 @@ export const InstitutionalSection = forwardRef<
   SideNavSectionProps
 >((props, ref) => (
   <Section
-    className="gap-16 bg-[hsl(0_0%_100%/0.3)] bg-[url(/img/background-alt-3.webp)] bg-cover bg-top bg-blend-color"
+    className="gap-16 bg-[hsl(0_0%_100%/0.3)] bg-[url(/img/background-alt-3.webp)] bg-cover bg-top bg-blend-color [@media(min-width:768px)_and_(min-height:640px)]:gap-0"
     {...props}
     ref={ref}
   >
     <h2 className="text-title-md text-primary-800 [@media(min-width:400px)]:text-title-lg">
       <strong>Institucional</strong>
     </h2>
-    <div className="lg:mx-auto lg:grid lg:max-w-5xl lg:grid-flow-col lg:items-center lg:justify-center lg:gap-4 lg:px-4">
+    <div className="my-auto lg:mx-auto lg:grid lg:max-w-5xl lg:grid-flow-col lg:items-center lg:justify-center lg:gap-4 lg:px-4">
       <img
         className="hidden aspect-square w-72 border-4 border-solid border-white object-cover lg:block"
         src={cosmoLogo}

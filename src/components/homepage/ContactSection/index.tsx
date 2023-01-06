@@ -19,9 +19,11 @@ export const ContactSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
         <strong>Contato</strong>
       </h2>
 
-      <Socials />
-      <Info />
-      <Form />
+      <div className="my-auto">
+        <Socials />
+        <Info />
+        <Form />
+      </div>
     </Section>
   )
 );
