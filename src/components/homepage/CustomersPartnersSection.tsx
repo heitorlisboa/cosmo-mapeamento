@@ -91,11 +91,13 @@ export const CustomersPartnersSection = forwardRef<
         </a>
       </li>
       <li>
-        <img
-          src={engenhariaVerdeLogo}
-          alt="Engenharia Verde, Consultoria e projetos LTDA"
-          loading="lazy"
-        />
+        <a
+          href="https://www.linkedin.com/company/geobit-consultoria-e-tecnologia-gis/about/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={geobyteLogo} alt="Geobyte" loading="lazy" />
+        </a>
       </li>
       <li>
         <a
@@ -111,8 +113,16 @@ export const CustomersPartnersSection = forwardRef<
         </a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/company/geobit-consultoria-e-tecnologia-gis/about/">
-          <img src={geobyteLogo} alt="Geobyte" loading="lazy" />
+        <a
+          href="https://www.engenhariaverde.eng.br/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src={engenhariaVerdeLogo}
+            alt="Engenharia Verde, Consultoria e projetos LTDA"
+            loading="lazy"
+          />
         </a>
       </li>
     </ul>
