@@ -127,7 +127,7 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
           // This list won't change so it's okay to use index as a key
           <li
             key={index}
-            className="min-w-[15rem] max-w-xs flex-1 sm:min-w-[12.5rem]"
+            className="min-w-[20rem] max-w-xs flex-1 sm:min-w-[12.5rem]"
           >
             <button
               className="relative grid after:pointer-events-auto after:absolute after:inset-0 after:bg-primary-800/50 after:opacity-0 after:transition-opacity hocus:after:opacity-100"
