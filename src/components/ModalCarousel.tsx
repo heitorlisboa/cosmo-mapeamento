@@ -29,6 +29,7 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
   const reducedMotion = useReducedMotion();
   const carouselRef = useRef<HTMLDivElement>(null);
   const slideScrollDistanceRef = useRef<number>();
+  const scrollStopTimeoutRef = useRef<number>();
 
   const isModalOpen = state.currentSlideIndex > -1;
   const lastSlideIndex = images.length - 1;
@@ -38,24 +39,33 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
   }
 
   function handleScrollCarousel(event: UIEvent<HTMLDivElement>) {
-    const carousel = carouselRef.current;
-    const slideScrollDistance = slideScrollDistanceRef.current;
-    if (!carousel || !slideScrollDistance) return;
+    const scrollStopTimeout = scrollStopTimeoutRef.current;
+    if (scrollStopTimeout) clearTimeout(scrollStopTimeout);
 
-    const scrollPosition = carousel.scrollLeft;
+    // Setting a timeout so the current slide index only updates after the scroll stops
+    scrollStopTimeoutRef.current = setTimeout(() => {
+      const carousel = carouselRef.current;
+      const slideScrollDistance = slideScrollDistanceRef.current;
+      if (!carousel || !slideScrollDistance) return;
 
-    const newSlideIndex = images.findIndex((_, index) => {
-      const scrollBreakpoint = slideScrollDistance * index;
-      const isNewSlide = scrollPosition === scrollBreakpoint;
-      return isNewSlide;
-    });
+      const scrollPosition = carousel.scrollLeft;
 
-    if (newSlideIndex === -1) return;
+      const newSlideIndex = images.findIndex((_, index) => {
+        const scrollBreakpoint = slideScrollDistance * index;
+        const isNewSlide = scrollPosition === scrollBreakpoint;
+        return isNewSlide;
+      });
 
-    dispatch({
-      type: 'manuallyScrollCarousel',
-      payload: { slideIndex: newSlideIndex },
-    });
+      const slideIndexNotFound = newSlideIndex === -1;
+      const didNotChangeSlide = state.currentSlideIndex === newSlideIndex;
+
+      if (slideIndexNotFound || didNotChangeSlide) return;
+
+      dispatch({
+        type: 'manuallyScrollCarousel',
+        payload: { slideIndex: newSlideIndex },
+      });
+    }, 100);
   }
 
   function handleGoToPreviousSlide() {
