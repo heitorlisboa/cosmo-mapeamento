@@ -12,7 +12,7 @@ const DISPLAY_NAME = 'TeamSection';
 export const TeamSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
   (props, ref) => (
     <Section
-      className="gap-16 bg-[hsl(0_0%_100%/0.3)] bg-[url(/img/background-alt-2.webp)] bg-cover bg-center bg-blend-color [@media(min-width:768px)_and_(min-height:768px)]:gap-0"
+      className="gap-16 bg-white/30 bg-cover bg-center bg-blend-color bg-srcset-[/img/backgrounds/background-alt-2.webp] [@media(min-width:768px)_and_(min-height:768px)]:gap-0"
       {...props}
       ref={ref}
     >

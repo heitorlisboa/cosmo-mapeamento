@@ -41,6 +41,7 @@ module.exports = {
             transform: 'translateX(0)',
           },
         },
+        /** @type {Record<string, Partial<CSSStyleDeclaration>>} */
         'fade-in-to-right': {
           from: {
             opacity: '0',
@@ -59,6 +60,25 @@ module.exports = {
       addVariant('where', ':where(&)');
       addVariant('hocus', ['&:hover', '&:focus-visible']);
       addVariant('group-hocus', ['.group:hover &', '.group:focus-visible &']);
+    }),
+    plugin(({ matchUtilities }) => {
+      matchUtilities({
+        'bg-srcset': (value) => {
+          const [imgPath, imgExtension] = value.split('.');
+
+          /** @param {number} imgWidth */
+          const toUrl = (imgWidth) =>
+            `url(${imgPath}-${imgWidth}w.${imgExtension})`;
+
+          /** @type {Partial<CSSStyleDeclaration> & Record<string, Partial<CSSStyleDeclaration>>} */
+          const result = {
+            backgroundImage: toUrl(1280),
+            '@media (min-width: 1281px)': { backgroundImage: toUrl(1920) },
+            '@media (min-width: 1921px)': { backgroundImage: toUrl(3840) },
+          };
+          return result;
+        },
+      });
     }),
   ],
 };
