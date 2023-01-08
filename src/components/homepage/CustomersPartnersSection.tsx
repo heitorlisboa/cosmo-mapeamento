@@ -36,7 +36,7 @@ export const CustomersPartnersSection = forwardRef<
           <img src={studioMatilhaLogo} alt="Studio Matilha" loading="lazy" />
         </a>
       </li>
-      <li className="px-[clamp(0.5rem,2vw,2rem)]">
+      <li className="px-[clamp(0.75rem,3vw,3rem)]">
         <a
           href="https://www.algerconsultoria.com/"
           target="_blank"
