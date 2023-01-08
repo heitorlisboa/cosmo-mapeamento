@@ -70,7 +70,6 @@ export const CustomersPartnersSection = forwardRef<
           rel="noreferrer"
         >
           <img
-            className="aspect-[3/1] w-full object-cover object-[50%_45%]"
             src={prefeituraNazarenoLogo}
             alt="Prefeitura Municipal de Nazareno (Adiministração de 2021 a 2024)"
             loading="lazy"

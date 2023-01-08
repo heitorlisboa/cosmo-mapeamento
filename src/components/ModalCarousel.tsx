@@ -181,7 +181,7 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
                 // This list won't change so it's okay to use index as a key
                 <img
                   key={index}
-                  className="mx-auto aspect-square w-[min(100%,600px)] snap-center object-cover lg:h-full lg:w-auto [@media_not_all_and_(min-height:640px)]:h-[95vh]"
+                  className="mx-auto aspect-square w-[min(100%,600px)] snap-center object-contain lg:h-[min(95vh,1080px)] lg:w-auto [@media_not_all_and_(min-height:640px)]:h-[95vh]"
                   src={src}
                   alt={alt}
                   // Hiding the non-visible slides

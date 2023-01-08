@@ -5,7 +5,7 @@ import type { SideNavSectionProps } from '../SideNav';
 import { Section } from '../Section';
 import { TextBox } from '../TextBox';
 
-const cosmoLogo = '/img/logo-cosmo.webp';
+const cosmoLogo = '/img/cosmo-logo-galaxy.webp';
 
 const DISPLAY_NAME = 'InstitutionalSection';
 export const InstitutionalSection = forwardRef<
