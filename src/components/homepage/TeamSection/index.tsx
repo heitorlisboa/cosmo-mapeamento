@@ -12,7 +12,7 @@ const DISPLAY_NAME = 'TeamSection';
 export const TeamSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
   (props, ref) => (
     <Section
-      className="gap-16 bg-white/30 bg-cover bg-center bg-blend-color bg-srcset-[/img/backgrounds/background-alt-2.webp] [@media(min-width:768px)_and_(min-height:768px)]:gap-0"
+      className="gap-16 bg-white/30 bg-cover bg-center bg-blend-color bg-srcset-[/img/backgrounds/background-alt-2.webp] [@media(min-width:768px)_and_(min-height:810px)]:gap-0"
       {...props}
       ref={ref}
     >
@@ -44,10 +44,12 @@ export const TeamSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
             <strong className="block">Fabrício Lisboa Vieira Machado</strong>
             CEO da Cosmo - Mapeamento Ambiental
           </p>
-          <p>
-            Geógrafo, Mestre em Geografia e Análise Ambiental e Doutorando em
-            Geografia Aplicada e Geotecnologias pela Universidade Federal de
-            Minas Gerais
+          <p className="text-sm text-justify sm:text-center">
+            Geógrafo de formação e Mestre em Geografia e Análise Ambiental pela
+            Universidade Federal de Minas Gerais. Especialista em
+            Georreferenciamento de Imóveis Rurais e Urbanos pela Faculdade de
+            Engenharia de Minas Gerais. Atual Doutorando em Geografia Aplicada e
+            Geotecnologias também pela UFMG
           </p>
         </Member>
       </div>

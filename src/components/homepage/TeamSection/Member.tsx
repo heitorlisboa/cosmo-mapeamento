@@ -10,13 +10,13 @@ type MemberProps = PropsWithChildren<{
 }>;
 
 export const Member: FC<MemberProps> = ({ children, img }) => (
-  <article className="mx-auto grid grid-rows-[max-content_1fr] items-center justify-items-center gap-4 md:grid-flow-col md:grid-rows-none md:justify-center">
+  <article className="mx-auto grid max-w-4xl grid-rows-[max-content_1fr] items-center justify-items-center gap-4 md:grid-flow-col md:grid-rows-none md:justify-center">
     <img
       className="aspect-square w-44 rounded-full border-4 border-solid border-white object-cover"
       src={img.url}
       alt={img.alt}
       loading="lazy"
     />
-    <TextBox className="max-w-xl text-center md:max-w-lg">{children}</TextBox>
+    <TextBox className="max-w-xl text-center md:max-w-none">{children}</TextBox>
   </article>
 );
