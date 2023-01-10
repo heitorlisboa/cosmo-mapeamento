@@ -26,8 +26,8 @@ export const CustomersPartnersSection = forwardRef<
     <h2 className="text-primary-800">
       <strong>Clientes</strong> &amp; Parceiros
     </h2>
-    <ul className="mx-auto my-auto flex max-w-5xl flex-wrap items-center justify-center gap-8 px-4 md:gap-16 [&_li]:basis-[clamp(175px,20vw,250px)] [&_a]:block [&_img]:w-full">
-      <li className="px-[clamp(0.5rem,2vw,2rem)]">
+    <ul className="mx-auto my-auto flex max-w-5xl flex-wrap items-center justify-center gap-8 px-4 md:gap-16 [&_a]:block [&_img]:w-full [&_li]:basis-[clamp(175px,20vw,275px)]">
+      <li className="px-4 sm:px-6 lg:px-10 xl:px-[3.25rem]">
         <a
           href="https://www.studiomatilha.com/"
           target="_blank"
@@ -36,7 +36,8 @@ export const CustomersPartnersSection = forwardRef<
           <img src={studioMatilhaLogo} alt="Studio Matilha" loading="lazy" />
         </a>
       </li>
-      <li className="px-[clamp(0.75rem,3vw,3rem)]">
+
+      <li className="px-4 sm:px-6 lg:px-10 xl:px-[3.25rem]">
         <a
           href="https://www.algerconsultoria.com/"
           target="_blank"
@@ -49,7 +50,8 @@ export const CustomersPartnersSection = forwardRef<
           />
         </a>
       </li>
-      <li className="px-[clamp(0.5rem,2vw,2rem)]">
+
+      <li className="px-1 sm:px-3 lg:px-7 xl:px-10">
         <a
           href="https://www.instagram.com/innovarcontabilidadecontagem/"
           target="_blank"
@@ -58,12 +60,14 @@ export const CustomersPartnersSection = forwardRef<
           <img src={innovarLogo} alt="Innovar, Contabilidade" loading="lazy" />
         </a>
       </li>
+
       <li>
         <a href="https://www.vasgeo.com.br/" target="_blank" rel="noreferrer">
           <img src={vasgeoLogo} alt="VasGeo" loading="lazy" />
         </a>
       </li>
-      <li>
+
+      <li className="xl:px-3">
         <a
           href="http://www.nazareno.mg.gov.br/"
           target="_blank"
@@ -76,7 +80,8 @@ export const CustomersPartnersSection = forwardRef<
           />
         </a>
       </li>
-      <li>
+
+      <li className="xl:px-3">
         <a
           href="https://www.instagram.com/aplicageo/"
           target="_blank"
@@ -89,7 +94,8 @@ export const CustomersPartnersSection = forwardRef<
           />
         </a>
       </li>
-      <li>
+
+      <li className="xl:px-3">
         <a
           href="https://www.linkedin.com/company/geobit-consultoria-e-tecnologia-gis/about/"
           target="_blank"
@@ -98,7 +104,8 @@ export const CustomersPartnersSection = forwardRef<
           <img src={geobyteLogo} alt="Geobyte" loading="lazy" />
         </a>
       </li>
-      <li>
+
+      <li className="xl:px-3">
         <a
           href="https://www.inteligenciaterritorial.org/"
           target="_blank"
@@ -111,6 +118,7 @@ export const CustomersPartnersSection = forwardRef<
           />
         </a>
       </li>
+
       <li>
         <a
           href="https://www.engenhariaverde.eng.br/"
