@@ -1,14 +1,50 @@
-import type { FC } from 'react';
+import { type FC, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import Email from '@emailjs/browser';
+
+type RequestQuoteFormFields = {
+  name: string;
+  institution?: string;
+  email: string;
+  phone?: string;
+  description?: string;
+};
 
 export const Form: FC = () => {
-  // TODO: Send form to the owner's email
-  function handleSubmit() {}
+  const [isSendingRequest, setIsSendingRequest] = useState(false);
+  const { register, handleSubmit } = useForm<RequestQuoteFormFields>();
+
+  async function handleRequestQuote(data: RequestQuoteFormFields) {
+    setIsSendingRequest(true);
+
+    const valueNotInformed = 'Não informado';
+    try {
+      await Email.send(
+        import.meta.env.PUBLIC_EMAILJS_SERVICE,
+        import.meta.env.PUBLIC_EMAILJS_TEMPLATE,
+        {
+          name: data.name,
+          institution: data.institution || valueNotInformed,
+          email: data.email,
+          phone: data.phone || valueNotInformed,
+          description: data.description || valueNotInformed,
+        } satisfies Required<RequestQuoteFormFields>,
+        import.meta.env.PUBLIC_EMAILJS_API_KEY
+      );
+
+      window.alert('Solicitação de orçamento enviada com sucesso!');
+    } catch (error) {
+      window.alert('Não foi possível enviar a solicitação...');
+    }
+
+    setIsSendingRequest(false);
+  }
 
   return (
     <form
       className="mx-auto mt-16 flex max-w-3xl flex-col items-center gap-8"
       aria-labelledby="form-title"
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(handleRequestQuote)}
     >
       <h3
         className="m-0 p-0 font-secondary text-title-sm font-bold normal-case leading-normal tracking-normal"
@@ -25,9 +61,9 @@ export const Form: FC = () => {
           <input
             id="name"
             type="text"
-            name="name"
             placeholder="Nome:"
             required
+            {...register('name')}
           />
         </div>
         <div>
@@ -37,8 +73,8 @@ export const Form: FC = () => {
           <input
             id="institution"
             type="text"
-            name="institution"
             placeholder="Instituição (opcional):"
+            {...register('institution')}
           />
         </div>
         <div>
@@ -48,9 +84,9 @@ export const Form: FC = () => {
           <input
             id="email"
             type="email"
-            name="email"
             placeholder="Email:"
             required
+            {...register('email')}
           />
         </div>
         <div>
@@ -60,8 +96,8 @@ export const Form: FC = () => {
           <input
             id="phone"
             type="tel"
-            name="phone"
             placeholder="Telefone (opcional):"
+            {...register('phone')}
           />
         </div>
         {/* Display grid is used to remove the gap below the `textarea` */}
@@ -71,8 +107,8 @@ export const Form: FC = () => {
           </label>
           <textarea
             id="description"
-            name="description"
             placeholder="Breve descrição do seu projeto (opcional):"
+            {...register('description')}
           />
         </div>
       </div>
@@ -80,8 +116,9 @@ export const Form: FC = () => {
       <button
         className="w-60 bg-primary-800 px-10 py-6 transition-opacity hocus:opacity-60"
         type="submit"
+        aria-live="polite"
       >
-        Enviar
+        {isSendingRequest ? 'Enviando...' : 'Enviar'}
       </button>
     </form>
   );
