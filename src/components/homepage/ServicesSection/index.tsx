@@ -6,15 +6,15 @@ import { Section } from '../../Section';
 import { GridItem } from './GridItem';
 
 // Geography related icons
-const mapPointOfInterestIcon = '/img/services-icons/map-poi.webp';
-const layersIcon = '/img/services-icons/layers.webp';
-const layerContourIcon = '/img/services-icons/layer-contour.webp';
-const contourMapIcon = '/img/services-icons/contour-map.webp';
-const statisticMapIcon = '/img/services-icons/statistic-map.webp';
-const landcoverMapIcon = '/img/services-icons/landcover-map.webp';
-const earthGearIcon = '/img/services-icons/earth-gear.webp';
-const worldMapIcon = '/img/services-icons/world-map.webp';
-const phoneRouteIcon = '/img/services-icons/phone-route.webp';
+const mapPointOfInterestIcon = '/img/services-icons/map-poi.svg';
+const layersIcon = '/img/services-icons/layers.svg';
+const layerContourIcon = '/img/services-icons/layer-contour.svg';
+const contourMapIcon = '/img/services-icons/contour-map.svg';
+const statisticMapIcon = '/img/services-icons/statistic-map.svg';
+const landcoverMapIcon = '/img/services-icons/landcover-map.svg';
+const earthGearIcon = '/img/services-icons/earth-gear.svg';
+const worldMapIcon = '/img/services-icons/world-map.svg';
+const phoneRouteIcon = '/img/services-icons/phone-route.svg';
 const gnssAntenna = '/img/services-icons/gnss-antenna.svg';
 
 const DISPLAY_NAME = 'ServicesSection';
