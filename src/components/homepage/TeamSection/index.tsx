@@ -44,7 +44,7 @@ export const TeamSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
             <strong className="block">Fabrício Lisboa Vieira Machado</strong>
             CEO da Cosmo - Mapeamento Ambiental
           </p>
-          <p className="text-sm text-justify sm:text-center">
+          <p className="text-justify text-sm sm:text-center">
             Geógrafo de formação e Mestre em Geografia e Análise Ambiental pela
             Universidade Federal de Minas Gerais. Especialista em
             Georreferenciamento de Imóveis Rurais e Urbanos pela Faculdade de
