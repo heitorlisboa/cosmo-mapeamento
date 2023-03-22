@@ -20,9 +20,9 @@ export const InstitutionalSection = forwardRef<
     <h2 className="text-title-md text-white [@media(min-width:400px)]:text-title-lg">
       <strong>Institucional</strong>
     </h2>
-    <div className="my-auto lg:mx-auto lg:grid lg:max-w-5xl lg:grid-flow-col lg:items-center lg:justify-center lg:gap-4 lg:px-4">
+    <div className="my-auto lg:mx-auto lg:flex lg:max-w-5xl lg:gap-4 lg:px-4">
       <img
-        className="hidden aspect-square w-72 border-4 border-solid border-white object-cover lg:block"
+        className="hidden aspect-square w-64 border-4 border-solid border-white object-cover lg:block"
         src={cosmoLogo}
         alt=""
         loading="lazy"
