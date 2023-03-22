@@ -26,7 +26,7 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
       </h2>
 
       <div className="my-auto">
-        <ul className="mx-auto mt-16 flex max-w-[88rem] flex-wrap justify-around gap-x-4 gap-y-10 px-4 md:px-8 md:gap-x-16 lg:gap-x-4">
+        <ul className="mx-auto mt-16 flex max-w-[88rem] flex-wrap justify-around gap-x-4 gap-y-10 px-4 md:gap-x-16 md:px-8 lg:gap-x-4">
           <GridItem
             title="Levantamentos aerofotogramétricos"
             content="De propriedades rurais, áreas de preservação permanente, microbacias hidrográficas, loteamentos urbanos, áreas de mineração, dentre outros."
