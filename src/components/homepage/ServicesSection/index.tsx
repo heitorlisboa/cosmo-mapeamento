@@ -15,6 +15,7 @@ const landcoverMapIcon = '/img/services-icons/landcover-map.webp';
 const earthGearIcon = '/img/services-icons/earth-gear.webp';
 const worldMapIcon = '/img/services-icons/world-map.webp';
 const phoneRouteIcon = '/img/services-icons/phone-route.webp';
+const gnssAntenna = '/img/services-icons/gnss-antenna.svg';
 
 const DISPLAY_NAME = 'ServicesSection';
 export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
@@ -25,7 +26,7 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
       </h2>
 
       <div className="my-auto">
-        <ul className="mx-auto mt-16 flex max-w-5xl flex-wrap justify-around gap-x-4 gap-y-10 px-4 md:gap-x-16">
+        <ul className="mx-auto mt-16 flex max-w-[88rem] flex-wrap justify-around gap-x-4 gap-y-10 px-4 md:px-8 md:gap-x-16 lg:gap-x-4">
           <GridItem
             title="Levantamentos aerofotogramétricos"
             content="De propriedades rurais, áreas de preservação permanente, microbacias hidrográficas, loteamentos urbanos, áreas de mineração, dentre outros."
@@ -42,8 +43,8 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
             imgUrl={layerContourIcon}
           />
           <GridItem
-            title="Extração de curvas de nível do terreno"
-            content="Levantamentos planialtimétricos e cálculos volumétricos."
+            title="Topografia"
+            content="Levantamentos planialtimétricos, extração de curvas de nível do terreno e cálculos volumétricos."
             imgUrl={contourMapIcon}
           />
           <GridItem
@@ -71,9 +72,14 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
             content="Sistemas de Informação Geográfica na web para visualização de dados georreferenciados."
             imgUrl={phoneRouteIcon}
           />
+          <GridItem
+            title="Georreferenciamento de imóveis rurais"
+            content="Identificação precisa dos perímetros do imóvel, com memorial descritivo e demais peças técnicas para registro junto ao INCRA."
+            imgUrl={gnssAntenna}
+          />
         </ul>
 
-        <div className="mx-auto mt-8 w-[calc(100%-1rem)] max-w-2xl rounded-2xl p-4 text-center text-lg font-medium text-primary-800 shadow-[0_0_20px_rgb(0_0_0/0.1)] md:rounded-full md:border-2 md:border-solid md:border-primary-800 md:px-12 md:py-0 md:text-neutral-600">
+        <div className="mx-auto mt-8 w-[calc(100%-1rem)] max-w-2xl rounded-2xl p-4 text-center text-sm font-medium text-primary-800 shadow-[0_0_20px_rgb(0_0_0/0.1)] md:rounded-full md:border-2 md:border-solid md:border-primary-800 md:px-12 md:py-0 md:text-neutral-600">
           <p>Importante:</p>
           <p>
             Nossos veículos aéreos são devidamente registrados no{' '}
