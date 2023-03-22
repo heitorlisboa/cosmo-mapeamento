@@ -25,12 +25,17 @@ const arrowIcon = '/img/modal-icons/arrow-right-icon.svg';
       class="pointer-events-none absolute top-[100px] left-1/2 ml-[275px] hidden animate-[fade-in-to-left_1s_ease-out_500ms_both] lg:block"
       src={drone1}
       alt=""
+      width={452}
+      height={226}
       aria-hidden="true"
     />
     <img
-      class="pointer-events-none absolute bottom-[clamp(6rem,12vw,8rem)] left-1/2 block max-w-sm -translate-x-1/2 lg:bottom-[35px] lg:right-1/2 lg:left-[unset] lg:mr-[250px] lg:max-w-none lg:transform-none lg:animate-[fade-in-to-right_1s_ease-out_500ms_both]"
+      class="pointer-events-none absolute bottom-[clamp(6rem,12vw,8rem)] left-1/2 block w-auto max-w-sm -translate-x-1/2 lg:bottom-[35px] lg:right-1/2 lg:left-[unset] lg:mr-[250px] lg:max-w-none lg:transform-none lg:animate-[fade-in-to-right_1s_ease-out_500ms_both]"
       src={drone2}
       alt=""
+      {/* Using the mobile size as the default */}
+      width={384}
+      height={127}
       aria-hidden="true"
     />
     {/* Logo */}
@@ -38,6 +43,9 @@ const arrowIcon = '/img/modal-icons/arrow-right-icon.svg';
       class="mx-auto my-8 w-[clamp(200px,50%,288px)]"
       src={cosmoLogoTransparent}
       alt="Logo da Cosmo Mapeamento"
+      {/* Using the mobile size as the default */}
+      width={200}
+      height={200}
     />
 
     <Navbar client:media="not all and (min-width: 768px)" />
@@ -52,7 +60,13 @@ const arrowIcon = '/img/modal-icons/arrow-right-icon.svg';
       title="Ir para a primeira seção"
     >
       <span class="sr-only">Ir para a primeira seção</span>
-      <img class="w-16 rotate-90 invert" src={arrowIcon} alt="" />
+      <img
+        class="w-16 rotate-90 invert"
+        src={arrowIcon}
+        alt=""
+        width={64}
+        height={64}
+      />
     </a>
   </header>
 

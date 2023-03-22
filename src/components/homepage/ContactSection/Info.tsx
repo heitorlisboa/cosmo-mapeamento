@@ -31,7 +31,13 @@ export const Info: FC = () => (
           className="transition-opacity hocus:opacity-60"
           href="https://wa.me/message/YAJAA3RXTF7RG1"
         >
-          <img src={whatsappIcon} alt="Whatsapp" loading="lazy" />
+          <img
+            src={whatsappIcon}
+            alt="Whatsapp"
+            width={22}
+            height={22}
+            loading="lazy"
+          />
         </a>
         <div className="grid items-center">
           <p>Telefone / Whatsapp</p>
@@ -47,7 +53,7 @@ export const Info: FC = () => (
     <div className="hidden h-24 w-[3px] bg-white lg:block" aria-hidden />
 
     <li className="flex items-center gap-2">
-      <img src={localIcon} alt="" loading="lazy" />
+      <img src={localIcon} alt="" width={19} height={30} loading="lazy" />
       <div className="grid items-center">
         <p>Contagem - Minas Gerais</p>
         <p>CNPJ: 41.899.909/0001-20</p>

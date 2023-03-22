@@ -16,6 +16,9 @@ export const GridItem: FC<GridItemProps> = ({ title, content, imgUrl }) => (
       className="mt-auto w-10 md:w-[3.125rem]"
       src={imgUrl}
       alt=""
+      // Using the mobile size as the default
+      width={40}
+      height={40}
       loading="lazy"
     />
   </li>

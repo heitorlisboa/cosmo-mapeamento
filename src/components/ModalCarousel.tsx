@@ -133,7 +133,13 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
               className="relative grid after:pointer-events-auto after:absolute after:inset-0 after:bg-primary-800/50 after:opacity-0 after:transition-opacity hocus:after:opacity-100"
               onClick={() => handleOpenModal(index)}
             >
-              <img src={src} alt={alt} />
+              <img
+                src={src}
+                alt={alt}
+                // Using the mobile size as the default
+                width={320}
+                height={320}
+              />
             </button>
           </li>
         ))}
@@ -166,9 +172,12 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
               onClick={handleGoToPreviousSlide}
             >
               <img
-                className="h-full rotate-180"
+                className="h-full w-auto rotate-180"
                 src={arrowRightIcon}
                 alt="Imagem anterior"
+                // Using the mobile size as the default
+                width={16}
+                height={32}
               />
             </button>
 
@@ -195,9 +204,12 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
               onClick={handleGoToNextSlide}
             >
               <img
-                className="h-full"
+                className="h-full w-auto"
                 src={arrowRightIcon}
                 alt="Próxima imagem"
+                // Using the mobile size as the default
+                width={16}
+                height={32}
               />
             </button>
 
@@ -205,7 +217,14 @@ export const ModalCarousel: FC<ModalCarouselProps> = ({ images }) => {
               className="fixed top-8 right-8 aspect-square w-8 rounded-md bg-white/25 p-2 backdrop-blur transition-opacity hocus:opacity-60 md:w-10"
               onClick={handleCloseModal}
             >
-              <img src={closeIcon} alt="Fechar carrossel de imagens" />
+              <img
+                className="w-auto"
+                src={closeIcon}
+                alt="Fechar carrossel de imagens"
+                // Using the mobile size as the default
+                width={16}
+                height={16}
+              />
             </button>
           </Dialog.Panel>
         </Dialog>
