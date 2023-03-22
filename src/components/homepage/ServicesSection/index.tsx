@@ -26,7 +26,7 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
       </h2>
 
       <div className="my-auto">
-        <ul className="mx-auto mt-16 flex max-w-[88rem] flex-wrap justify-around gap-x-4 gap-y-10 px-4 md:gap-x-16 md:px-8 lg:gap-x-4">
+        <ul className="mx-auto mt-16 flex max-w-[88rem] flex-wrap justify-around gap-x-4 gap-y-10 px-4 md:gap-x-16 md:px-8 lg:mt-24 lg:gap-y-16 lg:gap-x-4">
           <GridItem
             title="Levantamentos aerofotogramétricos"
             content="De propriedades rurais, áreas de preservação permanente, microbacias hidrográficas, loteamentos urbanos, áreas de mineração, dentre outros."
@@ -79,7 +79,7 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
           />
         </ul>
 
-        <div className="mx-auto mt-8 w-[calc(100%-1rem)] max-w-2xl rounded-2xl p-4 text-center text-sm font-medium text-primary-800 shadow-[0_0_20px_rgb(0_0_0/0.1)] md:rounded-full md:border-2 md:border-solid md:border-primary-800 md:px-12 md:py-0 md:text-neutral-600">
+        <div className="mx-auto mt-8 w-[calc(100%-1rem)] max-w-2xl rounded-2xl p-4 text-center text-sm font-medium text-primary-800 shadow-[0_0_20px_rgb(0_0_0/0.1)] md:rounded-full md:border-2 md:border-solid md:border-primary-800 md:px-12 md:py-0 md:text-neutral-600 lg:mt-24">
           <p>Importante:</p>
           <p>
             Nossos veículos aéreos são devidamente registrados no{' '}
