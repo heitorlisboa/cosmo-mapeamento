@@ -56,7 +56,7 @@ export const Info: FC = () => (
       <img src={localIcon} alt="" width={19} height={30} loading="lazy" />
       <div className="grid items-center">
         <p>Contagem - Minas Gerais</p>
-        <p>CNPJ: 41.899.909/0001-20</p>
+        <p>CNPJ: 41.889.909/0001-20</p>
       </div>
     </li>
   </ul>
