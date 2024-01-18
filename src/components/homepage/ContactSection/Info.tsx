@@ -55,7 +55,7 @@ export const Info: FC = () => (
     <li className="flex items-center gap-2">
       <img src={localIcon} alt="" width={19} height={30} loading="lazy" />
       <div className="grid items-center">
-        <p>Contagem - Minas Gerais</p>
+        <p>Belo Horizonte - Minas Gerais</p>
         <p>CNPJ: 41.889.909/0001-20</p>
       </div>
     </li>
