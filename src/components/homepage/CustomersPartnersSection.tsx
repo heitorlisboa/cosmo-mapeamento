@@ -16,6 +16,9 @@ const engenhariaVerdeLogo =
   '/img/customers-partners-logos/engenharia-verde.webp';
 const citLogo = '/img/customers-partners-logos/cit.webp';
 const geobyteLogo = '/img/customers-partners-logos/geobyte.webp';
+const nmcLogo = '/img/customers-partners-logos/nmc.webp';
+const arcadisLogo = '/img/customers-partners-logos/arcadis.webp';
+const eyLogo = '/img/customers-partners-logos/ey.webp';
 
 const DISPLAY_NAME = 'CustomersPartnersSection';
 export const CustomersPartnersSection = forwardRef<
@@ -26,7 +29,7 @@ export const CustomersPartnersSection = forwardRef<
     <h2 className="text-primary-800">
       <strong>Clientes</strong> &amp; Parceiros
     </h2>
-    <ul className="mx-auto my-auto flex max-w-5xl flex-wrap items-center justify-center gap-8 px-4 md:gap-16 [&_a]:block [&_img]:w-full [&_li]:basis-[clamp(175px,20vw,275px)]">
+    <ul className="mx-auto my-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-4 px-4 md:gap-x-16 md:gap-y-8 lg:px-8 xl:px-0 [&_a]:block [&_img]:w-full [&_li]:basis-[clamp(10rem,20vw,13rem)]">
       <li className="px-4 sm:px-6 lg:px-10 xl:px-[3.25rem]">
         <a
           href="https://www.studiomatilha.com/"
@@ -130,6 +133,32 @@ export const CustomersPartnersSection = forwardRef<
             alt="Engenharia Verde, Consultoria e projetos LTDA"
             loading="lazy"
           />
+        </a>
+      </li>
+
+      <li className="xl:px-3">
+        <a
+          href="https://nmcintegrativa.com.br/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={nmcLogo} alt="" loading="lazy" />
+        </a>
+      </li>
+
+      <li className="xl:px-3">
+        <a
+          href="https://www.arcadis.com/pt-br"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={arcadisLogo} alt="" loading="lazy" />
+        </a>
+      </li>
+
+      <li className="px-4 sm:px-6 lg:px-10 xl:px-[3.25rem]">
+        <a href="https://www.ey.com/pt_br" target="_blank" rel="noreferrer">
+          <img src={eyLogo} alt="" loading="lazy" />
         </a>
       </li>
     </ul>
