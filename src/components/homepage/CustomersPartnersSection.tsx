@@ -19,6 +19,8 @@ const geobyteLogo = '/img/customers-partners-logos/geobyte.webp';
 const nmcLogo = '/img/customers-partners-logos/nmc.webp';
 const arcadisLogo = '/img/customers-partners-logos/arcadis.webp';
 const eyLogo = '/img/customers-partners-logos/ey.webp';
+const vilaPampulhaLogo = '/img/customers-partners-logos/vila-pampulha.webp';
+const arqueaLogo = '/img/customers-partners-logos/arquea.webp';
 
 const DISPLAY_NAME = 'CustomersPartnersSection';
 export const CustomersPartnersSection = forwardRef<
@@ -159,6 +161,26 @@ export const CustomersPartnersSection = forwardRef<
       <li className="px-4 sm:px-6 lg:px-10 xl:px-[3.25rem]">
         <a href="https://www.ey.com/pt_br" target="_blank" rel="noreferrer">
           <img src={eyLogo} alt="" loading="lazy" />
+        </a>
+      </li>
+
+      <li className="xl:px-3">
+        <a
+          href="https://coworkingvillapampulha.com.br/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={vilaPampulhaLogo} alt="" loading="lazy" />
+        </a>
+      </li>
+
+      <li className="px-2 sm:px-4 lg:px-8 xl:px-10">
+        <a
+          href="https://br.linkedin.com/company/arquea-engenharia-e-geotecnologia"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={arqueaLogo} alt="" loading="lazy" />
         </a>
       </li>
     </ul>
