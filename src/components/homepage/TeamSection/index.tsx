@@ -42,14 +42,14 @@ export const TeamSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
         >
           <p>
             <strong className="block">Fabrício Lisboa Vieira Machado</strong>
-            CEO da Cosmo - Mapeamento Ambiental
+            Diretor técnico-executivo
           </p>
           <p className="text-justify text-sm sm:text-center">
-            Geógrafo de formação e Mestre em Geografia e Análise Ambiental pela
-            Universidade Federal de Minas Gerais. Especialista em
-            Georreferenciamento de Imóveis Rurais e Urbanos pela Faculdade de
-            Engenharia de Minas Gerais. Atual Doutorando em Geografia Aplicada e
-            Geotecnologias também pela UFMG
+            Geógrafo, Mestre em Análise Ambiental e Doutor em Geografia Aplicada
+            e Geotecnologias pela Universidade Federal de Minas Gerais.
+            Especialista em Georreferenciamento de Imóveis Rurais e Urbanos pela
+            Faculdade de Engenharia de Minas Gerais. Ex-servidor público
+            estadual da Semad-MG, onde coordenou a implantação da IDE-Sisema.
           </p>
         </Member>
       </div>
