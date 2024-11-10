@@ -6,7 +6,7 @@ import { Section } from '../../Section';
 import { TextBox } from '../../TextBox';
 import { Member } from './Member';
 
-const fabricioImg = '/img/team-img/perfil-fabricio-palestra.webp';
+const fabricioImg = '/img/team-img/perfil-fabricio.webp';
 
 const DISPLAY_NAME = 'TeamSection';
 export const TeamSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
