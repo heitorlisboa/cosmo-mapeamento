@@ -19,8 +19,10 @@ const geobyteLogo = '/img/customers-partners-logos/geobyte.webp';
 const nmcLogo = '/img/customers-partners-logos/nmc.webp';
 const arcadisLogo = '/img/customers-partners-logos/arcadis.webp';
 const eyLogo = '/img/customers-partners-logos/ey.webp';
+const carsteLogo = '/img/customers-partners-logos/carste.webp';
 const vilaPampulhaLogo = '/img/customers-partners-logos/vila-pampulha.webp';
 const arqueaLogo = '/img/customers-partners-logos/arquea.webp';
+const topoAgroLogo = '/img/customers-partners-logos/topo-agro.webp';
 
 const DISPLAY_NAME = 'CustomersPartnersSection';
 export const CustomersPartnersSection = forwardRef<
@@ -58,7 +60,7 @@ export const CustomersPartnersSection = forwardRef<
 
       <li className="px-1 sm:px-3 lg:px-7 xl:px-10">
         <a
-          href="https://www.instagram.com/innovarcontabilidadecontagem/"
+          href="https://www.instagram.com/cont.innovar/"
           target="_blank"
           rel="noreferrer"
         >
@@ -67,7 +69,11 @@ export const CustomersPartnersSection = forwardRef<
       </li>
 
       <li>
-        <a href="https://www.vasgeo.com.br/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.linkedin.com/company/vasgeo/posts/?feedView=all"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={vasgeoLogo} alt="VasGeo" loading="lazy" />
         </a>
       </li>
@@ -164,6 +170,12 @@ export const CustomersPartnersSection = forwardRef<
         </a>
       </li>
 
+      <li className="px-2 sm:px-4 lg:px-8 xl:px-10">
+        <a href="https://carste.com.br/" target="_blank" rel="noreferrer">
+          <img src={carsteLogo} alt="" loading="lazy" />
+        </a>
+      </li>
+
       <li className="xl:px-3">
         <a
           href="https://coworkingvillapampulha.com.br/"
@@ -176,11 +188,21 @@ export const CustomersPartnersSection = forwardRef<
 
       <li className="px-2 sm:px-4 lg:px-8 xl:px-10">
         <a
-          href="https://br.linkedin.com/company/arquea-engenharia-e-geotecnologia"
+          href="https://www.linkedin.com/company/arquea-engenharia-e-geotecnologia/?originalSubdomain=br"
           target="_blank"
           rel="noreferrer"
         >
           <img src={arqueaLogo} alt="" loading="lazy" />
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="https://www.instagram.com/topoagro_solucoes/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={topoAgroLogo} alt="" loading="lazy" />
         </a>
       </li>
     </ul>
