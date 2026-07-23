@@ -2,16 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../components/Navbar';
 import { MainContent } from '../components/homepage/MainContent';
+import { PhoneIcon, MailIcon } from 'lucide-react';
 
-const drone1 = '/img/drone-1.webp';
-const drone2 = '/img/drone-2.webp';
-const cosmoLogoTransparent = '/img/cosmo-logo-transparent.webp';
 const arrowIcon = '/img/modal-icons/arrow-right-icon.svg';
 ---
 
 <Layout title="Cosmo Mapeamento">
-  <header
-    class="relative overflow-hidden bg-cover bg-fixed pb-[clamp(10rem,20vw,12rem)] bg-srcset-[/img/backgrounds/background.webp]"
+  <section
+    class="relative flex min-h-screen flex-col overflow-hidden bg-cover bg-fixed pb-[clamp(10rem,20vw,12rem)] bg-srcset-[/img/backgrounds/background.webp]"
   >
     <a
       class="absolute left-4 -translate-y-full bg-white px-4 py-2 text-primary-800 transition-transform duration-500 focus-visible:translate-y-0"
@@ -20,42 +18,53 @@ const arrowIcon = '/img/modal-icons/arrow-right-icon.svg';
       Pular para o conteúdo
     </a>
 
-    {/* Drones */}
-    <img
-      class="pointer-events-none absolute top-[130px] left-1/2 ml-[275px] hidden animate-[fade-in-to-left_1s_ease-out_500ms_both] lg:block"
-      src={drone1}
-      alt=""
-      width={416}
-      height={182}
-      aria-hidden="true"
-    />
-    <img
-      class="pointer-events-none absolute bottom-[clamp(3rem,6vw,5rem)] left-1/2 block max-w-sm -translate-x-1/2 lg:bottom-[-35px] lg:right-1/2 lg:left-[unset] lg:mr-[250px] lg:max-w-none lg:transform-none lg:animate-[fade-in-to-right_1s_ease-out_500ms_both]"
-      src={drone2}
-      alt=""
-      {/* Using the mobile size as the default */}
-      width={544}
-      height={306}
-      aria-hidden="true"
-    />
-    {/* Logo */}
-    <img
-      class="mx-auto my-8 w-[clamp(200px,50%,288px)]"
-      src={cosmoLogoTransparent}
-      alt="Logo da Cosmo Mapeamento"
-      {/* Using the mobile size as the default */}
-      width={200}
-      height={200}
-    />
+    <header
+      class="flex w-full flex-col gap-4 bg-white px-4 py-4 shadow-lg sm:gap-6 sm:px-8 sm:py-6 md:px-16 md:py-8"
+    >
+      <div class="flex items-center justify-between gap-4">
+        <h1 class="min-w-0 shrink">
+          <a href="#">
+            <img
+              class="w-48 sm:w-64 md:w-80"
+              src="/img/logo-banner.webp"
+              alt="Cosmo Mapeamento"
+            />
+          </a>
+        </h1>
 
-    <Navbar client:media="not all and (min-width: 768px)" />
-    <h1 id="main-title" class="my-16 text-white">
-      <span class="text-title-md">Descubra o universo do</span>
-      <strong>Mapeamento Aéreo</strong>
-    </h1>
+        <div
+          class="hidden flex-col gap-2 text-xs xs:flex sm:text-sm md:text-base"
+        >
+          <div class="flex items-center gap-2">
+            <PhoneIcon className="h-4 w-4 shrink-0" />
+            <a href="tel:31998979774">(31) 99897-9774</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <MailIcon className="h-4 w-4 shrink-0" />
+            <a class="truncate" href="mailto:contato@cosmomapeamento.com.br">
+              contato@cosmomapeamento.com.br
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <Navbar client:media="not all and (min-width: 768px)" />
+    </header>
+
+    <div
+      class="flex flex-1 flex-col justify-end px-6 sm:px-10 md:px-16"
+    >
+      <p
+        id="main-title"
+        class="max-w-2xl text-balance text-2xl font-bold leading-snug text-white sm:text-3xl md:text-4xl md:leading-tight"
+      >
+        Apoiamos projetos ambientais locais através de geotecnologias e
+        informações espaciais precisas.
+      </p>
+    </div>
 
     <a
-      class="absolute left-1/2 bottom-[min(4rem,5vw)] -translate-x-1/2"
+      class="absolute bottom-[min(4rem,5vw)] left-1/2 -translate-x-1/2"
       href="#services"
       title="Ir para a primeira seção"
     >
@@ -68,7 +77,7 @@ const arrowIcon = '/img/modal-icons/arrow-right-icon.svg';
         height={64}
       />
     </a>
-  </header>
+  </section>
 
   <main>
     <MainContent client:load />
