@@ -1,5 +1,3 @@
-/// <reference types="astro/client" />
-
 interface ImportMetaEnv {
   readonly PUBLIC_EMAILJS_API_KEY: string;
   readonly PUBLIC_EMAILJS_TEMPLATE: string;
