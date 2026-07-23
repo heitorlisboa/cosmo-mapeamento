@@ -6,10 +6,13 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     fontFamily: {
-      primary: ['Gotham Rounded', ...defaultTheme.fontFamily.sans],
-      secondary: ['Helvetica', ...defaultTheme.fontFamily.sans],
+      title: ['Gotham Rounded', ...defaultTheme.fontFamily.sans],
+      body: ['var(--font-geist)', ...defaultTheme.fontFamily.sans],
     },
     extend: {
+      screens: {
+        xs: '480px',
+      },
       colors: {
         primary: {
           400: 'hsl(244, 92%, 75%)',

@@ -24,7 +24,7 @@ export const PortfolioSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
       {...props}
       ref={ref}
     >
-      <h2 className="text-white">
+      <h2 className="font-title text-white">
         <strong>Portfólio</strong>
       </h2>
       <ModalCarousel

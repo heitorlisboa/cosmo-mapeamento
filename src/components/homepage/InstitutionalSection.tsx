@@ -17,7 +17,7 @@ export const InstitutionalSection = forwardRef<
     {...props}
     ref={ref}
   >
-    <h2 className="text-title-md text-white [@media(min-width:400px)]:text-title-lg">
+    <h2 className="font-title text-title-md text-white [@media(min-width:400px)]:text-title-lg">
       <strong>Institucional</strong>
     </h2>
     <div className="my-auto lg:mx-auto lg:flex lg:max-w-5xl lg:gap-4 lg:px-4">

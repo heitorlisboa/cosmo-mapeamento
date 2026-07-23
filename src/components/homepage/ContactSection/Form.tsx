@@ -47,7 +47,7 @@ export const Form: FC = () => {
       onSubmit={handleSubmit(handleRequestQuote)}
     >
       <h3
-        className="m-0 p-0 font-secondary text-title-sm font-bold normal-case leading-normal tracking-normal"
+        className="m-0 p-0 text-title-sm font-bold normal-case leading-normal tracking-normal"
         id="form-title"
       >
         Se preferir, preencha o formulário abaixo e solicite um orçamento:

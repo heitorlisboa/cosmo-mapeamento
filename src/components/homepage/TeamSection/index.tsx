@@ -16,8 +16,8 @@ export const TeamSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
       {...props}
       ref={ref}
     >
-      <h2 className="text-primary-800">
-        <strong>A equipe</strong>
+      <h2 className="font-title text-primary-800">
+        <strong>Quem somos</strong>
       </h2>
       <div className="my-auto grid gap-16">
         <TextBox>

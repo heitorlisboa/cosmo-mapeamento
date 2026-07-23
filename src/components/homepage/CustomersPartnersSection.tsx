@@ -30,8 +30,8 @@ export const CustomersPartnersSection = forwardRef<
   SideNavSectionProps
 >((props, ref) => (
   <Section className="gap-16 bg-white" {...props} ref={ref}>
-    <h2 className="text-primary-800">
-      <strong>Clientes</strong> &amp; Parceiros
+    <h2 className="font-title text-primary-800">
+      <strong>Clientes</strong> e parceiros
     </h2>
     <ul className="mx-auto my-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-4 px-4 md:gap-x-16 md:gap-y-8 lg:px-8 xl:px-0 [&_a]:block [&_img]:w-full [&_li]:basis-[clamp(10rem,20vw,13rem)]">
       <li className="px-4 sm:px-6 lg:px-10 xl:px-[3.25rem]">
