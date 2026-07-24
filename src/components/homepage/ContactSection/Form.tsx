@@ -7,7 +7,7 @@ type RequestQuoteFormFields = {
   institution?: string;
   email: string;
   phone?: string;
-  description?: string;
+  description: string;
 };
 
 export const Form: FC = () => {
@@ -27,7 +27,7 @@ export const Form: FC = () => {
           institution: data.institution || valueNotInformed,
           email: data.email,
           phone: data.phone || valueNotInformed,
-          description: data.description || valueNotInformed,
+          description: data.description,
         } satisfies Required<RequestQuoteFormFields>,
         import.meta.env.PUBLIC_EMAILJS_API_KEY
       );
@@ -103,11 +103,12 @@ export const Form: FC = () => {
         {/* Display grid is used to remove the gap below the `textarea` */}
         <div className="grid">
           <label htmlFor="description" className="sr-only">
-            Breve descrição do seu projeto (opcional)
+            Breve descrição do seu projeto
           </label>
           <textarea
             id="description"
-            placeholder="Breve descrição do seu projeto (opcional):"
+            placeholder="Breve descrição do seu projeto:"
+            required
             {...register('description')}
           />
         </div>
