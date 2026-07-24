@@ -18,41 +18,43 @@ const arrowIcon = '/img/modal-icons/arrow-right-icon.svg';
       Pular para o conteúdo
     </a>
 
-    <header
-      class="flex w-full flex-col gap-4 bg-white px-4 py-4 shadow-lg sm:gap-6 sm:px-8 sm:py-6 md:px-16 md:py-8"
-    >
-      <div class="flex items-center justify-between gap-4">
-        <h1 class="min-w-0 shrink">
-          <a href="#">
-            <img
-              class="w-48 sm:w-64 md:w-80"
-              src="/img/logo-banner.webp"
-              alt="Cosmo Mapeamento"
-            />
-          </a>
-        </h1>
-
-        <div
-          class="hidden flex-col gap-2 text-xs xs:flex sm:text-sm md:text-base"
-        >
-          <div class="flex items-center gap-2">
-            <PhoneIcon className="h-4 w-4 shrink-0" />
-            <a href="tel:31998979774">(31) 99897-9774</a>
-          </div>
-          <div class="flex items-center gap-2">
-            <MailIcon className="h-4 w-4 shrink-0" />
-            <a class="truncate" href="mailto:contato@cosmomapeamento.com.br">
-              contato@cosmomapeamento.com.br
+    <header class="w-full bg-white shadow-lg">
+      <div
+        class="mx-auto flex max-w-screen-xl flex-col gap-4 px-4 py-4 sm:gap-6 sm:px-8 sm:py-6 md:px-16 md:py-8"
+      >
+        <div class="flex items-center justify-between gap-4">
+          <h1 class="min-w-0 shrink">
+            <a href="#">
+              <img
+                class="w-48 sm:w-64 md:w-80"
+                src="/img/logo-banner.webp"
+                alt="Cosmo Mapeamento"
+              />
             </a>
+          </h1>
+
+          <div
+            class="hidden flex-col gap-2 text-xs xs:flex sm:text-sm md:text-base"
+          >
+            <div class="flex items-center gap-2">
+              <PhoneIcon className="h-4 w-4 shrink-0" />
+              <a href="tel:31998979774">(31) 99897-9774</a>
+            </div>
+            <div class="flex items-center gap-2">
+              <MailIcon className="h-4 w-4 shrink-0" />
+              <a class="truncate" href="mailto:contato@cosmomapeamento.com.br">
+                contato@cosmomapeamento.com.br
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <Navbar client:media="not all and (min-width: 768px)" />
+        <Navbar client:media="not all and (min-width: 768px)" />
+      </div>
     </header>
 
     <div
-      class="flex flex-1 flex-col justify-end px-6 sm:px-10 md:px-16"
+      class="mx-auto flex w-full max-w-screen-xl flex-1 flex-col justify-end px-6 sm:px-10 md:px-16"
     >
       <p
         id="main-title"
