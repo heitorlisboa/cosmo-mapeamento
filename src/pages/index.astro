@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Navbar } from '../components/Navbar';
+import { HeroCarousel } from '../components/homepage/HeroCarousel';
 import { MainContent } from '../components/homepage/MainContent';
 import { PhoneIcon, MailIcon } from 'lucide-react';
 
@@ -9,16 +10,16 @@ const arrowIcon = '/img/modal-icons/arrow-right-icon.svg';
 
 <Layout title="Cosmo Mapeamento">
   <section
-    class="relative flex min-h-[min(100vh,1080px)] flex-col overflow-hidden bg-cover bg-fixed pb-[clamp(10rem,20vw,12rem)] bg-srcset-[/img/backgrounds/background.webp]"
+    class="relative flex min-h-[min(100vh,1080px)] flex-col overflow-hidden"
   >
     <a
-      class="absolute left-4 -translate-y-full bg-white px-4 py-2 text-primary-800 transition-transform duration-500 focus-visible:translate-y-0"
+      class="absolute left-4 z-20 -translate-y-full bg-white px-4 py-2 text-primary-800 transition-transform duration-500 focus-visible:translate-y-0"
       href="#main-title"
     >
       Pular para o conteúdo
     </a>
 
-    <header class="w-full bg-white shadow-lg">
+    <header class="relative z-10 w-full shrink-0 bg-white shadow-lg">
       <div
         class="mx-auto flex max-w-screen-xl flex-col gap-4 px-4 py-4 sm:gap-6 sm:px-8 sm:py-6 md:px-16 md:py-8"
       >
@@ -54,31 +55,37 @@ const arrowIcon = '/img/modal-icons/arrow-right-icon.svg';
     </header>
 
     <div
-      class="mx-auto flex w-full max-w-screen-xl flex-1 flex-col justify-end px-6 sm:px-10 md:px-16"
+      class="relative flex min-h-0 flex-1 flex-col pb-[clamp(10rem,20vw,12rem)]"
     >
-      <p
-        id="main-title"
-        class="max-w-2xl text-balance text-2xl font-bold leading-snug text-white sm:text-3xl md:text-4xl md:leading-tight"
-      >
-        Apoiamos projetos ambientais locais através de geotecnologias e
-        informações espaciais precisas.
-      </p>
-    </div>
+      <HeroCarousel client:load />
 
-    <a
-      class="absolute bottom-[min(4rem,5vw)] left-1/2 -translate-x-1/2"
-      href="#services"
-      title="Ir para a primeira seção"
-    >
-      <span class="sr-only">Ir para a primeira seção</span>
-      <img
-        class="w-16 rotate-90 invert"
-        src={arrowIcon}
-        alt=""
-        width={64}
-        height={64}
-      />
-    </a>
+      <div
+        class="relative z-10 mx-auto flex w-full max-w-screen-xl flex-1 flex-col justify-end px-6 sm:px-10 md:px-16"
+      >
+        <p
+          id="main-title"
+          class="max-w-3xl text-balance font-title text-2xl font-bold leading-snug text-white [text-shadow:0_0_1rem_black] sm:text-3xl md:text-4xl md:leading-tight"
+        >
+          Apoiamos projetos ambientais locais através de geotecnologias e
+          informações espaciais precisas.
+        </p>
+      </div>
+
+      <a
+        class="absolute bottom-[min(2rem,2.5vw)] left-1/2 z-10 -translate-x-1/2"
+        href="#services"
+        title="Ir para a primeira seção"
+      >
+        <span class="sr-only">Ir para a primeira seção</span>
+        <img
+          class="w-[clamp(2rem,7vw,4rem)] rotate-90 invert"
+          src={arrowIcon}
+          alt=""
+          width={64}
+          height={64}
+        />
+      </a>
+    </div>
   </section>
 
   <main>
