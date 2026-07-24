@@ -29,10 +29,13 @@ export const TeamSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
           <p>
             Nossa <strong>equipe multidisciplinar</strong> é composta por
             especialistas, mestres e doutores em <strong>geociências</strong>,
-            com experiência comprovada nos setores <strong>ambiental</strong> e
-            de <strong>geotecnologias</strong>.
+            com mais de 12 anos de experiência comprovada no setor{' '}
+            <strong>ambiental</strong> e no uso de{' '}
+            <strong>geotecnologias</strong>. Nossa atuação é pautada na solidez
+            metodológica, <strong>transparência</strong> e rigor técnico,
+            compromissos que estão gravados nos{' '}
+            <strong>valores inegociáveis</strong> da empresa.
           </p>
-          <p>Conheça a coordenação:</p>
         </TextBox>
         <Member
           img={{

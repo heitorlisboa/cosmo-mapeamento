@@ -46,7 +46,7 @@ export const Info: FC = () => (
       </div>
       <div>
         <p>Atendimento</p>
-        <p>Segunda à sexta - 09h às 18h</p>
+        <p>Segunda à sexta - 08h às 17h</p>
       </div>
     </li>
 

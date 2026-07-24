@@ -39,7 +39,7 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
           />
           <GridItem
             title="Criação de Modelos Digitais de Elevação"
-            content="Modelagem de Terreno (MDT) e de Superfície (MDS) a partir de nuvens de ponto densas e malhas triangulares de levantamento próprio."
+            content="Modelagem de Superfície (MDS) e Terreno (MDT) a partir de nuvens de pontos e malhas triangulares de levantamento próprio."
             imgUrl={layerContourIcon}
           />
           <GridItem
@@ -78,18 +78,6 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
             imgUrl={gnssAntenna}
           />
         </ul>
-
-        <div className="mx-auto mt-8 w-[calc(100%-1rem)] max-w-2xl rounded-2xl p-4 text-center text-sm font-medium text-primary-800 shadow-[0_0_20px_rgb(0_0_0/0.1)] md:rounded-full md:border-2 md:border-solid md:border-primary-800 md:px-12 md:py-0 md:text-neutral-600 lg:mt-24">
-          <p>Importante:</p>
-          <p>
-            Nossos veículos aéreos são devidamente registrados no{' '}
-            <strong>SISANT/ANAC</strong> e todas as missões são acompanhadas de
-            autorização prévia no sistema <strong>SARPAS/DECEA</strong>, bem
-            como da elaboração de documento{' '}
-            <strong>de análise de risco operacional</strong>.
-          </p>
-          <p>Exija isso!</p>
-        </div>
       </div>
     </Section>
   )
