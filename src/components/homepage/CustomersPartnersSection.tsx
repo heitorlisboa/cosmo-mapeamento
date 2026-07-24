@@ -5,7 +5,7 @@ import type { SideNavSectionProps } from '../SideNav';
 import { Section } from '../Section';
 
 // Logos
-const studioMatilhaLogo = '/img/customers-partners-logos/studio-matilha.webp';
+const luizLogo = '/img/customers-partners-logos/luiz.webp';
 const algerLogo = '/img/customers-partners-logos/alger.webp';
 const innovarLogo = '/img/customers-partners-logos/innovar.webp';
 const vasgeoLogo = '/img/customers-partners-logos/vasgeo.webp';
@@ -34,13 +34,13 @@ export const CustomersPartnersSection = forwardRef<
       <strong>Clientes</strong> e parceiros
     </h2>
     <ul className="mx-auto my-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-4 px-4 md:gap-x-16 md:gap-y-8 lg:px-8 xl:px-0 [&_a]:block [&_img]:w-full [&_li]:basis-[clamp(10rem,20vw,13rem)]">
-      <li className="px-4 sm:px-6 lg:px-10 xl:px-[3.25rem]">
+      <li className="px-8 sm:px-10 lg:px-12 xl:px-[3.5rem]">
         <a
-          href="https://www.studiomatilha.com/"
+          href="https://www.luizcampolina.com/design"
           target="_blank"
           rel="noreferrer"
         >
-          <img src={studioMatilhaLogo} alt="Studio Matilha" loading="lazy" />
+          <img src={luizLogo} alt="Luiz" loading="lazy" />
         </a>
       </li>
 
