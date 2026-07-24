@@ -1,31 +1,35 @@
 import type { FC } from 'react';
 
 // Icons
+const mailIcon = '/img/contact-icons/mail.webp';
 const whatsappIcon = '/img/contact-icons/whatsapp.webp';
-const localIcon = '/img/contact-icons/local.webp';
+const locationIcon = '/img/contact-icons/location.webp';
 
 export const Info: FC = () => (
   <ul
-    className="mx-auto mt-12 grid items-center justify-center justify-items-center gap-12 px-4 text-center text-sm leading-normal lg:grid-flow-col lg:gap-8 [&_p]:m-0 lg:[&>li]:w-[17rem]"
+    className="mx-auto mt-12 grid items-center justify-center justify-items-center gap-12 px-4 text-center text-[0.9375rem] leading-normal lg:grid-flow-col lg:gap-4 [&_p]:m-0"
     aria-label="Informações de contato"
   >
-    <li>
-      <p>Email</p>
-      <p>
-        <a
-          className="underline transition-opacity hocus:opacity-60"
-          href="mailto:contato@cosmomapeamento.com.br"
-        >
-          contato@cosmomapeamento.
-          <wbr />
-          com.br
-        </a>
-      </p>
+    <li className="flex items-center gap-2 lg:pr-0">
+      <img src={mailIcon} alt="" width={36} height={36} loading="lazy" />
+      <div className="grid items-center">
+        <p>Email</p>
+        <p>
+          <a
+            className="underline transition-opacity hocus:opacity-60"
+            href="mailto:contato@cosmomapeamento.com.br"
+          >
+            contato@cosmomapeamento.
+            <wbr />
+            com.br
+          </a>
+        </p>
+      </div>
     </li>
 
-    <div className="hidden h-24 w-[3px] bg-white lg:block" aria-hidden />
+    <div className="ml-4 hidden h-24 w-[3px] bg-white lg:block" aria-hidden />
 
-    <li className="grid justify-items-center gap-4">
+    <li className="grid justify-items-center gap-4 lg:w-[17rem]">
       <div className="flex items-center gap-2">
         <a
           className="transition-opacity hocus:opacity-60"
@@ -34,8 +38,8 @@ export const Info: FC = () => (
           <img
             src={whatsappIcon}
             alt="Whatsapp"
-            width={22}
-            height={22}
+            width={36}
+            height={36}
             loading="lazy"
           />
         </a>
@@ -50,10 +54,10 @@ export const Info: FC = () => (
       </div>
     </li>
 
-    <div className="hidden h-24 w-[3px] bg-white lg:block" aria-hidden />
+    <div className="mr-4 hidden h-24 w-[3px] bg-white lg:block" aria-hidden />
 
     <li className="flex items-center gap-2">
-      <img src={localIcon} alt="" width={19} height={30} loading="lazy" />
+      <img src={locationIcon} alt="" width={36} height={36} loading="lazy" />
       <div className="grid items-center">
         <p>Belo Horizonte - Minas Gerais</p>
         <p>CNPJ: 41.889.909/0001-20</p>

@@ -53,7 +53,7 @@ export const Form: FC = () => {
         Se preferir, preencha o formulário abaixo e solicite um orçamento:
       </h3>
 
-      <div className="flex flex-col gap-2 self-stretch [&_input]:w-full [&_input]:border-b-2 [&_input]:border-solid [&_input]:border-primary-400 [&_input]:bg-transparent [&_input]:px-6 [&_input]:py-1 [&_textarea]:min-h-[7.5rem] [&_textarea]:w-full [&_textarea]:px-6 [&_textarea]:py-2 [&_textarea]:text-primary-700 [&_::placeholder]:text-inherit [&_::placeholder]:opacity-60">
+      <div className="flex flex-col gap-2 self-stretch [&_::placeholder]:text-inherit [&_:is(input,textarea)]:text-[0.9375rem] [&_input::placeholder]:opacity-75 [&_input]:w-full [&_input]:border-b-2 [&_input]:border-solid [&_input]:border-primary-400 [&_input]:bg-transparent [&_input]:px-6 [&_input]:py-1 [&_textarea::placeholder]:opacity-50 [&_textarea]:min-h-[7.5rem] [&_textarea]:w-full [&_textarea]:px-6 [&_textarea]:py-2 [&_textarea]:text-primary-700">
         <div>
           <label htmlFor="name" className="sr-only">
             Nome

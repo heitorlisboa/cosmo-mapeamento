@@ -27,21 +27,6 @@ export const Socials: FC = () => (
     </li>
     <li>
       <a
-        href="https://www.facebook.com/cosmomapeamento"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img
-          src={facebookIcon}
-          alt="Facebook"
-          width={36}
-          height={36}
-          loading="lazy"
-        />
-      </a>
-    </li>
-    <li>
-      <a
         href="https://www.linkedin.com/company/cosmo-mapeamento-ambiental"
         target="_blank"
         rel="noreferrer"

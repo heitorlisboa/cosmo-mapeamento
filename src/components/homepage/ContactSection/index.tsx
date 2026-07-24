@@ -11,7 +11,7 @@ const DISPLAY_NAME = 'ContactSection';
 export const ContactSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
   (props, ref) => (
     <Section
-      className="bg-cover bg-fixed font-bold text-white bg-srcset-[/img/backgrounds/background.webp]"
+      className="min-h-[calc(min(100vh,1000px)-var(--footer-height))] bg-cover bg-fixed py-12 font-bold text-white bg-srcset-[/img/backgrounds/background.webp] [--footer-height:2.75rem]"
       {...props}
       ref={ref}
     >

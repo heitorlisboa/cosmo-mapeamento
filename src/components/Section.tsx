@@ -1,5 +1,5 @@
 import { forwardRef, type HTMLAttributes } from 'react';
-import clsx from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 import type { SideNavSectionProps } from './SideNav';
 
@@ -11,9 +11,9 @@ export const Section = forwardRef<HTMLDivElement, SectionProps>(
   should not be passed to `div` */
   ({ children, className, name, ...props }, ref) => (
     <div
-      className={clsx(
-        className,
-        'flex min-h-[min(100vh,1000px)] flex-col py-16'
+      className={twMerge(
+        'flex min-h-[min(100vh,1000px)] flex-col py-16',
+        className
       )}
       {...props}
       ref={ref}
