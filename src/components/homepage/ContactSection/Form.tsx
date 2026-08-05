@@ -33,7 +33,7 @@ export const Form: FC = () => {
       );
 
       window.alert('Solicitação de orçamento enviada com sucesso!');
-    } catch (error) {
+    } catch {
       window.alert('Não foi possível enviar a solicitação...');
     }
 
@@ -42,18 +42,18 @@ export const Form: FC = () => {
 
   return (
     <form
-      className="mx-auto mt-16 flex max-w-3xl flex-col items-center gap-8"
+      className="flex flex-col gap-6"
       aria-labelledby="form-title"
       onSubmit={handleSubmit(handleRequestQuote)}
     >
       <h3
-        className="m-0 p-0 text-title-sm font-bold normal-case leading-normal tracking-normal"
+        className="m-0 text-base font-bold leading-snug tracking-normal text-white"
         id="form-title"
       >
         Se preferir, preencha o formulário abaixo e solicite um orçamento:
       </h3>
 
-      <div className="flex flex-col gap-2 self-stretch [&_::placeholder]:text-inherit [&_:is(input,textarea)]:text-[0.9375rem] [&_input::placeholder]:opacity-75 [&_input]:w-full [&_input]:border-b-2 [&_input]:border-solid [&_input]:border-primary-400 [&_input]:bg-transparent [&_input]:px-6 [&_input]:py-1 [&_textarea::placeholder]:opacity-50 [&_textarea]:min-h-[7.5rem] [&_textarea]:w-full [&_textarea]:px-6 [&_textarea]:py-2 [&_textarea]:text-primary-700">
+      <div className="flex flex-col gap-3 [&_::placeholder]:text-white/55 [&_:is(input,textarea)]:w-full [&_:is(input,textarea)]:border [&_:is(input,textarea)]:border-white/25 [&_:is(input,textarea)]:bg-white/5 [&_:is(input,textarea)]:px-4 [&_:is(input,textarea)]:py-2.5 [&_:is(input,textarea)]:text-[0.9375rem] [&_:is(input,textarea)]:text-white [&_textarea]:min-h-[7.5rem]">
         <div>
           <label htmlFor="name" className="sr-only">
             Nome
@@ -100,8 +100,7 @@ export const Form: FC = () => {
             {...register('phone')}
           />
         </div>
-        {/* Display grid is used to remove the gap below the `textarea` */}
-        <div className="grid">
+        <div>
           <label htmlFor="description" className="sr-only">
             Breve descrição do seu projeto
           </label>
@@ -115,7 +114,7 @@ export const Form: FC = () => {
       </div>
 
       <button
-        className="w-60 bg-primary-800 px-10 py-6 transition-opacity hocus:opacity-60"
+        className="self-start bg-primary-800 px-8 py-3 font-title text-sm font-bold uppercase tracking-[0.08em] text-white transition-colors hocus:opacity-60"
         type="submit"
         aria-live="polite"
       >
