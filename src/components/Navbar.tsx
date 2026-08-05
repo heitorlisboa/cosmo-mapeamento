@@ -21,7 +21,7 @@ export function Navbar() {
   return (
     <>
       <nav
-        className="-mb-16 hidden rounded-full bg-[#4101D0] py-5 font-title font-bold leading-normal text-white shadow-2xl shadow-black/50 md:block"
+        className="-mb-16 hidden rounded-full bg-white py-5 font-bold leading-normal text-[#4101D0] shadow-2xl shadow-black/50 md:block"
         aria-label="Navegação principal"
       >
         <ul className="flex flex-wrap justify-center gap-6 px-8 lg:justify-evenly [&_a]:transition-colors [&_a]:duration-300 hocus:[&_a]:text-[#c49bff]">
@@ -35,7 +35,7 @@ export function Navbar() {
 
       <div className="-mb-10 sm:-mb-12 md:hidden">
         <button
-          className="flex w-full items-center justify-center gap-3 rounded-full bg-[#4101D0] px-5 py-4 font-title font-bold text-white shadow-2xl shadow-black/50 transition-colors hocus:bg-[#4f12e0]"
+          className="flex w-full items-center justify-center gap-3 rounded-full bg-white px-5 py-4 font-bold text-[#4101D0] shadow-2xl shadow-black/50 transition-colors hocus:bg-[#4f12e0]"
           type="button"
           aria-expanded={isOpen}
           aria-controls="mobile-nav-menu"
@@ -74,7 +74,7 @@ export function Navbar() {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <Dialog.Panel className="flex h-full w-full max-w-xs flex-col bg-[#4101D0] font-title font-bold text-white shadow-2xl">
+              <Dialog.Panel className="flex h-full w-full max-w-xs flex-col bg-white font-bold text-[#4101D0] shadow-2xl">
                 <div className="flex justify-end px-6 py-5">
                   <Dialog.Title className="sr-only">Menu</Dialog.Title>
                   <button
@@ -99,7 +99,7 @@ export function Navbar() {
                   </ul>
                 </nav>
 
-                <div className="mt-auto flex flex-col gap-3 border-t border-white/15 px-6 py-6 font-body text-sm font-normal">
+                <div className="mt-auto flex flex-col gap-3 border-t border-white/15 px-6 py-6 text-sm font-normal">
                   <a
                     className="flex items-center gap-2 transition-colors hocus:text-[#c49bff]"
                     href="tel:31998979774"
