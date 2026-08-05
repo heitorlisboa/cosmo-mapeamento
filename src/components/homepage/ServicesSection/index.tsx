@@ -74,7 +74,7 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
           />
           <GridItem
             title="Georreferenciamento de imóveis rurais"
-            content="Identificação precisa dos perímetros do imóvel, com memorial descritivo e demais peças técnicas para registro junto ao INCRA."
+            content="Identificação precisa dos perímetros do imóvel, com memorial descritivo e demais peças técnicas para certificação junto ao INCRA."
             imgUrl={gnssAntenna}
           />
         </ul>
