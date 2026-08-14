@@ -4,9 +4,9 @@ import Email from '@emailjs/browser';
 
 type RequestQuoteFormFields = {
   name: string;
-  institution?: string;
+  institution: string;
   email: string;
-  phone?: string;
+  phone: string;
   description: string;
 };
 
@@ -17,16 +17,15 @@ export const Form: FC = () => {
   async function handleRequestQuote(data: RequestQuoteFormFields) {
     setIsSendingRequest(true);
 
-    const valueNotInformed = 'Não informado';
     try {
       await Email.send(
         import.meta.env.PUBLIC_EMAILJS_SERVICE,
         import.meta.env.PUBLIC_EMAILJS_TEMPLATE,
         {
           name: data.name,
-          institution: data.institution || valueNotInformed,
+          institution: data.institution,
           email: data.email,
-          phone: data.phone || valueNotInformed,
+          phone: data.phone,
           description: data.description,
         } satisfies Required<RequestQuoteFormFields>,
         import.meta.env.PUBLIC_EMAILJS_API_KEY
@@ -63,18 +62,19 @@ export const Form: FC = () => {
             type="text"
             placeholder="Nome:"
             required
-            {...register('name')}
+            {...register('name', { required: true })}
           />
         </div>
         <div>
           <label htmlFor="institution" className="sr-only">
-            Instituição (opcional)
+            Instituição
           </label>
           <input
             id="institution"
             type="text"
-            placeholder="Instituição (opcional):"
-            {...register('institution')}
+            placeholder="Instituição:"
+            required
+            {...register('institution', { required: true })}
           />
         </div>
         <div>
@@ -86,18 +86,19 @@ export const Form: FC = () => {
             type="email"
             placeholder="Email:"
             required
-            {...register('email')}
+            {...register('email', { required: true })}
           />
         </div>
         <div>
           <label htmlFor="phone" className="sr-only">
-            Telefone (opcional)
+            Telefone
           </label>
           <input
             id="phone"
             type="tel"
-            placeholder="Telefone (opcional):"
-            {...register('phone')}
+            placeholder="Telefone:"
+            required
+            {...register('phone', { required: true })}
           />
         </div>
         <div>
@@ -108,7 +109,7 @@ export const Form: FC = () => {
             id="description"
             placeholder="Breve descrição do seu projeto:"
             required
-            {...register('description')}
+            {...register('description', { required: true })}
           />
         </div>
       </div>
