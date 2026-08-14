@@ -17,7 +17,7 @@ const slides = [
 export function HeroCarousel() {
   const reducedMotion = useReducedMotion();
   const autoplay = useRef(
-    Autoplay({ delay: 3000, playOnInit: false, stopOnInteraction: false })
+    Autoplay({ delay: 4000, playOnInit: false, stopOnInteraction: false })
   );
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     autoplay.current,
