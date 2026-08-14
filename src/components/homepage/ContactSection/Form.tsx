@@ -45,12 +45,12 @@ export const Form: FC = () => {
       aria-labelledby="form-title"
       onSubmit={handleSubmit(handleRequestQuote)}
     >
-      <h3
-        className="m-0 text-base font-bold leading-snug tracking-normal text-white"
+      <p
+        className="m-0 text-balance text-center font-bold leading-snug"
         id="form-title"
       >
         Se preferir, preencha o formulário abaixo e solicite um orçamento:
-      </h3>
+      </p>
 
       <div className="flex flex-col gap-3 [&_::placeholder]:text-white/55 [&_:is(input,textarea)]:w-full [&_:is(input,textarea)]:border [&_:is(input,textarea)]:border-white/25 [&_:is(input,textarea)]:bg-white/5 [&_:is(input,textarea)]:px-4 [&_:is(input,textarea)]:py-2.5 [&_:is(input,textarea)]:text-[0.9375rem] [&_:is(input,textarea)]:text-white [&_textarea]:min-h-[7.5rem]">
         <div>

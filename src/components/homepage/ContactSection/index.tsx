@@ -3,8 +3,6 @@ import { forwardRef } from 'react';
 import type { SideNavSectionProps } from '../../SideNav';
 
 import { Section } from '../../Section';
-import { Socials } from './Socials';
-import { Info } from './Info';
 import { Form } from './Form';
 
 export const contactDetails = {
@@ -39,16 +37,6 @@ export const ContactSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
       {...props}
       ref={ref}
     >
-      {/* <h2 className="font-title text-white">
-        <strong>Contato</strong>
-      </h2>
-
-      <div className="my-auto">
-        <Socials />
-        <Info />
-        <Form />
-      </div> */}
-
       <div className="mx-auto max-w-6xl">
         <h2 className="font-title text-white">
           <strong>Contato</strong>
@@ -57,33 +45,33 @@ export const ContactSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
         <div className="mt-12 grid gap-12 p-6 sm:p-8 lg:grid-cols-2 lg:gap-16 lg:p-10">
           <div className="grid gap-8">
             <ul
-              className="flex gap-3"
-              aria-label="Redes sociais da Cosmo Mapeamento"
-            >
-              {socialLinks.map((social) => (
-                <li key={social.href}>
-                  <a
-                    className="block transition-opacity hocus:opacity-70"
-                    href={social.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={social.icon}
-                      alt={social.label}
-                      width={36}
-                      height={36}
-                      loading="lazy"
-                    />
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <ul
-              className="grid gap-5 text-sm leading-relaxed"
+              className="grid items-start gap-5 text-sm leading-relaxed"
               aria-label="Informações de contato"
             >
+              <li className="flex items-start gap-2">
+                <div className="flex flex-col gap-2">
+                  {socialLinks.map((social) => (
+                    <a
+                      className="block transition-opacity hocus:opacity-70"
+                      href={social.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        src={social.icon}
+                        alt={social.label}
+                        width={36}
+                        height={36}
+                        loading="lazy"
+                      />
+                    </a>
+                  ))}
+                </div>
+
+                <p className="m-0 flex flex-col self-center font-title text-xs font-bold uppercase tracking-[0.14em]">
+                  Redes <span>sociais</span>
+                </p>
+              </li>
               <li className="flex items-start gap-2">
                 <img
                   src="/img/contact-icons/mail.webp"
@@ -93,12 +81,12 @@ export const ContactSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
                   loading="lazy"
                 />
                 <div>
-                  <p className="m-0 font-title text-xs font-bold uppercase tracking-[0.14em] text-turquoise-500">
+                  <p className="m-0 font-title text-xs font-bold uppercase tracking-[0.14em]">
                     Email
                   </p>
                   <p className="m-0 mt-1">
                     <a
-                      className="underline decoration-turquoise-500/50 underline-offset-4 transition-colors hocus:text-turquoise-500"
+                      className="underline underline-offset-4 transition-colors"
                       href={contactDetails.emailHref}
                     >
                       {contactDetails.email}
@@ -115,12 +103,12 @@ export const ContactSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
                   loading="lazy"
                 />
                 <div>
-                  <p className="m-0 font-title text-xs font-bold uppercase tracking-[0.14em] text-turquoise-500">
+                  <p className="m-0 font-title text-xs font-bold uppercase tracking-[0.14em]">
                     Telefone / Whatsapp
                   </p>
                   <p className="m-0 mt-1">
                     <a
-                      className="underline decoration-turquoise-500/50 underline-offset-4 transition-colors hocus:text-turquoise-500"
+                      className="underline underline-offset-4 transition-colors"
                       href={contactDetails.phoneHref}
                     >
                       {contactDetails.phone}
@@ -142,7 +130,7 @@ export const ContactSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
                   loading="lazy"
                 />
                 <div>
-                  <p className="m-0 font-title text-xs font-bold uppercase tracking-[0.14em] text-turquoise-500">
+                  <p className="m-0 font-title text-xs font-bold uppercase tracking-[0.14em]">
                     Local
                   </p>
                   <p className="m-0 mt-1">{contactDetails.location}</p>
