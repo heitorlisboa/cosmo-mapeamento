@@ -74,7 +74,7 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
       </h2>
 
       <div className="my-auto">
-        <ul className="mt-8 grid max-w-[88rem] mx-auto gap-x-12 gap-y-12 px-4 xs:px-8 sm:grid-cols-2 sm:px-12 md:px-16 lg:gap-y-6">
+        <ul className="mx-auto mt-8 grid max-w-[88rem] gap-x-12 gap-y-12 px-4 xs:px-8 sm:grid-cols-2 sm:px-12 md:px-16 lg:gap-y-6">
           {services.map(({ title, content, imgUrl }, index) => (
             <li key={title} className="flex gap-4">
               <img
@@ -86,13 +86,9 @@ export const ServicesSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
                 loading="lazy"
               />
               <div>
-                <h3 className="m-0 px-0 text-start font-title text-sm xs:text-base font-bold text-primary-900 md:text-lg">
+                <h3 className="m-0 px-0 text-start font-title text-sm font-bold text-primary-900 xs:text-base md:text-lg">
                   {title}
                 </h3>
-                <div
-                  className="mt-1 h-px w-full max-w-[12rem] bg-gradient-to-r from-turquoise-500/80 to-transparent"
-                  aria-hidden
-                />
                 <p className="mt-1 text-sm leading-relaxed text-primary-900/85">
                   {content}
                 </p>
