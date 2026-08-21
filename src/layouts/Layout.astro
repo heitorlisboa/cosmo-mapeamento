@@ -1,5 +1,5 @@
 ---
-import { Font } from "astro:assets";
+import { Font } from 'astro:assets';
 import '../fonts/stylesheet.css';
 
 export interface Props {
@@ -9,7 +9,7 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
@@ -43,6 +43,7 @@ const { title } = Astro.props;
       media="(min-width: 1921px)"
     />
     <Font cssVariable="--font-geist" />
+    <Font cssVariable="--font-funnel" />
     <title>{title}</title>
   </head>
   <body>
@@ -66,7 +67,7 @@ const { title } = Astro.props;
   h4,
   h5,
   h6 {
-    @apply px-1 text-center text-title-lg uppercase sm:px-4 [&_strong]:block;
+    @apply px-1 text-center font-title text-title-lg uppercase sm:px-4 [&_strong]:block;
   }
 
   p {

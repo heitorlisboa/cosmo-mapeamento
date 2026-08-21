@@ -6,7 +6,7 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     fontFamily: {
-      title: ['Gotham Rounded', ...defaultTheme.fontFamily.sans],
+      title: ['var(--font-funnel)', ...defaultTheme.fontFamily.sans],
       body: ['var(--font-geist)', ...defaultTheme.fontFamily.sans],
     },
     extend: {
