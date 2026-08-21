@@ -52,6 +52,7 @@ export const ContactSection = forwardRef<HTMLDivElement, SideNavSectionProps>(
                 <div className="flex flex-col gap-2">
                   {socialLinks.map((social) => (
                     <a
+                      key={social.label}
                       className="block transition-opacity hocus:opacity-70"
                       href={social.href}
                       target="_blank"
